@@ -1,0 +1,578 @@
+[
+ {
+  "scene": 1,
+  "speaker": "JAMSHID",
+  "text": "Toʻxtang!",
+  "first": true,
+  "start": 0.0,
+  "end": 0.52,
+  "how": "m+snap"
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Agar",
+  "first": true,
+  "start": 0.855,
+  "end": 1.12,
+  "how": "m+snap"
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Jamshidxon",
+  "first": false,
+  "start": 1.12,
+  "end": 1.66,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Ziyoxonov",
+  "first": false,
+  "start": 1.66,
+  "end": 2.28,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "bloger",
+  "first": false,
+  "start": 2.28,
+  "end": 2.76,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "boʻlmaganida,",
+  "first": false,
+  "start": 2.76,
+  "end": 3.44,
+  "how": "m"
+ },
+ {
+  "scene": 3,
+  "speaker": "HIKOYACHI",
+  "text": "aptekachi",
+  "first": true,
+  "start": 3.71,
+  "end": 4.22,
+  "how": "m+snap"
+ },
+ {
+  "scene": 3,
+  "speaker": "HIKOYACHI",
+  "text": "boʻlardi!",
+  "first": false,
+  "start": 4.22,
+  "end": 4.58,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "Bilasizmi,",
+  "first": true,
+  "start": 5.05,
+  "end": 5.58,
+  "how": "m+snap"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "u",
+  "first": false,
+  "start": 5.875,
+  "end": 5.98,
+  "how": "m+snap"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "rostdan",
+  "first": false,
+  "start": 5.98,
+  "end": 6.54,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "ham",
+  "first": false,
+  "start": 6.54,
+  "end": 6.72,
+  "how": "interp"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "farmatsevtikada",
+  "first": false,
+  "start": 6.72,
+  "end": 7.54,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "oʻqigan.",
+  "first": false,
+  "start": 7.54,
+  "end": 7.88,
+  "how": "m"
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "Aka,",
+  "first": true,
+  "start": 8.3,
+  "end": 8.54,
+  "how": "m+snap"
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "menga",
+  "first": false,
+  "start": 8.78,
+  "end": 9.08,
+  "how": "m"
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "vitamin",
+  "first": false,
+  "start": 9.08,
+  "end": 9.34,
+  "how": "m"
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "bering!",
+  "first": false,
+  "start": 9.34,
+  "end": 9.76,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "speaker": "JAMSHID",
+  "text": "Qaysi",
+  "first": true,
+  "start": 10.135,
+  "end": 10.355,
+  "how": "split+snap"
+ },
+ {
+  "scene": 6,
+  "speaker": "JAMSHID",
+  "text": "biridan?",
+  "first": false,
+  "start": 10.355,
+  "end": 10.74,
+  "how": "split"
+ },
+ {
+  "scene": 7,
+  "speaker": "MIJOZ",
+  "text": "Eng",
+  "first": true,
+  "start": 11.05,
+  "end": 11.269,
+  "how": "split+snap"
+ },
+ {
+  "scene": 7,
+  "speaker": "MIJOZ",
+  "text": "qimmatidan!",
+  "first": false,
+  "start": 11.269,
+  "end": 11.9,
+  "how": "split"
+ },
+ {
+  "scene": 8,
+  "speaker": "JAMSHID",
+  "text": "Toʻxtang!",
+  "first": true,
+  "start": 12.305,
+  "end": 12.74,
+  "how": "m+snap"
+ },
+ {
+  "scene": 9,
+  "speaker": "JAMSHID",
+  "text": "Pulni",
+  "first": true,
+  "start": 13.07,
+  "end": 13.3,
+  "how": "m+snap"
+ },
+ {
+  "scene": 9,
+  "speaker": "JAMSHID",
+  "text": "doriga",
+  "first": false,
+  "start": 13.3,
+  "end": 13.66,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "speaker": "JAMSHID",
+  "text": "emas...",
+  "first": false,
+  "start": 13.66,
+  "end": 14.1,
+  "how": "m"
+ },
+ {
+  "scene": 10,
+  "speaker": "JAMSHID",
+  "text": "mevaga",
+  "first": true,
+  "start": 14.335,
+  "end": 14.78,
+  "how": "m+snap"
+ },
+ {
+  "scene": 10,
+  "speaker": "JAMSHID",
+  "text": "sarflang!",
+  "first": false,
+  "start": 14.78,
+  "end": 15.28,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "speaker": "MIJOZ",
+  "text": "Aka,",
+  "first": true,
+  "start": 15.65,
+  "end": 15.92,
+  "how": "m+snap"
+ },
+ {
+  "scene": 11,
+  "speaker": "MIJOZ",
+  "text": "bu",
+  "first": false,
+  "start": 16.08,
+  "end": 16.16,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "speaker": "MIJOZ",
+  "text": "dorixona-ku?!",
+  "first": false,
+  "start": 16.16,
+  "end": 16.98,
+  "how": "m2"
+ },
+ {
+  "scene": 12,
+  "speaker": "JAMSHID",
+  "text": "Vitamin",
+  "first": true,
+  "start": 17.36,
+  "end": 17.7,
+  "how": "m+snap"
+ },
+ {
+  "scene": 12,
+  "speaker": "JAMSHID",
+  "text": "qutida",
+  "first": false,
+  "start": 17.7,
+  "end": 18.08,
+  "how": "m"
+ },
+ {
+  "scene": 12,
+  "speaker": "JAMSHID",
+  "text": "emas,",
+  "first": false,
+  "start": 18.08,
+  "end": 18.58,
+  "how": "m"
+ },
+ {
+  "scene": 12,
+  "speaker": "JAMSHID",
+  "text": "bozorda!",
+  "first": false,
+  "start": 18.71,
+  "end": 19.34,
+  "how": "m+snap"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "Bir",
+  "first": true,
+  "start": 19.805,
+  "end": 19.94,
+  "how": "m+snap"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "haftadan",
+  "first": false,
+  "start": 19.94,
+  "end": 20.408,
+  "how": "split"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "keyin",
+  "first": false,
+  "start": 20.408,
+  "end": 20.7,
+  "how": "split"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "xoʻjayin",
+  "first": false,
+  "start": 20.84,
+  "end": 21.22,
+  "how": "m"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "xabar",
+  "first": false,
+  "start": 21.22,
+  "end": 21.57,
+  "how": "split"
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "yozdi.",
+  "first": false,
+  "start": 21.57,
+  "end": 21.92,
+  "how": "split"
+ },
+ {
+  "scene": 14,
+  "speaker": "JAMSHID",
+  "text": "Dori",
+  "first": true,
+  "start": 22.31,
+  "end": 22.68,
+  "how": "m+snap"
+ },
+ {
+  "scene": 14,
+  "speaker": "JAMSHID",
+  "text": "sotilmadi...",
+  "first": false,
+  "start": 22.68,
+  "end": 23.18,
+  "how": "m"
+ },
+ {
+  "scene": 15,
+  "speaker": "JAMSHID",
+  "text": "lekin",
+  "first": true,
+  "start": 23.58,
+  "end": 23.92,
+  "how": "m+snap"
+ },
+ {
+  "scene": 15,
+  "speaker": "JAMSHID",
+  "text": "butun",
+  "first": false,
+  "start": 23.92,
+  "end": 24.5,
+  "how": "m"
+ },
+ {
+  "scene": 15,
+  "speaker": "JAMSHID",
+  "text": "mahalla",
+  "first": false,
+  "start": 24.5,
+  "end": 24.9,
+  "how": "m"
+ },
+ {
+  "scene": 15,
+  "speaker": "JAMSHID",
+  "text": "sogʻaydi!",
+  "first": false,
+  "start": 24.9,
+  "end": 25.38,
+  "how": "m"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "Shuning",
+  "first": true,
+  "start": 25.71,
+  "end": 26.02,
+  "how": "m+snap"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "uchun",
+  "first": false,
+  "start": 26.02,
+  "end": 26.26,
+  "how": "m"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "ham",
+  "first": false,
+  "start": 26.26,
+  "end": 26.64,
+  "how": "interp"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "u",
+  "first": false,
+  "start": 26.64,
+  "end": 26.68,
+  "how": "m"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "bloger",
+  "first": false,
+  "start": 26.68,
+  "end": 27.2,
+  "how": "m"
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "boʻldi!",
+  "first": false,
+  "start": 27.2,
+  "end": 27.54,
+  "how": "m"
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "Keyingi",
+  "first": true,
+  "start": 27.975,
+  "end": 28.3,
+  "how": "m+snap"
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "qismda",
+  "first": false,
+  "start": 28.3,
+  "end": 28.66,
+  "how": "m"
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "kimni",
+  "first": false,
+  "start": 28.66,
+  "end": 29.0,
+  "how": "m"
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "koʻrishni",
+  "first": false,
+  "start": 29.0,
+  "end": 29.34,
+  "how": "m"
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "xohlaysiz?",
+  "first": false,
+  "start": 29.34,
+  "end": 29.88,
+  "how": "m"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "Izohda",
+  "first": true,
+  "start": 30.19,
+  "end": 30.58,
+  "how": "split+snap"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "yozing",
+  "first": false,
+  "start": 30.58,
+  "end": 30.92,
+  "how": "split"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "va",
+  "first": false,
+  "start": 31.04,
+  "end": 31.18,
+  "how": "m"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "Ziyoxonovni",
+  "first": false,
+  "start": 31.18,
+  "end": 31.94,
+  "how": "m"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "belgilab",
+  "first": false,
+  "start": 31.94,
+  "end": 32.44,
+  "how": "m"
+ },
+ {
+  "scene": 18,
+  "speaker": "HIKOYACHI",
+  "text": "qoʻying!",
+  "first": false,
+  "start": 32.44,
+  "end": 32.74,
+  "how": "m"
+ }
+]

@@ -1,0 +1,100 @@
+{
+ "checks": [
+  [
+   1,
+   0.301,
+   "Toʻxtang!",
+   1
+  ],
+  [
+   9,
+   13.734333333333332,
+   "emas...",
+   9
+  ],
+  [
+   13,
+   21.201,
+   "xoʻjayin",
+   13
+  ],
+  [
+   18,
+   31.434333333333335,
+   "Ziyoxonovni",
+   18
+  ]
+ ],
+ "results": [
+  [
+   "video duration equals audio duration",
+   true,
+   "video 33.000s, audio track 33.000s, source voice 32.993s, 990 frames"
+  ],
+  [
+   "format h264 1080x1920 30fps yuv420p + aac",
+   true,
+   "h264,1080,1920,yuv420p,30/1 / aac"
+  ],
+  [
+   "every scene starts within 1 frame of its first word",
+   true,
+   "max offset 31.7 ms; starts: 1:0.00, 2:0.85, 3:3.71, 4:5.05, 5:8.30, 6:10.13, 7:11.05, 8:12.30, 9:13.07, 10:14.34, 11:15.65, 12:17.36, 13:19.80, 14:22.31, 15:23.58, 16:25.71, 17:27.98, 18:30.19"
+  ],
+  [
+   "mid-sentence cuts at aptekachi / mevaga / lekin",
+   true,
+   ""
+  ],
+  [
+   "all 64 script words in subtitles, in order",
+   true,
+   "64 words, 34 lines"
+  ],
+  [
+   "every word highlighted when spoken (>=1 frame)",
+   true,
+   "min highlight 1 frames"
+  ],
+  [
+   "subtitle lines <=4 words / <=24 chars, no scene mixing",
+   true,
+   ""
+  ],
+  [
+   "font has U+02BB and U+02BC",
+   true,
+   "Nunito_900Black.ttf"
+  ],
+  [
+   "all emojis render in colour (no tofu)",
+   true,
+   "✅ ✍ 🍇 🍎 👇 💊 💪 💰 😂 😡 😳 🤯"
+  ],
+  [
+   "no missing text glyphs",
+   true,
+   ""
+  ],
+  [
+   "subtitles inside x80–1000 / y250–1600, headlines in top band",
+   true,
+   "0 frames out"
+  ],
+  [
+   "sprites have no grey halo",
+   true,
+   "worst edge-grey share 1.91% (cust2_04.png)"
+  ],
+  [
+   "QA timestamps: spoken word belongs to the scene on screen",
+   true,
+   "s1 @0.30s → 'Toʻxtang!'; s9 @13.73s → 'emas...'; s13 @21.20s → 'xoʻjayin'; s18 @31.43s → 'Ziyoxonovni'"
+  ],
+  [
+   "last frame matches scene-1 frame-0 composition",
+   true,
+   "pose 6 bbox first (89, 520, 871, 1770) vs last (89, 524, 871, 1770); camera zoom 1.0 centre (540,960) on both"
+  ]
+ ]
+}

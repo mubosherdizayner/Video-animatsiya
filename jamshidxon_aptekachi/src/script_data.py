@@ -1,0 +1,23 @@
+SCENES = [
+ (1,"JAMSHID","Toʻxtang!"),
+ (2,"HIKOYACHI","Agar Jamshidxon Ziyoxonov bloger boʻlmaganida,"),
+ (3,"HIKOYACHI","aptekachi boʻlardi!"),
+ (4,"HIKOYACHI","Bilasizmi, u rostdan ham farmatsevtikada oʻqigan."),
+ (5,"MIJOZ","Aka, menga vitamin bering!"),
+ (6,"JAMSHID","Qaysi biridan?"),
+ (7,"MIJOZ","Eng qimmatidan!"),
+ (8,"JAMSHID","Toʻxtang!"),
+ (9,"JAMSHID","Pulni doriga emas..."),
+ (10,"JAMSHID","mevaga sarflang!"),
+ (11,"MIJOZ","Aka, bu dorixona-ku?!"),
+ (12,"JAMSHID","Vitamin qutida emas, bozorda!"),
+ (13,"HIKOYACHI","Bir haftadan keyin xoʻjayin xabar yozdi."),
+ (14,"JAMSHID","Dori sotilmadi..."),
+ (15,"JAMSHID","lekin butun mahalla sogʻaydi!"),
+ (16,"HIKOYACHI","Shuning uchun ham u bloger boʻldi!"),
+ (17,"HIKOYACHI","Keyingi qismda kimni koʻrishni xohlaysiz?"),
+ (18,"HIKOYACHI","Izohda yozing va Ziyoxonovni belgilab qoʻying!"),
+]
+HEADLINES = {1:"NEGA TOʻXTATDI? 😳",2:"AGAR BLOGER BOʻLMAGANIDA...",3:"APTEKACHI 💊",4:"✅ FAKT: farmatsevtikada oʻqigan",
+ 7:"💰💰💰",9:"PULNI DORIGA EMAS...",10:"...MEVAGA SARFLANG! 🍎",11:"🤯",12:"VITAMIN — BOZORDA 🍇",13:"BIR HAFTADAN KEYIN...",
+ 15:"MAHALLA SOGʻ 💪",16:"SHUNING UCHUN BLOGER BOʻLDI 😂",17:"KEYINGI QISM — KIM? 👇",18:"IZOHDA YOZING ✍️ ZIYOXONOVNI BELGILANG"}
