@@ -3,3 +3,4 @@ src/qa/
 src/sprites/
 src/sprites_st/
 src/__pycache__/
+*_crops.png
