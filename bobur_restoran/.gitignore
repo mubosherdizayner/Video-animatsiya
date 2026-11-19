@@ -1,0 +1,5 @@
+build/
+src/qa/
+src/sprites/
+src/sprites_st/
+src/__pycache__/

@@ -1,0 +1,742 @@
+[
+ {
+  "scene": 1,
+  "speaker": "OFITSIANT",
+  "text": "Bobur",
+  "first": true,
+  "start": 0.0,
+  "end": 0.325,
+  "how": "split+iv",
+  "iv": 0
+ },
+ {
+  "scene": 1,
+  "speaker": "OFITSIANT",
+  "text": "aka,",
+  "first": false,
+  "start": 0.325,
+  "end": 0.675,
+  "how": "split+iv",
+  "iv": 0
+ },
+ {
+  "scene": 1,
+  "speaker": "OFITSIANT",
+  "text": "meni",
+  "first": false,
+  "start": 0.675,
+  "end": 1.195,
+  "how": "m+iv",
+  "iv": 0
+ },
+ {
+  "scene": 1,
+  "speaker": "OFITSIANT",
+  "text": "vaynga",
+  "first": false,
+  "start": 1.195,
+  "end": 1.585,
+  "how": "split+iv",
+  "iv": 0
+ },
+ {
+  "scene": 1,
+  "speaker": "OFITSIANT",
+  "text": "oling!",
+  "first": false,
+  "start": 1.585,
+  "end": 2.03,
+  "how": "split+iv",
+  "iv": 0
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Agar",
+  "first": true,
+  "start": 2.37,
+  "end": 2.645,
+  "how": "m+iv",
+  "iv": 1
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Bobur",
+  "first": false,
+  "start": 2.645,
+  "end": 3.01,
+  "how": "m+iv",
+  "iv": 1
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "Mansurov",
+  "first": false,
+  "start": 3.01,
+  "end": 3.545,
+  "how": "m+iv",
+  "iv": 1
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "bloger",
+  "first": false,
+  "start": 3.545,
+  "end": 3.95,
+  "how": "m+iv",
+  "iv": 1
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "boʻlmaganida",
+  "first": false,
+  "start": 3.95,
+  "end": 4.73,
+  "how": "m+iv",
+  "iv": 1
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "kim",
+  "first": false,
+  "start": 4.865,
+  "end": 4.98,
+  "how": "m+iv",
+  "iv": 2
+ },
+ {
+  "scene": 2,
+  "speaker": "HIKOYACHI",
+  "text": "boʻlardi?",
+  "first": false,
+  "start": 4.98,
+  "end": 5.495,
+  "how": "m+iv",
+  "iv": 2
+ },
+ {
+  "scene": 3,
+  "speaker": "HIKOYACHI",
+  "text": "Tasavvur",
+  "first": true,
+  "start": 5.84,
+  "end": 6.255,
+  "how": "m+iv",
+  "iv": 3
+ },
+ {
+  "scene": 3,
+  "speaker": "HIKOYACHI",
+  "text": "qiling...",
+  "first": false,
+  "start": 6.255,
+  "end": 6.54,
+  "how": "m+iv",
+  "iv": 3
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "Restoran",
+  "first": true,
+  "start": 6.905,
+  "end": 7.45,
+  "how": "m+iv",
+  "iv": 4
+ },
+ {
+  "scene": 4,
+  "speaker": "HIKOYACHI",
+  "text": "egasi!",
+  "first": false,
+  "start": 7.45,
+  "end": 8.05,
+  "how": "m+iv",
+  "iv": 4
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "Aka,",
+  "first": true,
+  "start": 8.35,
+  "end": 8.9,
+  "how": "m+iv",
+  "iv": 5
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "bitta",
+  "first": false,
+  "start": 8.9,
+  "end": 9.075,
+  "how": "split+iv",
+  "iv": 5
+ },
+ {
+  "scene": 5,
+  "speaker": "MIJOZ",
+  "text": "osh!",
+  "first": false,
+  "start": 9.075,
+  "end": 9.42,
+  "how": "split+iv",
+  "iv": 5
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "Lekin",
+  "first": true,
+  "start": 9.76,
+  "end": 10.06,
+  "how": "m+iv",
+  "iv": 6
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "bu",
+  "first": false,
+  "start": 10.06,
+  "end": 10.18,
+  "how": "m+iv",
+  "iv": 6
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "restoranda",
+  "first": false,
+  "start": 10.18,
+  "end": 10.785,
+  "how": "m+iv",
+  "iv": 6
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "ofitsiantlarning",
+  "first": false,
+  "start": 10.785,
+  "end": 11.66,
+  "how": "m+iv",
+  "iv": 6
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "hammasi",
+  "first": false,
+  "start": 11.66,
+  "end": 12.4,
+  "how": "m+iv",
+  "iv": 6
+ },
+ {
+  "scene": 6,
+  "speaker": "HIKOYACHI",
+  "text": "aktyor.",
+  "first": false,
+  "start": 12.53,
+  "end": 13.02,
+  "how": "m+iv",
+  "iv": 7
+ },
+ {
+  "scene": 7,
+  "speaker": "OFITSIANT",
+  "text": "Bobur",
+  "first": true,
+  "start": 13.395,
+  "end": 13.675,
+  "how": "split+iv",
+  "iv": 8
+ },
+ {
+  "scene": 7,
+  "speaker": "OFITSIANT",
+  "text": "aka,",
+  "first": false,
+  "start": 13.675,
+  "end": 14.005,
+  "how": "split+iv",
+  "iv": 8
+ },
+ {
+  "scene": 7,
+  "speaker": "OFITSIANT",
+  "text": "meni",
+  "first": false,
+  "start": 14.005,
+  "end": 14.49,
+  "how": "m+iv",
+  "iv": 8
+ },
+ {
+  "scene": 7,
+  "speaker": "OFITSIANT",
+  "text": "vaynga",
+  "first": false,
+  "start": 14.49,
+  "end": 15.01,
+  "how": "m+iv",
+  "iv": 8
+ },
+ {
+  "scene": 7,
+  "speaker": "OFITSIANT",
+  "text": "oling!",
+  "first": false,
+  "start": 15.01,
+  "end": 15.33,
+  "how": "m+iv",
+  "iv": 8
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "Oshpaz",
+  "first": true,
+  "start": 15.655,
+  "end": 16.05,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "piyoz",
+  "first": false,
+  "start": 16.05,
+  "end": 16.33,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "toʻgʻrab,",
+  "first": false,
+  "start": 16.33,
+  "end": 16.69,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "kameraga",
+  "first": false,
+  "start": 16.69,
+  "end": 17.13,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "qarab",
+  "first": false,
+  "start": 17.13,
+  "end": 17.56,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 8,
+  "speaker": "HIKOYACHI",
+  "text": "yigʻlaydi.",
+  "first": false,
+  "start": 17.56,
+  "end": 18.12,
+  "how": "m+iv",
+  "iv": 9
+ },
+ {
+  "scene": 9,
+  "speaker": "HIKOYACHI",
+  "text": "Kassir",
+  "first": true,
+  "start": 18.445,
+  "end": 18.81,
+  "how": "m+iv",
+  "iv": 10
+ },
+ {
+  "scene": 9,
+  "speaker": "HIKOYACHI",
+  "text": "hisob",
+  "first": false,
+  "start": 18.81,
+  "end": 19.165,
+  "how": "m+iv",
+  "iv": 10
+ },
+ {
+  "scene": 9,
+  "speaker": "HIKOYACHI",
+  "text": "oʻrniga",
+  "first": false,
+  "start": 19.165,
+  "end": 19.55,
+  "how": "m+iv",
+  "iv": 10
+ },
+ {
+  "scene": 9,
+  "speaker": "HIKOYACHI",
+  "text": "monolog",
+  "first": false,
+  "start": 19.55,
+  "end": 20.155,
+  "how": "m+iv",
+  "iv": 10
+ },
+ {
+  "scene": 9,
+  "speaker": "HIKOYACHI",
+  "text": "oʻqiydi.",
+  "first": false,
+  "start": 20.155,
+  "end": 20.615,
+  "how": "m+iv",
+  "iv": 10
+ },
+ {
+  "scene": 10,
+  "speaker": "MIJOZ",
+  "text": "Men",
+  "first": true,
+  "start": 20.91,
+  "end": 20.977,
+  "how": "m+iv",
+  "iv": 11
+ },
+ {
+  "scene": 10,
+  "speaker": "MIJOZ",
+  "text": "ovqat",
+  "first": false,
+  "start": 20.977,
+  "end": 21.485,
+  "how": "m+iv",
+  "iv": 11
+ },
+ {
+  "scene": 10,
+  "speaker": "MIJOZ",
+  "text": "yegani",
+  "first": false,
+  "start": 21.485,
+  "end": 21.86,
+  "how": "m+iv",
+  "iv": 11
+ },
+ {
+  "scene": 10,
+  "speaker": "MIJOZ",
+  "text": "keldim!",
+  "first": false,
+  "start": 21.86,
+  "end": 22.245,
+  "how": "m+iv",
+  "iv": 11
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "Bu",
+  "first": true,
+  "start": 22.505,
+  "end": 22.572,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "yerda",
+  "first": false,
+  "start": 22.572,
+  "end": 22.865,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "ovqat",
+  "first": false,
+  "start": 22.865,
+  "end": 23.32,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "ham",
+  "first": false,
+  "start": 23.32,
+  "end": 23.51,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "rol",
+  "first": false,
+  "start": 23.51,
+  "end": 23.59,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 11,
+  "speaker": "BOBUR",
+  "text": "oʻynaydi!",
+  "first": false,
+  "start": 23.59,
+  "end": 24.195,
+  "how": "m+iv",
+  "iv": 12
+ },
+ {
+  "scene": 12,
+  "speaker": "HIKOYACHI",
+  "text": "Oxiri",
+  "first": true,
+  "start": 24.53,
+  "end": 24.82,
+  "how": "m+iv",
+  "iv": 13
+ },
+ {
+  "scene": 12,
+  "speaker": "HIKOYACHI",
+  "text": "restoran",
+  "first": false,
+  "start": 24.82,
+  "end": 25.5,
+  "how": "m+iv",
+  "iv": 13
+ },
+ {
+  "scene": 12,
+  "speaker": "HIKOYACHI",
+  "text": "sotildi.",
+  "first": false,
+  "start": 25.5,
+  "end": 26.01,
+  "how": "m+iv",
+  "iv": 13
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "Bobur",
+  "first": true,
+  "start": 26.28,
+  "end": 26.575,
+  "how": "m+iv",
+  "iv": 14
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "esa",
+  "first": false,
+  "start": 26.575,
+  "end": 26.895,
+  "how": "m+iv",
+  "iv": 14
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "shunday",
+  "first": false,
+  "start": 26.895,
+  "end": 27.315,
+  "how": "m+iv",
+  "iv": 14
+ },
+ {
+  "scene": 13,
+  "speaker": "HIKOYACHI",
+  "text": "dedi:",
+  "first": false,
+  "start": 27.315,
+  "end": 27.585,
+  "how": "m+iv",
+  "iv": 14
+ },
+ {
+  "scene": 14,
+  "speaker": "BOBUR",
+  "text": "Bizdan",
+  "first": true,
+  "start": 27.945,
+  "end": 28.19,
+  "how": "m+iv",
+  "iv": 15
+ },
+ {
+  "scene": 14,
+  "speaker": "BOBUR",
+  "text": "tadbirkor",
+  "first": false,
+  "start": 28.19,
+  "end": 28.845,
+  "how": "m+iv",
+  "iv": 15
+ },
+ {
+  "scene": 14,
+  "speaker": "BOBUR",
+  "text": "chiqmadi!",
+  "first": false,
+  "start": 28.845,
+  "end": 29.455,
+  "how": "m+iv",
+  "iv": 15
+ },
+ {
+  "scene": 15,
+  "speaker": "HIKOYACHI",
+  "text": "Bu",
+  "first": true,
+  "start": 29.775,
+  "end": 29.842,
+  "how": "m+iv",
+  "iv": 16
+ },
+ {
+  "scene": 15,
+  "speaker": "HIKOYACHI",
+  "text": "videoni",
+  "first": false,
+  "start": 29.842,
+  "end": 30.305,
+  "how": "m+iv",
+  "iv": 16
+ },
+ {
+  "scene": 15,
+  "speaker": "HIKOYACHI",
+  "text": "Bobur",
+  "first": false,
+  "start": 30.305,
+  "end": 30.85,
+  "how": "m+iv",
+  "iv": 16
+ },
+ {
+  "scene": 15,
+  "speaker": "HIKOYACHI",
+  "text": "Mansurovga",
+  "first": false,
+  "start": 30.85,
+  "end": 31.33,
+  "how": "m2+iv",
+  "iv": 16
+ },
+ {
+  "scene": 15,
+  "speaker": "HIKOYACHI",
+  "text": "yuboring",
+  "first": false,
+  "start": 31.33,
+  "end": 31.785,
+  "how": "m+iv",
+  "iv": 16
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "va",
+  "first": true,
+  "start": 31.985,
+  "end": 32.15,
+  "how": "m+iv",
+  "iv": 17
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "izohda",
+  "first": false,
+  "start": 32.15,
+  "end": 32.455,
+  "how": "split+iv",
+  "iv": 17
+ },
+ {
+  "scene": 16,
+  "speaker": "HIKOYACHI",
+  "text": "yozing:",
+  "first": false,
+  "start": 32.455,
+  "end": 32.905,
+  "how": "split+iv",
+  "iv": 17
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "keyingi",
+  "first": true,
+  "start": 33.285,
+  "end": 33.62,
+  "how": "m+iv",
+  "iv": 18
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "videoda",
+  "first": false,
+  "start": 33.62,
+  "end": 33.945,
+  "how": "m+iv",
+  "iv": 18
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "kimni",
+  "first": false,
+  "start": 33.945,
+  "end": 34.455,
+  "how": "m+iv",
+  "iv": 18
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "koʻrishni",
+  "first": false,
+  "start": 34.455,
+  "end": 34.745,
+  "how": "m+iv",
+  "iv": 18
+ },
+ {
+  "scene": 17,
+  "speaker": "HIKOYACHI",
+  "text": "xohlaysiz?",
+  "first": false,
+  "start": 34.745,
+  "end": 35.44,
+  "how": "m+iv",
+  "iv": 18
+ }
+]

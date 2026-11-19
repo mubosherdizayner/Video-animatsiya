@@ -1,0 +1,23 @@
+SCENES = [
+ (1, "OFITSIANT", "Bobur aka, meni vaynga oling!"),
+ (2, "HIKOYACHI", "Agar Bobur Mansurov bloger boʻlmaganida kim boʻlardi?"),
+ (3, "HIKOYACHI", "Tasavvur qiling..."),
+ (4, "HIKOYACHI", "Restoran egasi!"),
+ (5, "MIJOZ", "Aka, bitta osh!"),
+ (6, "HIKOYACHI", "Lekin bu restoranda ofitsiantlarning hammasi aktyor."),
+ (7, "OFITSIANT", "Bobur aka, meni vaynga oling!"),
+ (8, "HIKOYACHI", "Oshpaz piyoz toʻgʻrab, kameraga qarab yigʻlaydi."),
+ (9, "HIKOYACHI", "Kassir hisob oʻrniga monolog oʻqiydi."),
+ (10, "MIJOZ", "Men ovqat yegani keldim!"),
+ (11, "BOBUR", "Bu yerda ovqat ham rol oʻynaydi!"),
+ (12, "HIKOYACHI", "Oxiri restoran sotildi."),
+ (13, "HIKOYACHI", "Bobur esa shunday dedi:"),
+ (14, "BOBUR", "Bizdan tadbirkor chiqmadi!"),
+ (15, "HIKOYACHI", "Bu videoni Bobur Mansurovga yuboring"),
+ (16, "HIKOYACHI", "va izohda yozing:"),
+ (17, "HIKOYACHI", "keyingi videoda kimni koʻrishni xohlaysiz?"),
+]
+HEADLINES = {1: "OFITSIANTMI YO AKTYOR? 😳", 2: "AGAR BLOGER BOʻLMAGANIDA...", 3: "TASAVVUR QILING... 💭",
+ 4: "RESTORAN EGASI 🍽", 6: "HAMMASI AKTYOR 🎭", 7: "🙏", 8: "OSHPAZ — DRAMA 😭", 9: "HISOB OʻRNIGA MONOLOG 🎤",
+ 10: "😤", 11: "OVQAT HAM ROL OʻYNAYDI 🍛", 12: "SOTILDI", 13: "BOBUR ESA...", 14: "✅ OʻZI SHUNDAY DEGAN 😂",
+ 15: "BOBUR MANSUROVGA YUBORING 📲", 16: "IZOHDA YOZING ✍️", 17: "KEYINGI QISM — KIM? 👇"}

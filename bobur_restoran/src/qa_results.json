@@ -1,0 +1,114 @@
+{
+ "checks": [
+  [
+   1,
+   32,
+   "meni",
+   1,
+   "Bobur aka, meni"
+  ],
+  [
+   6,
+   380,
+   "aktyor.",
+   6,
+   "hammasi aktyor."
+  ],
+  [
+   11,
+   712,
+   "oʻynaydi!",
+   11,
+   "rol oʻynaydi!"
+  ],
+  [
+   17,
+   1027,
+   "kimni",
+   17,
+   "kimni koʻrishni"
+  ]
+ ],
+ "results": [
+  [
+   "video duration equals audio duration",
+   true,
+   "video 35.633s, audio track 35.631s, source voice 35.631s, 1069 frames"
+  ],
+  [
+   "format h264 1080x1920 30fps yuv420p + aac",
+   true,
+   "h264,1080,1920,yuv420p,30/1 / aac"
+  ],
+  [
+   "every scene starts within 1 frame of its first word",
+   true,
+   "max offset 30.0 ms; 1:0.00, 2:2.37, 3:5.84, 4:6.91, 5:8.35, 6:9.76, 7:13.39, 8:15.65, 9:18.45, 10:20.91, 11:22.50, 12:24.53, 13:26.28, 14:27.95, 15:29.77, 16:31.98, 17:33.28"
+  ],
+  [
+   "scenes 4/14/16/17 start at Restoran / Bizdan / va / keyingi",
+   true,
+   "{4: 'Restoran', 14: 'Bizdan', 16: 'va', 17: 'keyingi'}"
+  ],
+  [
+   "scene 1 starts at frame 0 and scene 17 ends at the audio end",
+   true,
+   "N_FRAMES 1069"
+  ],
+  [
+   "all 74 script words in subtitles, in script order",
+   true,
+   "74 words in 36 lines"
+  ],
+  [
+   "each word highlighted from its spoken onset (>= 2 frames)",
+   true,
+   "min highlight 2 frames"
+  ],
+  [
+   "subtitle lines <= 4 words / 24 chars, never mixing scenes",
+   true,
+   ""
+  ],
+  [
+   "font has U+02BB, U+02BC, — and all text glyphs",
+   true,
+   "Nunito_900Black.ttf"
+  ],
+  [
+   "all emojis render in colour (no tofu)",
+   true,
+   "✅ ✍ 🍛 🍽 🎤 🎭 👇 💭 📲 😂 😤 😭 😳 🙏"
+  ],
+  [
+   "subtitles inside x 80–1000 / y 250–1600; headlines in the top band",
+   true,
+   "0 frames out"
+  ],
+  [
+   "voice clearly audible over sfx",
+   true,
+   "voice -17.8 dB vs sfx -48.8 dB overall; worst 100 ms window during speech: voice 14.3 dB above sfx"
+  ],
+  [
+   "no sheet sprite shown larger than 5x its cell",
+   true,
+   "worst bobur_04 at 99% of the limit; 12 sprites used"
+  ],
+  [
+   "QA frames (scenes 1, 6, 11, 17): spoken word belongs to the scene on screen and its subtitle line is shown",
+   true,
+   "s1 f32 → 'meni' in “Bobur aka, meni”; s6 f380 → 'aktyor.' in “hammasi aktyor.”; s11 f712 → 'oʻynaydi!' in “rol oʻynaydi!”; s17 f1027 → 'kimni' in “kimni koʻrishni”"
+  ],
+  [
+   "last frame matches scene 1 frame 0 composition (seamless loop)",
+   true,
+   "mean abs pixel difference 1.38/255 outside the subtitle band"
+  ],
+  [
+   "sticker outline applied to every character (edge_fallback)",
+   true,
+   "white 8 px outline + 25% shadow on all sheet sprites and code-drawn characters; 4x crops in qa/edges_zoom4x.png"
+  ]
+ ]
+}
