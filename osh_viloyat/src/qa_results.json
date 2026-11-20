@@ -37,7 +37,7 @@
     "shown_scene": 2,
     "highlighted": "Yunesko",
     "line": "Yunesko roʻyxatida —",
-    "yellow_px": 13008
+    "yellow_px": 12994
    },
    {
     "t": 15.233,
@@ -100,10 +100,10 @@
  "frame0_hook": {
   "pass": true,
   "info": {
-   "text_white_px": 22225,
-   "text_gold_px": 21895,
-   "falling_lagan_px": 8472,
-   "mean_abs_diff_to_frame1": 10.76,
+   "text_white_px": 22200,
+   "text_gold_px": 21892,
+   "falling_lagan_px": 8450,
+   "mean_abs_diff_to_frame1": 10.75,
    "black_frame": false
   }
  },
@@ -235,10 +235,10 @@
   "pass": true,
   "info": {
    "logo_ink_box": [
-    472,
-    520,
-    753,
-    809
+    410,
+    820,
+    671,
+    1089
    ],
    "subtitle_box": [
     83,
@@ -252,17 +252,17 @@
     916,
     433
    ],
-   "gap_text_to_logo_px": 87,
-   "logo_pixels_match_mean_abs": 14.0,
+   "gap_text_to_logo_px": 387,
+   "logo_pixels_match_mean_abs": 15.7,
    "visible_from_s": 37.43
   }
  },
  "loop_seamless": {
   "pass": true,
   "info": {
-   "table_band_mean_abs_diff": 4.99,
-   "whole_frame_mean_abs_diff": 23.37,
-   "typical_consecutive_frame_diff": 5.99,
+   "table_band_mean_abs_diff": 5.0,
+   "whole_frame_mean_abs_diff": 23.61,
+   "typical_consecutive_frame_diff": 5.81,
    "camera_scale_last_vs_0": [
     1.15,
     1.15

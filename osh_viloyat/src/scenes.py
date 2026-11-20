@@ -7,7 +7,7 @@ from props import *
 from timeline import S, SF, DUR, SC, T, IDS, REGIONS, N_FRAMES, FPS as TFPS
 
 HERO_YB, HERO_H = 1330, 780
-HERO_X = 330                     # hero body x in scenes 1 and 14 (loop match)
+HERO_X = 285                     # hero body x in scenes 1 and 14 (loop match; leaves the centre free for the logo)
 TOWER_X = 780
 CAM1 = dict(ax=560, ay=900)      # scene-1 camera anchor (also used for the loop push-in in scene 14)
 FALL = 0.55                      # lagan fall time (s); first one lands at 0.15 s
@@ -577,8 +577,8 @@ def scene13(t, lt, dur):
 
 
 # ================================================================ scene 14 — send to a friend (+ seamless loop)
-LOGO_POS = (612, 660)
-LOGO_D = 270
+LOGO_POS = (540, 950)
+LOGO_D = 250
 
 
 def scene14(t, lt, dur):
