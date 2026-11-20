@@ -1,0 +1,650 @@
+[
+ {
+  "scene": 1,
+  "text": "Bitta",
+  "first": true,
+  "start": 0.0,
+  "end": 0.42,
+  "how": "ctc(w+0.12)"
+ },
+ {
+  "scene": 1,
+  "text": "osh.",
+  "first": false,
+  "start": 0.495,
+  "end": 0.76,
+  "how": "ctc(w+0.32)+dip"
+ },
+ {
+  "scene": 1,
+  "text": "Oʻn",
+  "first": false,
+  "start": 1.145,
+  "end": 1.299,
+  "how": "ctc(w+0.40)+quiet"
+ },
+ {
+  "scene": 1,
+  "text": "toʻrt",
+  "first": false,
+  "start": 1.365,
+  "end": 1.56,
+  "how": "ctc(w+0.10)+dip"
+ },
+ {
+  "scene": 1,
+  "text": "hudud.",
+  "first": false,
+  "start": 1.56,
+  "end": 1.899,
+  "how": "ctc(w+0.02)+dip"
+ },
+ {
+  "scene": 1,
+  "text": "Hammasi:",
+  "first": false,
+  "start": 2.205,
+  "end": 2.779,
+  "how": "ctc(w+0.24)+quiet"
+ },
+ {
+  "scene": 1,
+  "text": "«Eng",
+  "first": false,
+  "start": 3.08,
+  "end": 3.358,
+  "how": "ctc(w+0.36)+quiet"
+ },
+ {
+  "scene": 1,
+  "text": "zoʻri",
+  "first": false,
+  "start": 3.393,
+  "end": 3.658,
+  "how": "ctc(w+0.18)"
+ },
+ {
+  "scene": 1,
+  "text": "bizniki!»",
+  "first": false,
+  "start": 3.705,
+  "end": 4.098,
+  "how": "ctc(w+0.08)+dip"
+ },
+ {
+  "scene": 2,
+  "text": "Osh",
+  "first": true,
+  "start": 4.55,
+  "end": 4.758,
+  "how": "ctc(w+0.44)+quiet"
+ },
+ {
+  "scene": 2,
+  "text": "madaniyati",
+  "first": false,
+  "start": 4.765,
+  "end": 5.317,
+  "how": "ctc(w+0.16)+dip"
+ },
+ {
+  "scene": 2,
+  "text": "Yunesko",
+  "first": false,
+  "start": 5.455,
+  "end": 5.917,
+  "how": "ctc(w+0.32)+dip"
+ },
+ {
+  "scene": 2,
+  "text": "roʻyxatida —",
+  "first": false,
+  "start": 5.985,
+  "end": 6.457,
+  "how": "ctc(w+0.10)+dip"
+ },
+ {
+  "scene": 2,
+  "text": "masala",
+  "first": false,
+  "start": 6.77,
+  "end": 7.157,
+  "how": "ctc(w+0.28)+quiet"
+ },
+ {
+  "scene": 2,
+  "text": "jiddiy!",
+  "first": false,
+  "start": 7.21,
+  "end": 7.576,
+  "how": "ctc(w+0.20)+dip"
+ },
+ {
+  "scene": 3,
+  "text": "Men",
+  "first": true,
+  "start": 8.07,
+  "end": 8.296,
+  "how": "ctc(w+0.40)+quiet"
+ },
+ {
+  "scene": 3,
+  "text": "xolis",
+  "first": false,
+  "start": 8.435,
+  "end": 8.796,
+  "how": "ctc(w+0.32)+dip"
+ },
+ {
+  "scene": 3,
+  "text": "hakam",
+  "first": false,
+  "start": 8.835,
+  "end": 9.116,
+  "how": "ctc(w+0.12)+dip"
+ },
+ {
+  "scene": 3,
+  "text": "boʻlishga",
+  "first": false,
+  "start": 9.155,
+  "end": 9.455,
+  "how": "ctc(w+0.14)+dip"
+ },
+ {
+  "scene": 3,
+  "text": "qaror",
+  "first": false,
+  "start": 9.495,
+  "end": 9.755,
+  "how": "ctc(w+0.10)+dip"
+ },
+ {
+  "scene": 3,
+  "text": "qildim.",
+  "first": false,
+  "start": 9.82,
+  "end": 10.075,
+  "how": "ctc(w+0.13)+dip"
+ },
+ {
+  "scene": 4,
+  "text": "Toshkent",
+  "first": true,
+  "start": 10.455,
+  "end": 10.87,
+  "how": "ctc(w+0.29)+quiet"
+ },
+ {
+  "scene": 4,
+  "text": "oshi —",
+  "first": false,
+  "start": 10.87,
+  "end": 11.155,
+  "how": "ctc(w+0.16)+dip"
+ },
+ {
+  "scene": 4,
+  "text": "hammasi",
+  "first": false,
+  "start": 11.35,
+  "end": 11.954,
+  "how": "ctc(w+0.31)+quiet"
+ },
+ {
+  "scene": 4,
+  "text": "aralash.",
+  "first": false,
+  "start": 11.989,
+  "end": 12.414,
+  "how": "ctc(w+0.05)"
+ },
+ {
+  "scene": 5,
+  "text": "Samarqandda",
+  "first": true,
+  "start": 12.705,
+  "end": 13.334,
+  "how": "ctc(w+0.21)+quiet"
+ },
+ {
+  "scene": 5,
+  "text": "aralashtirilmaydi:",
+  "first": false,
+  "start": 13.395,
+  "end": 14.273,
+  "how": "ctc(w+0.15)+dip"
+ },
+ {
+  "scene": 5,
+  "text": "guruch,",
+  "first": false,
+  "start": 14.555,
+  "end": 15.013,
+  "how": "ctc(w+0.25)+quiet"
+ },
+ {
+  "scene": 5,
+  "text": "sabzi,",
+  "first": false,
+  "start": 15.145,
+  "end": 15.613,
+  "how": "ctc(w+0.17)+dip"
+ },
+ {
+  "scene": 5,
+  "text": "goʻsht —",
+  "first": false,
+  "start": 15.86,
+  "end": 16.172,
+  "how": "ctc(w+0.21)+dip"
+ },
+ {
+  "scene": 5,
+  "text": "qavat-qavat.",
+  "first": false,
+  "start": 16.395,
+  "end": 17.072,
+  "how": "ctc(w+0.17)+quiet"
+ },
+ {
+  "scene": 6,
+  "text": "Fargʻonada —",
+  "first": true,
+  "start": 17.35,
+  "end": 17.931,
+  "how": "ctc(w+0.27)+quiet"
+ },
+ {
+  "scene": 6,
+  "text": "devzira",
+  "first": false,
+  "start": 18.105,
+  "end": 18.571,
+  "how": "ctc(w+0.31)+dip"
+ },
+ {
+  "scene": 6,
+  "text": "guruch,",
+  "first": false,
+  "start": 18.64,
+  "end": 18.905,
+  "how": "ctc(w+0.15)+dip"
+ },
+ {
+  "scene": 6,
+  "text": "yogʻi",
+  "first": false,
+  "start": 18.905,
+  "end": 19.431,
+  "how": "ctc(w-0.01)+dip"
+ },
+ {
+  "scene": 6,
+  "text": "moʻl.",
+  "first": false,
+  "start": 19.466,
+  "end": 19.691,
+  "how": "ctc(w+0.17)"
+ },
+ {
+  "scene": 7,
+  "text": "Qolgan",
+  "first": true,
+  "start": 20.045,
+  "end": 20.39,
+  "how": "ctc(w+0.49)+quiet"
+ },
+ {
+  "scene": 7,
+  "text": "oʻn",
+  "first": false,
+  "start": 20.465,
+  "end": 20.61,
+  "how": "ctc(w+0.21)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "bitta",
+  "first": false,
+  "start": 20.66,
+  "end": 20.89,
+  "how": "ctc(w+0.18)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "hududning",
+  "first": false,
+  "start": 20.94,
+  "end": 21.33,
+  "how": "ctc(w+0.17)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "ham",
+  "first": false,
+  "start": 21.38,
+  "end": 21.55,
+  "how": "ctc(w+0.13)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "oʻz",
+  "first": false,
+  "start": 21.645,
+  "end": 21.83,
+  "how": "ctc(w+0.21)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "siri",
+  "first": false,
+  "start": 21.89,
+  "end": 22.109,
+  "how": "ctc(w+0.11)+dip"
+ },
+ {
+  "scene": 7,
+  "text": "bor.",
+  "first": false,
+  "start": 22.15,
+  "end": 22.309,
+  "how": "ctc(w+0.09)+dip"
+ },
+ {
+  "scene": 8,
+  "text": "Lekin",
+  "first": true,
+  "start": 22.585,
+  "end": 22.949,
+  "how": "ctc(w+0.31)+quiet"
+ },
+ {
+  "scene": 8,
+  "text": "bir",
+  "first": false,
+  "start": 23.06,
+  "end": 23.269,
+  "how": "ctc(w+0.17)+dip"
+ },
+ {
+  "scene": 8,
+  "text": "muammo",
+  "first": false,
+  "start": 23.29,
+  "end": 23.669,
+  "how": "ctc(w+0.17)+dip"
+ },
+ {
+  "scene": 8,
+  "text": "chiqdi:",
+  "first": false,
+  "start": 23.745,
+  "end": 24.009,
+  "how": "ctc(w+0.09)+dip"
+ },
+ {
+  "scene": 8,
+  "text": "hammasi",
+  "first": false,
+  "start": 24.36,
+  "end": 24.968,
+  "how": "ctc(w+0.13)+quiet"
+ },
+ {
+  "scene": 8,
+  "text": "eng",
+  "first": false,
+  "start": 25.09,
+  "end": 25.368,
+  "how": "ctc(w+0.21)+quiet"
+ },
+ {
+  "scene": 8,
+  "text": "zoʻri!",
+  "first": false,
+  "start": 25.425,
+  "end": 25.668,
+  "how": "ctc(w+0.21)+dip"
+ },
+ {
+  "scene": 9,
+  "text": "Aslida",
+  "first": true,
+  "start": 26.08,
+  "end": 26.507,
+  "how": "ctc(w+0.41)+quiet"
+ },
+ {
+  "scene": 9,
+  "text": "eng",
+  "first": false,
+  "start": 26.68,
+  "end": 26.967,
+  "how": "ctc(w+0.41)+quiet"
+ },
+ {
+  "scene": 9,
+  "text": "zoʻr",
+  "first": false,
+  "start": 27.035,
+  "end": 27.207,
+  "how": "ctc(w+0.27)+dip"
+ },
+ {
+  "scene": 9,
+  "text": "osh...",
+  "first": false,
+  "start": 27.27,
+  "end": 27.527,
+  "how": "ctc(w+0.21)+dip"
+ },
+ {
+  "scene": 9,
+  "text": "onamning",
+  "first": false,
+  "start": 27.94,
+  "end": 28.406,
+  "how": "ctc(w+0.37)+quiet"
+ },
+ {
+  "scene": 9,
+  "text": "oshi.",
+  "first": false,
+  "start": 28.461,
+  "end": 28.686,
+  "how": "ctc(w+0.17)"
+ },
+ {
+  "scene": 10,
+  "text": "Lekin",
+  "first": true,
+  "start": 29.085,
+  "end": 29.426,
+  "how": "ctc(w+0.37)+quiet"
+ },
+ {
+  "scene": 10,
+  "text": "bu",
+  "first": false,
+  "start": 29.515,
+  "end": 29.586,
+  "how": "ctc(w+0.09)+dip"
+ },
+ {
+  "scene": 10,
+  "text": "xolis",
+  "first": false,
+  "start": 29.67,
+  "end": 29.966,
+  "how": "ctc(w+0.13)+dip"
+ },
+ {
+  "scene": 10,
+  "text": "emas.",
+  "first": false,
+  "start": 29.985,
+  "end": 30.306,
+  "how": "ctc(w+0.11)+dip"
+ },
+ {
+  "scene": 11,
+  "text": "Shuning",
+  "first": true,
+  "start": 30.545,
+  "end": 30.8,
+  "how": "ctc(w+0.23)+quiet"
+ },
+ {
+  "scene": 11,
+  "text": "uchun",
+  "first": false,
+  "start": 30.8,
+  "end": 31.005,
+  "how": "ctc(w+0.11)"
+ },
+ {
+  "scene": 11,
+  "text": "hakam —",
+  "first": false,
+  "start": 31.075,
+  "end": 31.405,
+  "how": "ctc(w+0.05)+dip"
+ },
+ {
+  "scene": 11,
+  "text": "siz!",
+  "first": false,
+  "start": 31.645,
+  "end": 32.005,
+  "how": "ctc(w+0.32)+quiet"
+ },
+ {
+  "scene": 12,
+  "text": "Izohda",
+  "first": true,
+  "start": 32.355,
+  "end": 32.724,
+  "how": "ctc(w+0.30)+quiet"
+ },
+ {
+  "scene": 12,
+  "text": "yozing:",
+  "first": false,
+  "start": 32.739,
+  "end": 33.084,
+  "how": "ctc(w+0.12)"
+ },
+ {
+  "scene": 12,
+  "text": "qaysi",
+  "first": false,
+  "start": 33.305,
+  "end": 33.53,
+  "how": "ctc(w+0.22)+quiet"
+ },
+ {
+  "scene": 12,
+  "text": "viloyatdansiz",
+  "first": false,
+  "start": 33.53,
+  "end": 34.344,
+  "how": "ctc(w+0.04)+dip"
+ },
+ {
+  "scene": 13,
+  "text": "va",
+  "first": true,
+  "start": 34.46,
+  "end": 34.624,
+  "how": "ctc(w+0.18)+quiet"
+ },
+ {
+  "scene": 13,
+  "text": "qaysi",
+  "first": false,
+  "start": 34.79,
+  "end": 35.103,
+  "how": "ctc(w+0.22)+quiet"
+ },
+ {
+  "scene": 13,
+  "text": "viloyat",
+  "first": false,
+  "start": 35.145,
+  "end": 35.523,
+  "how": "ctc(w+0.06)+dip"
+ },
+ {
+  "scene": 13,
+  "text": "oshi",
+  "first": false,
+  "start": 35.535,
+  "end": 35.783,
+  "how": "ctc(w+0.06)+dip"
+ },
+ {
+  "scene": 13,
+  "text": "sizga",
+  "first": false,
+  "start": 35.878,
+  "end": 36.163,
+  "how": "ctc(w+0.14)"
+ },
+ {
+  "scene": 13,
+  "text": "yoqadi?",
+  "first": false,
+  "start": 36.178,
+  "end": 36.523,
+  "how": "ctc(w+0.12)"
+ },
+ {
+  "scene": 14,
+  "text": "Boshqa",
+  "first": true,
+  "start": 36.82,
+  "end": 37.075,
+  "how": "ctc(w+0.26)+quiet"
+ },
+ {
+  "scene": 14,
+  "text": "viloyatlik",
+  "first": false,
+  "start": 37.075,
+  "end": 37.602,
+  "how": "ctc(w+0.04)+dip"
+ },
+ {
+  "scene": 14,
+  "text": "doʻstingizga",
+  "first": false,
+  "start": 37.645,
+  "end": 38.182,
+  "how": "ctc(w+0.08)+dip"
+ },
+ {
+  "scene": 14,
+  "text": "yuboring —",
+  "first": false,
+  "start": 38.217,
+  "end": 38.622,
+  "how": "ctc(w+0.10)"
+ },
+ {
+  "scene": 14,
+  "text": "bahs",
+  "first": false,
+  "start": 38.855,
+  "end": 39.241,
+  "how": "ctc(w+0.26)+quiet"
+ },
+ {
+  "scene": 14,
+  "text": "boshlansin!",
+  "first": false,
+  "start": 39.345,
+  "end": 39.961,
+  "how": "ctc(w+0.12)+quiet"
+ }
+]

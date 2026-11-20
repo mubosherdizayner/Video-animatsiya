@@ -1,0 +1,274 @@
+{
+ "output_spec": {
+  "pass": true,
+  "info": {
+   "codec": "h264",
+   "pix_fmt": "yuv420p",
+   "size": "1080x1920",
+   "fps": "30/1",
+   "audio": "aac",
+   "frames": 1209
+  }
+ },
+ "duration_equals_audio": {
+  "pass": true,
+  "info": {
+   "voice_over_s": 40.281,
+   "video_stream_s": 40.3,
+   "audio_stream_s": 40.3,
+   "container_s": 40.3
+  }
+ },
+ "loudness_-14_LUFS": {
+  "pass": true,
+  "info": {
+   "integrated_LUFS": -14.0,
+   "peak_dBFS": -0.9
+  }
+ },
+ "sync_4_timestamps": {
+  "pass": true,
+  "info": [
+   {
+    "t": 5.567,
+    "frame": 167,
+    "spoken": "Yunesko",
+    "spoken_scene": 2,
+    "shown_scene": 2,
+    "highlighted": "Yunesko",
+    "line": "Yunesko roʻyxatida —",
+    "yellow_px": 13008
+   },
+   {
+    "t": 15.233,
+    "frame": 457,
+    "spoken": "sabzi,",
+    "spoken_scene": 5,
+    "shown_scene": 5,
+    "highlighted": "sabzi,",
+    "line": "guruch, sabzi, goʻsht —",
+    "yellow_px": 5314
+   },
+   {
+    "t": 28.033,
+    "frame": 841,
+    "spoken": "onamning",
+    "spoken_scene": 9,
+    "shown_scene": 9,
+    "highlighted": "onamning",
+    "line": "onamning oshi.",
+    "yellow_px": 9585
+   },
+   {
+    "t": 34.567,
+    "frame": 1037,
+    "spoken": "va",
+    "spoken_scene": 13,
+    "shown_scene": 13,
+    "highlighted": "va",
+    "line": "va qaysi viloyat oshi",
+    "yellow_px": 3016
+   }
+  ]
+ },
+ "sync_max_offset_1_frame": {
+  "pass": true,
+  "info": {
+   "trigger_offsets_frames": {
+    "scene1": 0,
+    "scene2": 0,
+    "scene3": 0,
+    "scene4": 0,
+    "scene5": 0,
+    "scene6": 0,
+    "scene7": 0,
+    "scene8": 0,
+    "scene9": 0,
+    "scene10": 0,
+    "scene11": 0,
+    "scene12": 0,
+    "scene13": 0,
+    "scene14": 0,
+    "s5_guruch": 0,
+    "s5_sabzi": 0,
+    "s5_go": 0,
+    "s9_text": 0
+   },
+   "max_subtitle_offset_frames": 0.5
+  }
+ },
+ "frame0_hook": {
+  "pass": true,
+  "info": {
+   "text_white_px": 22225,
+   "text_gold_px": 21895,
+   "falling_lagan_px": 8472,
+   "mean_abs_diff_to_frame1": 10.76,
+   "black_frame": false
+  }
+ },
+ "voice_audible": {
+  "pass": true,
+  "info": {
+   "voice_LUFS": -18.7,
+   "sfx_LUFS": -45.0,
+   "music_LUFS": -47.0,
+   "voice_minus_music_LU": 28.3,
+   "worst_word_voice_over_bed_dB": 16.4,
+   "worst_word": "Bitta",
+   "music_peak_in_s8_cut": 0.0
+  }
+ },
+ "subtitles_inside_frame": {
+  "pass": true,
+  "info": {
+   "union_bbox": [
+    83,
+    1406,
+    994,
+    1512
+   ],
+   "chunks": 35,
+   "safe_zone": "x 40..1040, y < 1560 (above bottom UI)"
+  }
+ },
+ "poses_and_bg_removed": {
+  "pass": true,
+  "info": {
+   "scene_pose": {
+    "1": "s1_r2c1",
+    "2": "s1_r1c2",
+    "3": "s1_r2c2",
+    "4": "s1_r2c3",
+    "5": "s1_r3c2",
+    "6": "s2_r2c1",
+    "7": "s2_r1c2",
+    "8": "s1_r2c4",
+    "9": "s2_r2c4",
+    "10": "s2_r2c2",
+    "11": "s1_r1c3",
+    "12": "s1_r3c1",
+    "13": "s1_r1c4",
+    "14": "s2_r1c4"
+   },
+   "per_pose[grey_px_touching_transparency, largest_enclosed_grey_blob_px](x3 upscaled)": {
+    "s1_r2c1": [
+     0,
+     47
+    ],
+    "s1_r1c2": [
+     0,
+     57
+    ],
+    "s1_r2c2": [
+     0,
+     89
+    ],
+    "s1_r2c3": [
+     0,
+     117
+    ],
+    "s1_r3c2": [
+     0,
+     109
+    ],
+    "s2_r2c1": [
+     0,
+     101
+    ],
+    "s2_r1c2": [
+     0,
+     56
+    ],
+    "s1_r2c4": [
+     0,
+     84
+    ],
+    "s2_r2c4": [
+     0,
+     60
+    ],
+    "s2_r2c2": [
+     0,
+     123
+    ],
+    "s1_r1c3": [
+     0,
+     120
+    ],
+    "s1_r3c1": [
+     0,
+     66
+    ],
+    "s1_r1c4": [
+     0,
+     111
+    ],
+    "s2_r1c4": [
+     0,
+     147
+    ]
+   }
+  }
+ },
+ "uz_okina_glyph": {
+  "pass": true,
+  "info": {
+   "font": "Nunito-Black.ttf",
+   "U+02BB_in_cmap": true,
+   "glyph_drawn_as_raised_mark": true,
+   "test_image": "uz_glyph_test.png"
+  }
+ },
+ "scene7_regions_readable": {
+  "pass": true,
+  "info": {
+   "cards": 11,
+   "slot_s_each": 0.19,
+   "all_front_on_last_frame": true,
+   "min_font_px": 40,
+   "last_card_visible_s": 0.41,
+   "image": "scene7_last.png"
+  }
+ },
+ "scene14_logo_visible_no_overlap": {
+  "pass": true,
+  "info": {
+   "logo_ink_box": [
+    472,
+    520,
+    753,
+    809
+   ],
+   "subtitle_box": [
+    83,
+    1406,
+    994,
+    1512
+   ],
+   "ost_ink_box": [
+    164,
+    218,
+    916,
+    433
+   ],
+   "gap_text_to_logo_px": 87,
+   "logo_pixels_match_mean_abs": 14.0,
+   "visible_from_s": 37.43
+  }
+ },
+ "loop_seamless": {
+  "pass": true,
+  "info": {
+   "table_band_mean_abs_diff": 4.99,
+   "whole_frame_mean_abs_diff": 23.37,
+   "typical_consecutive_frame_diff": 5.99,
+   "camera_scale_last_vs_0": [
+    1.15,
+    1.15
+   ],
+   "falling_lagan_time_step_s": 0.0333,
+   "no_landing_at_end": true
+  }
+ }
+}
