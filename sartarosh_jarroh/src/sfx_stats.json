@@ -1,0 +1,87 @@
+{
+ "events": [
+  {
+   "name": "whoosh",
+   "t": 0.0,
+   "level_db": -18
+  },
+  {
+   "name": "tink",
+   "t": 0.1,
+   "level_db": -20
+  },
+  {
+   "name": "creak",
+   "t": 3.05,
+   "level_db": -18
+  },
+  {
+   "name": "pop",
+   "t": 7.5,
+   "level_db": -18
+  },
+  {
+   "name": "tuk",
+   "t": 8.167,
+   "level_db": -16
+  },
+  {
+   "name": "tuk",
+   "t": 9.333,
+   "level_db": -16
+  },
+  {
+   "name": "thud",
+   "t": 12.967,
+   "level_db": -14
+  },
+  {
+   "name": "pshh",
+   "t": 13.733,
+   "level_db": -20
+  },
+  {
+   "name": "heartbeat",
+   "t": 18.2,
+   "level_db": -13
+  },
+  {
+   "name": "whoosh",
+   "t": 20.633,
+   "level_db": -18
+  },
+  {
+   "name": "ding",
+   "t": 23.067,
+   "level_db": -21
+  },
+  {
+   "name": "ding",
+   "t": 24.4,
+   "level_db": -21
+  },
+  {
+   "name": "creak",
+   "t": 28.9,
+   "level_db": -18
+  },
+  {
+   "name": "pop",
+   "t": 30.2,
+   "level_db": -18
+  },
+  {
+   "name": "tick",
+   "t": 32.967,
+   "level_db": -20
+  },
+  {
+   "name": "tick",
+   "t": 33.4,
+   "level_db": -20
+  }
+ ],
+ "voice_over_sfx_db_in_speech": 25.0,
+ "sfx_peak_vs_voice_peak_db": -16.0,
+ "mix_seconds": 33.9667
+}

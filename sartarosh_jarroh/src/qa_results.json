@@ -1,0 +1,155 @@
+{
+ "format": {
+  "ok": true,
+  "video": "h264",
+  "pix_fmt": "yuv420p",
+  "size": "1080x1920",
+  "fps": "30/1",
+  "audio": "aac"
+ },
+ "timestamp_2.11s": {
+  "ok": true,
+  "spoken": "tish",
+  "subtitle": "tish",
+  "scene": 1,
+  "expected_scene": 1,
+  "video_vs_render_psnr": 38.3
+ },
+ "timestamp_5.53s": {
+  "ok": true,
+  "spoken": "sartarosh-jarroh",
+  "subtitle": "sartarosh-jarroh",
+  "scene": 2,
+  "expected_scene": 2,
+  "video_vs_render_psnr": 37.4
+ },
+ "timestamp_18.31s": {
+  "ok": true,
+  "spoken": "qon",
+  "subtitle": "qon",
+  "scene": 7,
+  "expected_scene": 7,
+  "video_vs_render_psnr": 38.2
+ },
+ "timestamp_26.25s": {
+  "ok": true,
+  "spoken": "bint.",
+  "subtitle": "bint.",
+  "scene": 9,
+  "expected_scene": 9,
+  "video_vs_render_psnr": 40.6
+ },
+ "frame0_hook": {
+  "ok": true,
+  "headline": "QAYCHI EMAS — OMBUR?!",
+  "scene": 1
+ },
+ "duration": {
+  "ok": true,
+  "audio_source": 33.9591,
+  "video_stream": 33.9667,
+  "audio_stream": 33.966,
+  "frames": "1019"
+ },
+ "voice_audible": {
+  "ok": true,
+  "voice_over_sfx_db": 25.0,
+  "sfx_peak_db": -16.0,
+  "music": "disabled"
+ },
+ "text_inside_frame_and_safe_zone": {
+  "ok": true,
+  "outside": [],
+  "words": 68
+ },
+ "script_matches_voiceover": {
+  "ok": true,
+  "script_words": 68,
+  "transcript_words": 70,
+  "unmatched": [],
+  "weak": []
+ },
+ "scene4_on_suyak": {
+  "ok": true,
+  "scene4_frame": 245,
+  "suyak_frame": 245,
+  "suyak_time": 8.17
+ },
+ "scene_changes_on_first_word": {
+  "ok": true,
+  "starts": {
+   "1": [
+    0,
+    3
+   ],
+   "2": [
+    90,
+    90
+   ],
+   "3": [
+    206,
+    206
+   ],
+   "4": [
+    245,
+    245
+   ],
+   "5": [
+    322,
+    322
+   ],
+   "6": [
+    412,
+    412
+   ],
+   "7": [
+    494,
+    494
+   ],
+   "8": [
+    582,
+    582
+   ],
+   "9": [
+    692,
+    692
+   ],
+   "10": [
+    800,
+    800
+   ],
+   "11": [
+    906,
+    906
+   ],
+   "12": [
+    956,
+    956
+   ]
+  }
+ },
+ "subtitle_sync": {
+  "ok": true,
+  "max_offset_frames": 0.5
+ },
+ "hero_no_glasses": {
+  "ok": true,
+  "note": "no glasses shape exists in the character code; see qa_hero_vs_logo.png"
+ },
+ "no_graphic_medical_art": {
+  "ok": true,
+  "note": "bowl interior is a flat dark-red disk; vein is a stylised blue line; only the brief's own 🩸 emoji appears in scene 7 text"
+ },
+ "scene11_logo_and_name": {
+  "ok": true,
+  "logo_bottom_y": 1075,
+  "name_top_y": 1138,
+  "name_centre_x": 540,
+  "logo_centre_x": 540
+ },
+ "loop_last_matches_first": {
+  "ok": true,
+  "mean_abs_diff": 2.54
+ },
+ "ALL_OK": true
+}
