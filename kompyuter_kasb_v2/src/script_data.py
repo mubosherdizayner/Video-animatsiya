@@ -1,0 +1,31 @@
+# Script (scene texts) — Uzbek Latin with proper oʻ/gʻ (U+02BB) and tutuq ʼ (U+02BC).
+SCENES = [
+ (1,  "Toʻxtang! Kompyuter avval mashina emas, kasb boʻlgan."),
+ (2,  "Elektron kompyuterlar paydo boʻlgunga qadar"),
+ (3,  "\"computer\" qoʻlda hisob-kitob qiladigan odamning lavozimi edi."),
+ (4,  "Soʻz bu maʼnoda yozma manbalarda ilk bor"),
+ (5,  "bir ming olti yuz oʻn uchinchi yilda uchraydi."),
+ (6,  "Siz ham mashina deb oʻylaganmidingiz?"),
+ (7,  "Eng qizigʻi keyin."),
+ (8,  "Urush yillarida yuzlab \"kompyuter\" ayollardan"),
+ (9,  "oltitasi Eniak mashinasini dasturlashga tanlangan."),
+ (10, "Keyin oʻsha mashina"),
+ (11, "ularning nomini ham, ishini ham olib qoʻydi."),
+ (12, "Dasturchi doʻstingizga yuboring."),
+ (13, "Keyingi kasb qaysi boʻlsin, izohda yozing."),
+]
+ONSCREEN = {
+ 1: "KOMPYUTER = ODAM?",
+ 2: "ELEKTRON KOMPYUTERDAN OLDIN",
+ 3: "«COMPUTER» = LAVOZIM",
+ 4: "ORQAGA…",
+ 5: "1613 · R. Brathwait",
+ 6: "SIZ HAM?",
+ 7: "ENG QIZIGʻI →",
+ 8: "ENIAC · 1945",
+ 9: "6 AYOL DASTURLADI",
+ 10: "",
+ 11: "Electronic Numerical Integrator And Computer",
+ 12: "DASTURCHI DOʻSTINGIZGA ✈",
+ 13: "KEYINGI KASB? IZOHDA 👇",
+}
