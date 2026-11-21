@@ -1,0 +1,7 @@
+build/*
+!build/words.json
+!build/words_whisper.json
+!build/qa_results.json
+!build/audio_dur.txt
+src/__pycache__/
+!build/voice_raw.mp3

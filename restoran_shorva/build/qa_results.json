@@ -1,0 +1,206 @@
+{
+ "format": {
+  "video": {
+   "codec_name": "h264",
+   "width": 1080,
+   "height": 1920,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "duration": "35.966667",
+   "nb_frames": "1079"
+  },
+  "audio": {
+   "codec_name": "aac",
+   "r_frame_rate": "0/0",
+   "duration": "35.970000",
+   "nb_frames": "1688"
+  }
+ },
+ "duration": {
+  "video": 35.966667,
+  "audio_stream": 35.97,
+  "source_audio": 35.970563,
+  "diff_frames": 0.12
+ },
+ "sync_frames": [
+  {
+   "word": "«tiklovchi»,",
+   "scene_expected": 3,
+   "scene_at_frame": 3,
+   "frame": 184,
+   "t": 6.133,
+   "subtitle_at_frame": "«tiklovchi»,",
+   "word_start_frame": 177,
+   "offset_frames": 0
+  },
+  {
+   "word": "Afsona!",
+   "scene_expected": 7,
+   "scene_at_frame": 7,
+   "frame": 433,
+   "t": 14.433,
+   "subtitle_at_frame": "Afsona!",
+   "word_start_frame": 426,
+   "offset_frames": 0
+  },
+  {
+   "word": "oltmishinchi",
+   "scene_expected": 9,
+   "scene_at_frame": 9,
+   "frame": 543,
+   "t": 18.1,
+   "subtitle_at_frame": "oltmishinchi",
+   "word_start_frame": 538,
+   "offset_frames": 0
+  },
+  {
+   "word": "oshxona",
+   "scene_expected": 15,
+   "scene_at_frame": 15,
+   "frame": 932,
+   "t": 31.067,
+   "subtitle_at_frame": "oshxona",
+   "word_start_frame": 925,
+   "offset_frames": 0
+  }
+ ],
+ "scene_starts": [
+  {
+   "scene": 1,
+   "frame": 0,
+   "first_word": "To'xtang!",
+   "word_frame": 0,
+   "diff": 0
+  },
+  {
+   "scene": 2,
+   "frame": 83,
+   "first_word": "sho'rva",
+   "word_frame": 83,
+   "diff": 0
+  },
+  {
+   "scene": 3,
+   "frame": 126,
+   "first_word": "Frantsuzchada",
+   "word_frame": 126,
+   "diff": 0
+  },
+  {
+   "scene": 4,
+   "frame": 201,
+   "first_word": "ya'ni",
+   "word_frame": 201,
+   "diff": 0
+  },
+  {
+   "scene": 5,
+   "frame": 279,
+   "first_word": "Ko'pchilik",
+   "word_frame": 279,
+   "diff": 0
+  },
+  {
+   "scene": 6,
+   "frame": 366,
+   "first_word": "ishsiz",
+   "word_frame": 366,
+   "diff": 0
+  },
+  {
+   "scene": 7,
+   "frame": 426,
+   "first_word": "Afsona!",
+   "word_frame": 426,
+   "diff": 0
+  },
+  {
+   "scene": 8,
+   "frame": 460,
+   "first_word": "Birinchi",
+   "word_frame": 460,
+   "diff": 0
+  },
+  {
+   "scene": 9,
+   "frame": 538,
+   "first_word": "oltmishinchi",
+   "word_frame": 538,
+   "diff": 0
+  },
+  {
+   "scene": 10,
+   "frame": 584,
+   "first_word": "Inqilobdan",
+   "word_frame": 584,
+   "diff": 0
+  },
+  {
+   "scene": 11,
+   "frame": 644,
+   "first_word": "Ular",
+   "word_frame": 644,
+   "diff": 0
+  },
+  {
+   "scene": 12,
+   "frame": 695,
+   "first_word": "asosiy",
+   "word_frame": 695,
+   "diff": 0
+  },
+  {
+   "scene": 13,
+   "frame": 759,
+   "first_word": "Taom",
+   "word_frame": 759,
+   "diff": 0
+  },
+  {
+   "scene": 14,
+   "frame": 807,
+   "first_word": "Ya'ni",
+   "word_frame": 807,
+   "diff": 0
+  },
+  {
+   "scene": 15,
+   "frame": 882,
+   "first_word": "Choyxona",
+   "word_frame": 882,
+   "diff": 0
+  },
+  {
+   "scene": 16,
+   "frame": 970,
+   "first_word": "Yana",
+   "word_frame": 970,
+   "diff": 0
+  },
+  {
+   "scene": 17,
+   "frame": 1035,
+   "first_word": "Topib,",
+   "word_frame": 1035,
+   "diff": 0
+  }
+ ],
+ "subtitles_outside_safe_zone": [],
+ "text_layout": {
+  "headline_bottom_px": 497,
+  "subtitle_top_px": 1307,
+  "overlap": false
+ },
+ "loop": {
+  "mean_abs_diff_scene_band": 1.23,
+  "note": "frame 0 vs last frame (headline/subtitle text differ by design)"
+ },
+ "frame0_headline_dark_px": 12874,
+ "audio": {
+  "voice_over_bg_median_db": 15.6,
+  "voice_over_bg_p5_db": 9.5,
+  "music_rms_dbfs": -32.1,
+  "sfx_peak_dbfs": -16.7
+ },
+ "all_ok": true
+}

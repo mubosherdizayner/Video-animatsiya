@@ -1,0 +1,632 @@
+[
+ {
+  "scene": 1,
+  "text": "To'xtang!",
+  "first": true,
+  "start": 0.0,
+  "end": 0.34,
+  "how": "m",
+  "voice_end": 0.49
+ },
+ {
+  "scene": 1,
+  "text": "«Restoran»",
+  "first": false,
+  "start": 0.81,
+  "end": 1.3,
+  "how": "m+pause",
+  "voice_end": 1.415
+ },
+ {
+  "scene": 1,
+  "text": "avval",
+  "first": false,
+  "start": 1.415,
+  "end": 1.62,
+  "how": "m+dip",
+  "voice_end": 1.62
+ },
+ {
+  "scene": 1,
+  "text": "joy",
+  "first": false,
+  "start": 1.62,
+  "end": 1.855,
+  "how": "m+dip",
+  "voice_end": 1.855
+ },
+ {
+  "scene": 1,
+  "text": "emas,",
+  "first": false,
+  "start": 1.855,
+  "end": 2.36,
+  "how": "m+dip",
+  "voice_end": 2.545
+ },
+ {
+  "scene": 2,
+  "text": "sho'rva",
+  "first": true,
+  "start": 2.755,
+  "end": 3.06,
+  "how": "m+pause",
+  "voice_end": 3.08
+ },
+ {
+  "scene": 2,
+  "text": "nomi",
+  "first": false,
+  "start": 3.08,
+  "end": 3.34,
+  "how": "m+dip",
+  "voice_end": 3.515
+ },
+ {
+  "scene": 2,
+  "text": "bo'lgan.",
+  "first": false,
+  "start": 3.515,
+  "end": 3.74,
+  "how": "m+dip",
+  "voice_end": 3.845
+ },
+ {
+  "scene": 3,
+  "text": "Frantsuzchada",
+  "first": true,
+  "start": 4.185,
+  "end": 4.7,
+  "how": "m+pause",
+  "voice_end": 4.745
+ },
+ {
+  "scene": 3,
+  "text": "«restoran»",
+  "first": false,
+  "start": 4.745,
+  "end": 5.6,
+  "how": "m+dip",
+  "voice_end": 5.69
+ },
+ {
+  "scene": 3,
+  "text": "«tiklovchi»,",
+  "first": false,
+  "start": 5.895,
+  "end": 6.4,
+  "how": "m+pause",
+  "voice_end": 6.52
+ },
+ {
+  "scene": 4,
+  "text": "ya'ni",
+  "first": true,
+  "start": 6.695,
+  "end": 6.86,
+  "how": "m+pause",
+  "voice_end": 7.175
+ },
+ {
+  "scene": 4,
+  "text": "kuch",
+  "first": false,
+  "start": 7.335,
+  "end": 7.46,
+  "how": "m+pause",
+  "voice_end": 7.48
+ },
+ {
+  "scene": 4,
+  "text": "beradigan",
+  "first": false,
+  "start": 7.48,
+  "end": 7.88,
+  "how": "m+dip",
+  "voice_end": 7.9
+ },
+ {
+  "scene": 4,
+  "text": "quyuq",
+  "first": false,
+  "start": 7.9,
+  "end": 8.36,
+  "how": "m+dip",
+  "voice_end": 8.405
+ },
+ {
+  "scene": 4,
+  "text": "bulyon.",
+  "first": false,
+  "start": 8.405,
+  "end": 8.9,
+  "how": "m+dip",
+  "voice_end": 8.925
+ },
+ {
+  "scene": 5,
+  "text": "Ko'pchilik",
+  "first": true,
+  "start": 9.3,
+  "end": 9.6,
+  "how": "m+pause",
+  "voice_end": 9.725
+ },
+ {
+  "scene": 5,
+  "text": "ishonadi:",
+  "first": false,
+  "start": 9.725,
+  "end": 10.04,
+  "how": "m+dip",
+  "voice_end": 10.245
+ },
+ {
+  "scene": 5,
+  "text": "restoranlarni",
+  "first": false,
+  "start": 10.5,
+  "end": 11.1,
+  "how": "m+pause",
+  "voice_end": 11.1
+ },
+ {
+  "scene": 5,
+  "text": "inqilobdan",
+  "first": false,
+  "start": 11.1,
+  "end": 11.68,
+  "how": "m+dip",
+  "voice_end": 11.68
+ },
+ {
+  "scene": 5,
+  "text": "keyin",
+  "first": false,
+  "start": 11.68,
+  "end": 12.06,
+  "how": "m+dip",
+  "voice_end": 12.21
+ },
+ {
+  "scene": 6,
+  "text": "ishsiz",
+  "first": true,
+  "start": 12.21,
+  "end": 12.54,
+  "how": "override",
+  "voice_end": 12.635
+ },
+ {
+  "scene": 6,
+  "text": "qolgan",
+  "first": false,
+  "start": 12.635,
+  "end": 12.82,
+  "how": "m+dip",
+  "voice_end": 12.825
+ },
+ {
+  "scene": 6,
+  "text": "oshpazlar",
+  "first": false,
+  "start": 12.825,
+  "end": 13.38,
+  "how": "m+dip",
+  "voice_end": 13.38
+ },
+ {
+  "scene": 6,
+  "text": "ochgan.",
+  "first": false,
+  "start": 13.38,
+  "end": 13.94,
+  "how": "m+dip",
+  "voice_end": 13.93
+ },
+ {
+  "scene": 7,
+  "text": "Afsona!",
+  "first": true,
+  "start": 14.215,
+  "end": 14.7,
+  "how": "m+pause",
+  "voice_end": 15.04
+ },
+ {
+  "scene": 8,
+  "text": "Birinchi",
+  "first": true,
+  "start": 15.33,
+  "end": 15.58,
+  "how": "m+pause",
+  "voice_end": 15.69
+ },
+ {
+  "scene": 8,
+  "text": "restoranlar",
+  "first": false,
+  "start": 15.69,
+  "end": 16.2,
+  "how": "override",
+  "voice_end": 16.24
+ },
+ {
+  "scene": 8,
+  "text": "Parijda",
+  "first": false,
+  "start": 16.24,
+  "end": 16.66,
+  "how": "m+dip",
+  "voice_end": 16.68
+ },
+ {
+  "scene": 8,
+  "text": "bir",
+  "first": false,
+  "start": 16.68,
+  "end": 16.88,
+  "how": "override",
+  "voice_end": 16.88
+ },
+ {
+  "scene": 8,
+  "text": "ming",
+  "first": false,
+  "start": 16.88,
+  "end": 17.01,
+  "how": "override",
+  "voice_end": 17.01
+ },
+ {
+  "scene": 8,
+  "text": "yetti",
+  "first": false,
+  "start": 17.01,
+  "end": 17.69,
+  "how": "override",
+  "voice_end": 17.69
+ },
+ {
+  "scene": 8,
+  "text": "yuz",
+  "first": false,
+  "start": 17.69,
+  "end": 17.95,
+  "how": "override",
+  "voice_end": 17.95
+ },
+ {
+  "scene": 9,
+  "text": "oltmishinchi",
+  "first": true,
+  "start": 17.95,
+  "end": 18.26,
+  "how": "override",
+  "voice_end": 18.26
+ },
+ {
+  "scene": 9,
+  "text": "yillarda",
+  "first": false,
+  "start": 18.26,
+  "end": 18.62,
+  "how": "m+dip",
+  "voice_end": 18.67
+ },
+ {
+  "scene": 9,
+  "text": "ochilgan.",
+  "first": false,
+  "start": 18.67,
+  "end": 19.02,
+  "how": "m+dip",
+  "voice_end": 19.17
+ },
+ {
+  "scene": 10,
+  "text": "Inqilobdan",
+  "first": true,
+  "start": 19.465,
+  "end": 19.98,
+  "how": "m+pause",
+  "voice_end": 20.235
+ },
+ {
+  "scene": 10,
+  "text": "o'nlab",
+  "first": false,
+  "start": 20.235,
+  "end": 20.52,
+  "how": "m+dip",
+  "voice_end": 20.52
+ },
+ {
+  "scene": 10,
+  "text": "yil",
+  "first": false,
+  "start": 20.52,
+  "end": 20.78,
+  "how": "m",
+  "voice_end": 20.78
+ },
+ {
+  "scene": 10,
+  "text": "oldin.",
+  "first": false,
+  "start": 20.78,
+  "end": 21.1,
+  "how": "m",
+  "voice_end": 21.18
+ },
+ {
+  "scene": 11,
+  "text": "Ular",
+  "first": true,
+  "start": 21.46,
+  "end": 21.64,
+  "how": "m+pause",
+  "voice_end": 21.69
+ },
+ {
+  "scene": 11,
+  "text": "sog'liq",
+  "first": false,
+  "start": 21.69,
+  "end": 22.18,
+  "how": "m+dip",
+  "voice_end": 22.195
+ },
+ {
+  "scene": 11,
+  "text": "do'koni",
+  "first": false,
+  "start": 22.195,
+  "end": 22.54,
+  "how": "m+dip",
+  "voice_end": 22.54
+ },
+ {
+  "scene": 11,
+  "text": "edi,",
+  "first": false,
+  "start": 22.54,
+  "end": 22.84,
+  "how": "m",
+  "voice_end": 22.905
+ },
+ {
+  "scene": 12,
+  "text": "asosiy",
+  "first": true,
+  "start": 23.155,
+  "end": 23.44,
+  "how": "m+pause",
+  "voice_end": 23.46
+ },
+ {
+  "scene": 12,
+  "text": "taomi",
+  "first": false,
+  "start": 23.46,
+  "end": 23.9,
+  "how": "m2+dip",
+  "voice_end": 24.135
+ },
+ {
+  "scene": 12,
+  "text": "o'sha",
+  "first": false,
+  "start": 24.235,
+  "end": 24.52,
+  "how": "m+pause",
+  "voice_end": 24.59
+ },
+ {
+  "scene": 12,
+  "text": "bulyon.",
+  "first": false,
+  "start": 24.59,
+  "end": 24.9,
+  "how": "m+dip",
+  "voice_end": 24.98
+ },
+ {
+  "scene": 13,
+  "text": "Taom",
+  "first": true,
+  "start": 25.305,
+  "end": 25.6,
+  "how": "m2+pause",
+  "voice_end": 25.68
+ },
+ {
+  "scene": 13,
+  "text": "nomi",
+  "first": false,
+  "start": 25.68,
+  "end": 25.92,
+  "how": "m+dip",
+  "voice_end": 26.0
+ },
+ {
+  "scene": 13,
+  "text": "joyga",
+  "first": false,
+  "start": 26.0,
+  "end": 26.2,
+  "how": "m+dip",
+  "voice_end": 26.235
+ },
+ {
+  "scene": 13,
+  "text": "o'tdi.",
+  "first": false,
+  "start": 26.235,
+  "end": 26.54,
+  "how": "m+dip",
+  "voice_end": 26.69
+ },
+ {
+  "scene": 14,
+  "text": "Ya'ni",
+  "first": true,
+  "start": 26.89,
+  "end": 27.18,
+  "how": "m+pause",
+  "voice_end": 27.35
+ },
+ {
+  "scene": 14,
+  "text": "siz",
+  "first": false,
+  "start": 27.35,
+  "end": 27.5,
+  "how": "override",
+  "voice_end": 27.58
+ },
+ {
+  "scene": 14,
+  "text": "aslida",
+  "first": false,
+  "start": 27.58,
+  "end": 27.9,
+  "how": "override",
+  "voice_end": 27.94
+ },
+ {
+  "scene": 14,
+  "text": "sho'rvaga",
+  "first": false,
+  "start": 27.94,
+  "end": 28.5,
+  "how": "m+dip",
+  "voice_end": 28.525
+ },
+ {
+  "scene": 14,
+  "text": "kirasiz.",
+  "first": false,
+  "start": 28.525,
+  "end": 28.84,
+  "how": "m+dip",
+  "voice_end": 29.1
+ },
+ {
+  "scene": 15,
+  "text": "Choyxona",
+  "first": true,
+  "start": 29.39,
+  "end": 29.94,
+  "how": "m+pause",
+  "voice_end": 30.085
+ },
+ {
+  "scene": 15,
+  "text": "choydan,",
+  "first": false,
+  "start": 30.085,
+  "end": 30.54,
+  "how": "m+dip",
+  "voice_end": 30.565
+ },
+ {
+  "scene": 15,
+  "text": "oshxona",
+  "first": false,
+  "start": 30.835,
+  "end": 31.32,
+  "how": "m+pause",
+  "voice_end": 31.425
+ },
+ {
+  "scene": 15,
+  "text": "oshdan.",
+  "first": false,
+  "start": 31.57,
+  "end": 32.1,
+  "how": "m+pause",
+  "voice_end": 32.08
+ },
+ {
+  "scene": 16,
+  "text": "Yana",
+  "first": true,
+  "start": 32.33,
+  "end": 32.5,
+  "how": "m+pause",
+  "voice_end": 32.63
+ },
+ {
+  "scene": 16,
+  "text": "qaysi",
+  "first": false,
+  "start": 32.63,
+  "end": 32.87,
+  "how": "m+dip",
+  "voice_end": 32.87
+ },
+ {
+  "scene": 16,
+  "text": "joy",
+  "first": false,
+  "start": 32.87,
+  "end": 32.98,
+  "how": "m+dip",
+  "voice_end": 32.98
+ },
+ {
+  "scene": 16,
+  "text": "nomi",
+  "first": false,
+  "start": 32.98,
+  "end": 33.4,
+  "how": "m+dip",
+  "voice_end": 33.445
+ },
+ {
+  "scene": 16,
+  "text": "taomdan",
+  "first": false,
+  "start": 33.445,
+  "end": 33.735,
+  "how": "m2+dip",
+  "voice_end": 33.735
+ },
+ {
+  "scene": 16,
+  "text": "kelgan?",
+  "first": false,
+  "start": 33.735,
+  "end": 34.1,
+  "how": "m+dip",
+  "voice_end": 34.25
+ },
+ {
+  "scene": 17,
+  "text": "Topib,",
+  "first": true,
+  "start": 34.505,
+  "end": 34.78,
+  "how": "m+pause",
+  "voice_end": 35.0
+ },
+ {
+  "scene": 17,
+  "text": "izohda",
+  "first": false,
+  "start": 35.0,
+  "end": 35.28,
+  "how": "m+dip",
+  "voice_end": 35.29
+ },
+ {
+  "scene": 17,
+  "text": "yozing!",
+  "first": false,
+  "start": 35.29,
+  "end": 35.58,
+  "how": "m+dip",
+  "voice_end": 35.71
+ }
+]
