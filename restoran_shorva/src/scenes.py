@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFilter
 from scipy import ndimage
 from common import *
 import world_pool as WP
+import world_choyxona as WC
 import world_paris as WPa
 import world_mahalla as WM
 import hero as HR
@@ -109,7 +110,7 @@ def cam_pool(t):
         u = ease_io((t - T[14]) / dur(14)); return (lerp(585, 540, u), lerp(1060, 960, u), lerp(1.1, 1.0, u))
     return (540.0, 960.0, 1.0)
 
-KOSA = dict(cx=720.0, base=BANK_Y, k=13.0)
+KOSA = dict(cx=720.0, base=BANK_Y, k=11.5)
 
 def pool_frame(t, blur=0.0, extra=None, kosa=None):
     tev = te(t)
@@ -120,26 +121,26 @@ def pool_frame(t, blur=0.0, extra=None, kosa=None):
         c.layer(1.0); info.update(draw_hero(c, X, BANK_Y, 1.0, steam_t=tev, **kw))
     if blur <= 0:
         cv = Canvas(); cv.set_cam(*cam)
-        WP.draw_pool(cv, tev, P_ENV, kosa=kosa, hero_fn=hero_fn)
+        WC.draw_choyxona(cv, tev, P_ENV, kosa=kosa, hero_fn=hero_fn)
         if kosa:
             draw_kosa_steam(cv, kosa, tev)
         if extra: extra(cv, info)
         img = cv.result()
         cv.layer(1.0)
-        img = WP.reflect(img, cv, tev, P_ENV)
+        img = WP.reflect(img, cv, tev, P_ENV, sun_x=660.0)
         return img, info
     cv = Canvas(); cv.set_cam(*cam)
-    WP.draw_pool(cv, tev, P_ENV, hero_fn=None, leaves=False)
+    WC.draw_choyxona(cv, tev, P_ENV, hero_fn=None, leaves=False)
     img = cv.result()
     cv.layer(1.0)
-    img = WP.reflect(img, cv, tev, P_ENV)
+    img = WP.reflect(img, cv, tev, P_ENV, sun_x=660.0)
     img = img.filter(ImageFilter.GaussianBlur(blur))
     a = np.asarray(img).astype(np.float32)
     a = a * (1 - 0.10 * min(1, blur / 6)) + np.array(MTN2, np.float32) * 0.10 * min(1, blur / 6)
     img = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
     lay = Canvas(rgba=True); lay.set_cam(*cam)
     hero_fn(lay)
-    WP.leaves_falling(lay, tev, P_ENV)
+    WP.leaves_falling(lay, tev, P_ENV, region=(-60, 300, 820, 1000), wind=26.0)
     if extra: extra(lay, info)
     top = lay.result()
     img = img.convert("RGBA"); img.alpha_composite(top)

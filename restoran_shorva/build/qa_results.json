@@ -192,10 +192,10 @@
   "overlap": false
  },
  "loop": {
-  "mean_abs_diff_scene_band": 1.23,
+  "mean_abs_diff_scene_band": 1.29,
   "note": "frame 0 vs last frame (headline/subtitle text differ by design)"
  },
- "frame0_headline_dark_px": 12874,
+ "frame0_headline_dark_px": 12854,
  "audio": {
   "voice_over_bg_median_db": 15.6,
   "voice_over_bg_p5_db": 9.5,

@@ -109,3 +109,48 @@ def seated(cv, x, y, h, col, hunch=0.0, sip=0.0, face=1):
     cv.rect(*P(hand[0] - 2.5, hand[1] - 4), *P(hand[0] + 2.5, hand[1] + 1), col) if face > 0 else cv.rect(*P(hand[0] + 2.5, hand[1] - 4), *P(hand[0] - 2.5, hand[1] + 1), col)
     if sip < 0.5:
         cv.rect(*P(tx + 3, -50), *P(tx + 7, -45), col) if face > 0 else cv.rect(*P(tx + 7, -50), *P(tx + 3, -45), col)
+
+def seated_cross(cv, x, y, h, col, sip=0.0, nod=0.0, face=1, hat=None):
+    """customer sitting cross-legged on a tapchan (x,y = seat point); sip lifts a piala to the mouth"""
+    s = h / 100.0
+    def P(px, py): return (x + face * px * s, y + py * s)
+    # folded legs
+    cv.poly(ellipse_pts(*P(4, -8), 30 * s, 9 * s, 18), col)
+    # torso (slight lean toward the table)
+    lean = 6 + 3 * nod
+    body = [P(-12, -10), P(14, -10), P(13 + lean * 0.6, -52), P(-6 + lean * 0.6, -58)]
+    cv.poly(body, col)
+    hc = P(4 + lean * 0.8 + 2 * nod, -68 + 2 * nod)
+    cv.capsule(P(2 + lean * 0.6, -55), hc, 4.2 * s, 4 * s, col)
+    cv.circle(*hc, 9.5 * s, col)
+    if hat == "doppi":
+        cv.rect(hc[0] - 9.5 * s, hc[1] - 13 * s, hc[0] + 9.5 * s, hc[1] - 5 * s, col)
+    elif hat == "rumol":
+        cv.poly([(hc[0] - 11 * s, hc[1] + 6 * s), (hc[0] - 11 * s, hc[1] - 6 * s), (hc[0], hc[1] - 12 * s),
+                 (hc[0] + 11 * s, hc[1] - 6 * s), (hc[0] + 13 * s, hc[1] + 14 * s), (hc[0] - 14 * s, hc[1] + 16 * s)], col)
+    # arm: rests on the knee (sip=0) -> piala at the mouth (sip=1)
+    sh = P(6 + lean * 0.6, -50)
+    hand = P(lerp(26, 14 + lean, sip), lerp(-14, -64, sip))
+    elbow = P(lerp(20, 24, sip), lerp(-30, -46, sip))
+    cv.capsule(sh, elbow, 3.6 * s, 3.2 * s, col)
+    cv.capsule(elbow, hand, 3.2 * s, 3.0 * s, col)
+    cv.poly(ellipse_pts(hand[0] + face * 3 * s, hand[1] - 3 * s, 4.2 * s, 3 * s, 10), col)
+
+def cook(cv, x, y, h, col, stir=0.0, face=1):
+    """oshpaz standing at the qozon with a long kapgir (ladle); stir in 0..1 cycles the ladle"""
+    s = h / 100.0
+    def P(px, py): return (x + face * px * s, y + py * s)
+    for dx in (-5, 5):
+        cv.capsule(P(dx, -44), P(dx * 1.1, -3), 4.4 * s, 4.0 * s, col)
+    cv.poly([P(-11, -82), P(12, -82), P(16, -30), P(-15, -30)], col)
+    hc = P(3, -92)
+    cv.circle(*hc, 8.6 * s, col)
+    cv.poly([P(-5, -99), P(9, -99), P(10, -112), P(-6, -112)], col)     # cook's cap
+    cv.circle(*P(2, -113), 8 * s, col)
+    a = 2 * math.pi * stir
+    hand = P(30 + 6 * math.cos(a), -58 + 3 * math.sin(a))
+    cv.capsule(P(4, -76), P(18, -62), 3.8 * s, 3.4 * s, col)
+    cv.capsule(P(18, -62), hand, 3.4 * s, 3.0 * s, col)
+    tip = (hand[0] + face * 34 * s + face * 8 * s * math.cos(a), hand[1] + 44 * s)
+    cv.line([hand, tip], col, 2.6 * s)
+    cv.poly(ellipse_pts(tip[0], tip[1], 7 * s, 3.5 * s, 10), col)
