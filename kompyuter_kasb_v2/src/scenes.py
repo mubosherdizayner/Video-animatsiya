@@ -317,7 +317,7 @@ def write_k(lt):
 def s5(i):
     lt, D = local(i, 5)
     W = 12.3 + lt
-    k = ease_io(lt / D)
+    k = 0.8 * ease_io(lt / D) + 0.2 * (lt / D)
     fx, fy = lerp(560, 640, k), lerp(1160, EK.BOOK_BASE - EK.BOOK_HP * 0.5, k)   # tilt from the hero up to the word
     cam = Cam(x=fx - 540, y=960 - fy, zoom=1.42, cx=540, cy=960)
     surf = new_surface(); c = surf.getCanvas()
@@ -333,7 +333,7 @@ def s5(i):
 def s6(i):
     lt, D = local(i, 6)
     W = 14.7 + lt
-    cam = Cam(zoom=1.0 + 0.04 * ease_io(lt / D), cx=540, cy=1000)
+    cam = Cam(x=-14 * lt, zoom=1.0 + 0.05 * (0.6 * ease_io(lt / D) + 0.4 * lt / D), cx=540, cy=1000)
     g = ease_out_back(clamp01((lt - 0.1) / 0.4), 1.6)
     poke = max(0.0, math.sin(clamp01((lt - 0.45) / 1.5) * math.pi * 3)) if lt > 0.45 else 0.0
     cam.zoom += 0.012 * poke
@@ -376,7 +376,7 @@ def s7(i):
 # ---------------------------------------------------------------- scenes 8-11: the 1940s hall
 def s8_cam(lt):
     k = ease_io(clamp01((lt - 0.95) / 1.15))
-    return E4.Cam3(x=lerp(-5.15, -2.6, k), h=lerp(9.0, 2.5, k), z=lerp(8.0 + 0.5 * lt, 1.0, k), pitch=lerp(-70, -6, k),
+    return E4.Cam3(x=lerp(-5.15, -2.6, k), h=lerp(9.0, 2.5, k), z=lerp(8.0 + 0.5 * lt, 1.0 + 0.8 * max(0.0, lt - 1.6), k), pitch=lerp(-70, -6, k),
                    cy=lerp(960, 1000, k))
 
 
@@ -519,7 +519,8 @@ def s11(i):
     t = 25.5 + lt
     surf = new_surface(); c = surf.getCanvas()
     k = ease_io(clamp01(lt / 1.9))
-    cam = E4.Cam3(x=lerp(-4.0, 0.6, k), h=lerp(4.5, 2.4, k), z=lerp(2.0, 24.5, k), pitch=lerp(-14, -2, k), cy=lerp(900, 960, k))
+    creep = 0.45 * max(0.0, lt - 1.4)
+    cam = E4.Cam3(x=lerp(-4.0, 0.6, k), h=lerp(4.5, 2.4, k), z=lerp(2.0, 24.5, k) + creep, pitch=lerp(-14, -2, k), cy=lerp(900, 960, k))
     lamps = lambda kk, r, q: 0.88 + 0.12 * math.sin(t * 7 + kk + r)
     p, g = word_pos(lt)
 
@@ -551,7 +552,7 @@ def s11(i):
 
 # ---------------------------------------------------------------- scene 12: back to the present, the paper plane
 THROW = Arm(98, 128, "palm", 0.8, 1.0, 1.0)
-T_REL = 0.85
+T_REL = 0.7
 
 
 def far_hand_world(hx, hy, arm, s=HS):
@@ -571,8 +572,8 @@ def plane_pos(lt, hand):
 def s12(i):
     lt, D = local(i, 12)
     W = (i - LAST) / FPS
-    k = ease_io(clamp01((lt - T_REL) / (D - T_REL)))
-    cam = Cam(x=230 * k, y=260 * k, zoom=1.0 + 0.05 * k, cx=540, cy=1100)
+    k = 0.7 * ease_out(clamp01((lt - T_REL + 0.15) / (D - T_REL + 0.15))) + 0.3 * clamp01((lt - T_REL + 0.15) / (D - T_REL + 0.15))
+    cam = Cam(x=320 * k, y=560 * k, zoom=1.0 + 0.14 * k, cx=540, cy=1000)
     a, b = T_REL - 0.35, T_REL
     if lt < a:
         farm = REST

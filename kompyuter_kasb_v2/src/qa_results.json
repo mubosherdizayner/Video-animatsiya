@@ -1,0 +1,97 @@
+[
+ {
+  "check": "format: mp4 h264 1080x1920 30 fps yuv420p + aac",
+  "pass": true,
+  "info": "h264,1080,1920,yuv420p,30/1 / aac"
+ },
+ {
+  "check": "video duration equals audio duration",
+  "pass": true,
+  "info": "video 32.767s, audio track 32.766s, voice-over 32.7575s (983 frames)"
+ },
+ {
+  "check": "scene changes on the first word of each scene (≤1 frame)",
+  "pass": true,
+  "info": "max offset 0.40 frames; starts 1:0.00s, 2:3.89s, 3:6.26s, 4:9.97s, 5:12.38s, 6:14.74s, 7:17.08s, 8:18.36s, 9:21.02s, 10:24.57s, 11:25.50s, 12:28.02s, 13:30.10s"
+ },
+ {
+  "check": "each subtitle word highlighted when spoken (≤1 frame)",
+  "pass": true,
+  "info": "max offset 0.45 frames over 71 words"
+ },
+ {
+  "check": "subtitles use the script text, all words in order",
+  "pass": true,
+  "info": "71 words in 25 phrase lines"
+ },
+ {
+  "check": "frame 88 (2.93s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'kasb' (scene 1), highlighted 'kasb', scene shown 1, decoded-vs-render PSNR 41.4 dB, accent px 2473"
+ },
+ {
+  "check": "frame 301 (10.03s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Soʻz' (scene 4), highlighted 'Soʻz', scene shown 4, decoded-vs-render PSNR 42.1 dB, accent px 1835"
+ },
+ {
+  "check": "frame 514 (17.13s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Eng' (scene 7), highlighted 'Eng', scene shown 7, decoded-vs-render PSNR 41.1 dB, accent px 2073"
+ },
+ {
+  "check": "frame 843 (28.10s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Dasturchi' (scene 12), highlighted 'Dasturchi', scene shown 12, decoded-vs-render PSNR 41.7 dB, accent px 4643"
+ },
+ {
+  "check": "frame 0 shows the hook visual and hook text (no fade-in)",
+  "pass": true,
+  "info": "headline ink px 19060, accent px 10199, hero chapan px 4375, mean luminance 177"
+ },
+ {
+  "check": "voice clearly audible over sfx (no music)",
+  "pass": true,
+  "info": "voice/sfx RMS 21.9 dB, loudest sfx peak -18.0 dB vs voice peak, 35 sfx events"
+ },
+ {
+  "check": "no subtitle goes outside the frame (max width 900, 60 px side margin)",
+  "pass": true,
+  "info": "widest pill 868px, x range 106-974, centre y 1480"
+ },
+ {
+  "check": "on-screen text never overlaps the subtitles; headline sits in the upper third",
+  "pass": true,
+  "info": "lowest headline bottom 558px, highest subtitle top 1432px, gap 874px"
+ },
+ {
+  "check": "hero colours and proportions match the reference image",
+  "pass": true,
+  "info": "side-view silhouette IoU 0.9916, colour match 0.9663, height 1451 vs 1452 px"
+ },
+ {
+  "check": "last frame matches frame 0 (pose, framing, colours) for a seamless loop",
+  "pass": true,
+  "info": "scene render before text: max pixel diff 0; decoded first vs last outside text 2.28/765 vs h264 noise baseline 4.12/765"
+ },
+ {
+  "check": "no water, reflection, moon, sun disk, minaret or mulberry tree in any frame",
+  "pass": true,
+  "info": "source scan of every module: none of water_reflect, reflect, draw_sun, sun_path, draw_moon, moon, minaret, mulberry, dome; round sun/moon-coloured disks in 66 sampled frames: none"
+ },
+ {
+  "check": "each scene has its own environment from scenes[].visual; no two scenes look the same",
+  "pass": true,
+  "info": "closest pair scenes 1&2 differ 13.1/255 (1&13 share the loop framing by design: 2.9); environments: 1: present-day street, morning; 2: street sinking into the early 20th century; 3: old office facade, clerks in lit windows; 4: 1600s countryside, giant book flipping; 5: book spread, 'computer' written by hand; 6: hero front close-up, book blurred; 7: book slammed shut, pages form an arrow; 8: 1940s desk rows top-down -> ENIAC; 9: six women plug cables at the panels; 10: all lamps lit, desks empty, pull-back; 11: the word flies onto the panel; 12: street rises back, paper plane; 13: same street, turn (loop)"
+ },
+ {
+  "check": "oʻ gʻ ʼ and ' render correctly in subtitles and on-screen text",
+  "pass": true,
+  "info": "glyph check {'Inter-ExtraBold.otf': ([], 0), 'InterDisplay-Black.otf': ([], 0)}; special marks used: ʻ ʼ \""
+ },
+ {
+  "check": "every scene has movement (no static frames)",
+  "pass": true,
+  "info": "min mean frame-to-frame change 0.07/255; per scene min 1:0.11, 2:0.13, 3:0.15, 4:0.43, 5:0.84, 6:0.16, 7:0.21, 8:0.69, 9:0.21, 10:0.93, 11:0.81, 12:0.37, 13:0.07"
+ }
+]
