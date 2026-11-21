@@ -1,0 +1,87 @@
+[
+ {
+  "check": "format: mp4 h264 1080x1920 30 fps yuv420p + aac",
+  "pass": true,
+  "info": "h264,1080,1920,yuv420p,30/1 / aac"
+ },
+ {
+  "check": "video duration equals audio duration",
+  "pass": true,
+  "info": "video 32.767s, audio track 32.766s, voice-over 32.7575s (983 frames)"
+ },
+ {
+  "check": "scene changes on the first word of each scene (≤1 frame)",
+  "pass": true,
+  "info": "max offset 0.40 frames; starts 1:0.00s, 2:3.89s, 3:6.26s, 4:9.97s, 5:12.38s, 6:14.74s, 7:17.08s, 8:18.36s, 9:21.02s, 10:24.57s, 11:25.50s, 12:28.02s, 13:30.10s"
+ },
+ {
+  "check": "each subtitle word highlighted when spoken (≤1 frame)",
+  "pass": true,
+  "info": "max offset 0.45 frames over 71 words"
+ },
+ {
+  "check": "subtitles use the script text, all words in order",
+  "pass": true,
+  "info": "71 words in 25 phrase lines"
+ },
+ {
+  "check": "frame 88 (2.93s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'kasb' (scene 1), highlighted 'kasb', scene shown 1, decoded-vs-render PSNR 38.3 dB, accent px 2485"
+ },
+ {
+  "check": "frame 301 (10.03s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Soʻz' (scene 4), highlighted 'Soʻz', scene shown 4, decoded-vs-render PSNR 38.7 dB, accent px 1802"
+ },
+ {
+  "check": "frame 514 (17.13s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Eng' (scene 7), highlighted 'Eng', scene shown 7, decoded-vs-render PSNR 38.2 dB, accent px 2033"
+ },
+ {
+  "check": "frame 843 (28.10s): subtitle + scene match the spoken word",
+  "pass": true,
+  "info": "spoken 'Dasturchi' (scene 12), highlighted 'Dasturchi', scene shown 12, decoded-vs-render PSNR 38.5 dB, accent px 4646"
+ },
+ {
+  "check": "frame 0 shows the hook visual and hook text (no fade-in)",
+  "pass": true,
+  "info": "headline ink px 19083, accent px 10282, hero chapan px 11299, mean luminance 145"
+ },
+ {
+  "check": "voice clearly audible over sfx (no music)",
+  "pass": true,
+  "info": "voice/sfx RMS 21.3 dB, loudest sfx peak -18.0 dB vs voice peak, 37 sfx events"
+ },
+ {
+  "check": "no subtitle goes outside the frame (max width 900, 60 px side margin)",
+  "pass": true,
+  "info": "widest pill 868px, x range 106-974, centre y 1480"
+ },
+ {
+  "check": "on-screen text never overlaps the subtitles; headline sits in the upper third",
+  "pass": true,
+  "info": "lowest headline bottom 558px, highest subtitle top 1432px, gap 874px"
+ },
+ {
+  "check": "hero colours and proportions match the reference image",
+  "pass": true,
+  "info": "side-view silhouette IoU 0.9916, colour match 0.9663, height 1451 vs 1452 px"
+ },
+ {
+  "check": "last frame matches frame 0 (pose, framing, sun, colours) for a seamless loop",
+  "pass": true,
+  "info": "world render (before text) max pixel diff 0; decoded first vs last outside text 3.67/765 vs h264 noise baseline 5.29/765"
+ },
+ {
+  "check": "oʻ gʻ ʼ and ' render correctly in subtitles and on-screen text",
+  "pass": true,
+  "info": "glyph check {'Inter-ExtraBold.otf': ([], 0), 'InterDisplay-Black.otf': ([], 0)}; special marks used: ʻ ʼ \""
+ },
+ {
+  "check": "every scene has movement (no static frames)",
+  "pass": true,
+  "info": "min mean frame-to-frame change 0.20/255; per scene min 1:0.25, 2:0.20, 3:0.46, 4:1.07, 5:0.23, 6:0.81, 7:0.28, 8:0.51, 9:0.21, 10:0.63, 11:0.21, 12:0.26, 13:0.23"
+ }
+]

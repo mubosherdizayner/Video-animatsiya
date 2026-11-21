@@ -1,0 +1,570 @@
+[
+ {
+  "scene": 1,
+  "text": "Toʻxtang!",
+  "first": true,
+  "start": 0.0,
+  "end": 0.4,
+  "how": "m+snap"
+ },
+ {
+  "scene": 1,
+  "text": "Kompyuter",
+  "first": false,
+  "start": 0.56,
+  "end": 1.2,
+  "how": "m"
+ },
+ {
+  "scene": 1,
+  "text": "avval",
+  "first": false,
+  "start": 1.2,
+  "end": 1.68,
+  "how": "m"
+ },
+ {
+  "scene": 1,
+  "text": "mashina",
+  "first": false,
+  "start": 1.68,
+  "end": 2.06,
+  "how": "m"
+ },
+ {
+  "scene": 1,
+  "text": "emas,",
+  "first": false,
+  "start": 2.06,
+  "end": 2.46,
+  "how": "m"
+ },
+ {
+  "scene": 1,
+  "text": "kasb",
+  "first": false,
+  "start": 2.863,
+  "end": 3.12,
+  "how": "m+snap"
+ },
+ {
+  "scene": 1,
+  "text": "boʻlgan.",
+  "first": false,
+  "start": 3.12,
+  "end": 3.48,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "text": "Elektron",
+  "first": true,
+  "start": 3.893,
+  "end": 4.18,
+  "how": "m+snap"
+ },
+ {
+  "scene": 2,
+  "text": "kompyuterlar",
+  "first": false,
+  "start": 4.18,
+  "end": 4.84,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "text": "paydo",
+  "first": false,
+  "start": 4.84,
+  "end": 5.12,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "text": "boʻlgunga",
+  "first": false,
+  "start": 5.12,
+  "end": 5.64,
+  "how": "m"
+ },
+ {
+  "scene": 2,
+  "text": "qadar",
+  "first": false,
+  "start": 5.64,
+  "end": 6.0,
+  "how": "m"
+ },
+ {
+  "scene": 3,
+  "text": "\"computer\"",
+  "first": true,
+  "start": 6.258,
+  "end": 6.48,
+  "how": "m+snap"
+ },
+ {
+  "scene": 3,
+  "text": "qoʻlda",
+  "first": false,
+  "start": 7.028,
+  "end": 7.3,
+  "how": "m+snap"
+ },
+ {
+  "scene": 3,
+  "text": "hisob-kitob",
+  "first": false,
+  "start": 7.3,
+  "end": 7.9,
+  "how": "m2"
+ },
+ {
+  "scene": 3,
+  "text": "qiladigan",
+  "first": false,
+  "start": 8.022,
+  "end": 8.26,
+  "how": "m+snap"
+ },
+ {
+  "scene": 3,
+  "text": "odamning",
+  "first": false,
+  "start": 8.26,
+  "end": 8.74,
+  "how": "m"
+ },
+ {
+  "scene": 3,
+  "text": "lavozimi",
+  "first": false,
+  "start": 8.74,
+  "end": 9.32,
+  "how": "m"
+ },
+ {
+  "scene": 3,
+  "text": "edi.",
+  "first": false,
+  "start": 9.32,
+  "end": 9.6,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "text": "Soʻz",
+  "first": true,
+  "start": 9.973,
+  "end": 10.28,
+  "how": "m+snap"
+ },
+ {
+  "scene": 4,
+  "text": "bu",
+  "first": false,
+  "start": 10.3,
+  "end": 10.42,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "text": "maʼnoda",
+  "first": false,
+  "start": 10.42,
+  "end": 10.8,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "text": "yozma",
+  "first": false,
+  "start": 10.8,
+  "end": 11.22,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "text": "manbalarda",
+  "first": false,
+  "start": 11.22,
+  "end": 11.78,
+  "how": "m"
+ },
+ {
+  "scene": 4,
+  "text": "ilk",
+  "first": false,
+  "start": 12.062,
+  "end": 12.16,
+  "how": "m+snap"
+ },
+ {
+  "scene": 4,
+  "text": "bor",
+  "first": false,
+  "start": 12.16,
+  "end": 12.38,
+  "how": "m"
+ },
+ {
+  "scene": 5,
+  "text": "bir",
+  "first": true,
+  "start": 12.38,
+  "end": 12.585,
+  "how": "interp"
+ },
+ {
+  "scene": 5,
+  "text": "ming",
+  "first": false,
+  "start": 12.585,
+  "end": 12.955,
+  "how": "interp+dip"
+ },
+ {
+  "scene": 5,
+  "text": "olti",
+  "first": false,
+  "start": 12.955,
+  "end": 13.195,
+  "how": "interp+dip"
+ },
+ {
+  "scene": 5,
+  "text": "yuz",
+  "first": false,
+  "start": 13.195,
+  "end": 13.38,
+  "how": "interp+dip"
+ },
+ {
+  "scene": 5,
+  "text": "oʻn",
+  "first": false,
+  "start": 13.38,
+  "end": 13.495,
+  "how": "interp+dip"
+ },
+ {
+  "scene": 5,
+  "text": "uchinchi",
+  "first": false,
+  "start": 13.495,
+  "end": 13.88,
+  "how": "interp+dip"
+ },
+ {
+  "scene": 5,
+  "text": "yilda",
+  "first": false,
+  "start": 13.88,
+  "end": 14.18,
+  "how": "m"
+ },
+ {
+  "scene": 5,
+  "text": "uchraydi.",
+  "first": false,
+  "start": 14.18,
+  "end": 14.58,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "text": "Siz",
+  "first": true,
+  "start": 14.74,
+  "end": 15.24,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "text": "ham",
+  "first": false,
+  "start": 15.24,
+  "end": 15.48,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "text": "mashina",
+  "first": false,
+  "start": 15.48,
+  "end": 15.92,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "text": "deb",
+  "first": false,
+  "start": 15.92,
+  "end": 16.08,
+  "how": "m"
+ },
+ {
+  "scene": 6,
+  "text": "oʻylaganmidingiz?",
+  "first": false,
+  "start": 16.08,
+  "end": 16.88,
+  "how": "m3"
+ },
+ {
+  "scene": 7,
+  "text": "Eng",
+  "first": true,
+  "start": 17.08,
+  "end": 17.367,
+  "how": "m"
+ },
+ {
+  "scene": 7,
+  "text": "qizigʻi",
+  "first": false,
+  "start": 17.367,
+  "end": 17.82,
+  "how": "m+snap"
+ },
+ {
+  "scene": 7,
+  "text": "keyin.",
+  "first": false,
+  "start": 17.82,
+  "end": 18.22,
+  "how": "m"
+ },
+ {
+  "scene": 8,
+  "text": "Urush",
+  "first": true,
+  "start": 18.36,
+  "end": 18.9,
+  "how": "m"
+ },
+ {
+  "scene": 8,
+  "text": "yillarida",
+  "first": false,
+  "start": 18.9,
+  "end": 19.36,
+  "how": "m"
+ },
+ {
+  "scene": 8,
+  "text": "yuzlab",
+  "first": false,
+  "start": 19.36,
+  "end": 19.9,
+  "how": "m"
+ },
+ {
+  "scene": 8,
+  "text": "\"kompyuter\"",
+  "first": false,
+  "start": 19.9,
+  "end": 20.48,
+  "how": "m"
+ },
+ {
+  "scene": 8,
+  "text": "ayollardan",
+  "first": false,
+  "start": 20.48,
+  "end": 21.02,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "text": "oltitasi",
+  "first": true,
+  "start": 21.02,
+  "end": 21.66,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "text": "Eniak",
+  "first": false,
+  "start": 21.82,
+  "end": 22.42,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "text": "mashinasini",
+  "first": false,
+  "start": 22.42,
+  "end": 23.04,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "text": "dasturlashga",
+  "first": false,
+  "start": 23.04,
+  "end": 23.64,
+  "how": "m"
+ },
+ {
+  "scene": 9,
+  "text": "tanlangan.",
+  "first": false,
+  "start": 23.64,
+  "end": 24.04,
+  "how": "m"
+ },
+ {
+  "scene": 10,
+  "text": "Keyin",
+  "first": true,
+  "start": 24.567,
+  "end": 24.78,
+  "how": "m+snap"
+ },
+ {
+  "scene": 10,
+  "text": "oʻsha",
+  "first": false,
+  "start": 24.78,
+  "end": 25.08,
+  "how": "m"
+ },
+ {
+  "scene": 10,
+  "text": "mashina",
+  "first": false,
+  "start": 25.08,
+  "end": 25.5,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "ularning",
+  "first": true,
+  "start": 25.5,
+  "end": 25.94,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "nomini",
+  "first": false,
+  "start": 25.94,
+  "end": 26.42,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "ham,",
+  "first": false,
+  "start": 26.42,
+  "end": 26.76,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "ishini",
+  "first": false,
+  "start": 26.968,
+  "end": 27.16,
+  "how": "m+snap"
+ },
+ {
+  "scene": 11,
+  "text": "ham",
+  "first": false,
+  "start": 27.16,
+  "end": 27.38,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "olib",
+  "first": false,
+  "start": 27.38,
+  "end": 27.6,
+  "how": "m"
+ },
+ {
+  "scene": 11,
+  "text": "qoʻydi.",
+  "first": false,
+  "start": 27.723,
+  "end": 27.86,
+  "how": "m+snap"
+ },
+ {
+  "scene": 12,
+  "text": "Dasturchi",
+  "first": true,
+  "start": 28.02,
+  "end": 28.76,
+  "how": "m"
+ },
+ {
+  "scene": 12,
+  "text": "doʻstingizga",
+  "first": false,
+  "start": 28.76,
+  "end": 29.34,
+  "how": "m"
+ },
+ {
+  "scene": 12,
+  "text": "yuboring.",
+  "first": false,
+  "start": 29.34,
+  "end": 29.66,
+  "how": "m"
+ },
+ {
+  "scene": 13,
+  "text": "Keyingi",
+  "first": true,
+  "start": 30.102,
+  "end": 30.4,
+  "how": "m+snap"
+ },
+ {
+  "scene": 13,
+  "text": "kasb",
+  "first": false,
+  "start": 30.4,
+  "end": 30.7,
+  "how": "m"
+ },
+ {
+  "scene": 13,
+  "text": "qaysi",
+  "first": false,
+  "start": 30.802,
+  "end": 31.08,
+  "how": "m+snap"
+ },
+ {
+  "scene": 13,
+  "text": "boʻlsin,",
+  "first": false,
+  "start": 31.08,
+  "end": 31.38,
+  "how": "m"
+ },
+ {
+  "scene": 13,
+  "text": "izohda",
+  "first": false,
+  "start": 31.773,
+  "end": 32.08,
+  "how": "m+snap"
+ },
+ {
+  "scene": 13,
+  "text": "yozing.",
+  "first": false,
+  "start": 32.08,
+  "end": 32.38,
+  "how": "m"
+ }
+]

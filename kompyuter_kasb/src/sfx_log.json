@@ -1,0 +1,191 @@
+{
+ "events": [
+  {
+   "sfx": "accent",
+   "t": 0.0,
+   "peak_db_vs_voice": -18.0
+  },
+  {
+   "sfx": "wind (turn)",
+   "t": 0.0,
+   "peak_db_vs_voice": -23.2
+  },
+  {
+   "sfx": "abacus click",
+   "t": 4.073,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 4.329,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 4.579,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 4.855,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 5.09,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 5.356,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 5.604,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 5.873,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "abacus click",
+   "t": 6.099,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "paper rustle",
+   "t": 6.308,
+   "peak_db_vs_voice": -24.0
+  },
+  {
+   "sfx": "wing flutter",
+   "t": 8.878,
+   "peak_db_vs_voice": -23.2
+  },
+  {
+   "sfx": "rewind whoosh",
+   "t": 9.993,
+   "peak_db_vs_voice": -19.9
+  },
+  {
+   "sfx": "quill stroke",
+   "t": 12.6,
+   "peak_db_vs_voice": -24.9
+  },
+  {
+   "sfx": "bwom",
+   "t": 17.08,
+   "peak_db_vs_voice": -18.0
+  },
+  {
+   "sfx": "relay click",
+   "t": 18.569,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 18.805,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 19.034,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 19.302,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 19.527,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 19.751,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 19.958,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 20.242,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 20.5,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "relay click",
+   "t": 20.683,
+   "peak_db_vs_voice": -27.1
+  },
+  {
+   "sfx": "plug click",
+   "t": 21.37,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "plug click",
+   "t": 21.85,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "plug click",
+   "t": 22.33,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "plug click",
+   "t": 22.81,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "plug click",
+   "t": 23.29,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "plug click",
+   "t": 23.77,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "rising chime",
+   "t": 24.587,
+   "peak_db_vs_voice": -21.1
+  },
+  {
+   "sfx": "word whoosh",
+   "t": 26.0,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "calm thud",
+   "t": 27.05,
+   "peak_db_vs_voice": -18.9
+  },
+  {
+   "sfx": "fyut swoosh",
+   "t": 28.38,
+   "peak_db_vs_voice": -22.4
+  },
+  {
+   "sfx": "accent (loop)",
+   "t": 32.117,
+   "peak_db_vs_voice": -18.0
+  }
+ ],
+ "voice_to_sfx_rms_db": 21.3,
+ "duration_s": 32.766666666666666
+}
