@@ -167,7 +167,7 @@ def word_base():
     n2 = fractal_noise(w * 2, h * 2, 43, (90, 45, 22), (0.55, 0.3, 0.15))
     return M, n1, n2
 
-def steam_word(frame, cv, p, t, wx, wy, fade=1.0, rise=0.0):
+def steam_word(frame, cv, p, t, wx, wy, fade=1.0, rise=0.0, scale=None):
     """formation progress p (0..1); world center (wx, wy). frame: 1x RGB PIL image (modified)"""
     if p <= 0.001 or fade <= 0.001: return frame
     M, n1, n2 = word_base()
@@ -197,7 +197,7 @@ def steam_word(frame, cv, p, t, wx, wy, fade=1.0, rise=0.0):
     col = (cc[None, None] * a_core[..., None] + shc[None, None] * (a_sh * (1 - a_core))[..., None]) / np.maximum(out_a[..., None], 1e-4)
     rgba[..., :3] = col; rgba[..., 3] = out_a * 255
     im = Image.fromarray(np.clip(rgba, 0, 255).astype(np.uint8), "RGBA")
-    scale = cv.ez / WORD_ZREF
+    scale = cv.ez / WORD_ZREF if scale is None else scale
     im = im.resize((max(1, int(w * scale)), max(1, int(h * scale))), Image.BILINEAR)
     sx_, sy_ = cv.to_screen(wx, wy - rise)
     frame = frame.convert("RGBA")

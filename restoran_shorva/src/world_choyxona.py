@@ -125,10 +125,10 @@ def courtyard(cv):
     for x in range(0, 1100, 120):
         cv.line([(x, BANK_Y + 4), (x, WATER_Y)], hx("253034"), 1.6, caps=False)
 
-def draw_choyxona(cv, te, P, kosa=None, hero_fn=None, leaves=True, people=True, steam_t=None):
+def draw_choyxona(cv, te, P, kosa=None, hero_fn=None, leaves=True, people=True, steam_t=None, sun=(660, 700, 248)):
     sky(cv)
     cv.layer(1.0)
-    draw_sun(cv, 660, 700, 248)
+    draw_sun(cv, *sun)
     birds(cv, te, P, items=BIRDS_C)
     far(cv)
     ayvon(cv, te, P)
