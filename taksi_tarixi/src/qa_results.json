@@ -1,0 +1,277 @@
+{
+ "1_four_timestamps": {
+  "ok": true,
+  "detail": [
+   {
+    "t": 6.4,
+    "word": "«Qancha",
+    "subtitle": "«Qancha",
+    "scene": 3,
+    "ok": true
+   },
+   {
+    "t": 12.2,
+    "word": "quti",
+    "subtitle": "quti",
+    "scene": 6,
+    "ok": true
+   },
+   {
+    "t": 17.19,
+    "word": "taksometrni",
+    "subtitle": "taksometrni",
+    "scene": 8,
+    "ok": true
+   },
+   {
+    "t": 31.74,
+    "word": "yuboring.",
+    "subtitle": "yuboring.",
+    "scene": 13,
+    "ok": true
+   }
+  ]
+ },
+ "2_frame0_hook": {
+  "ok": true,
+  "detail": "scene 1, OST 'TAKSI = mashina?' at scale 0.88+, sign lift 6.0px, tilt 1.7 deg"
+ },
+ "3_duration": {
+  "ok": true,
+  "detail": {
+   "source_audio": 37.146063,
+   "video_stream": 37.133333,
+   "audio_stream": 37.146,
+   "container": 37.146,
+   "codec": "h264",
+   "size": "1080x1920",
+   "pix_fmt": "yuv420p",
+   "fps": "30/1",
+   "audio_codec": "aac"
+  }
+ },
+ "4_voice_audible": {
+  "ok": true,
+  "detail": {
+   "median_voice_over_bed_dB": 28.2,
+   "p5_dB": 15.3,
+   "min_dB": 7.2
+  }
+ },
+ "5_subtitles_in_frame": {
+  "ok": true,
+  "detail": {
+   "outside": [],
+   "subtitle_center_y": 1306,
+   "widest_px": 841
+  }
+ },
+ "7_key_actions_on_words": {
+  "ok": true,
+  "detail": {
+   "strike_line (2, mashinaning)": {
+    "action_frame": 75,
+    "word_frame": 75,
+    "offset_frames": 0
+   },
+   "box_landing (6, quti)": {
+    "action_frame": 363,
+    "word_frame": 363,
+    "offset_frames": 0
+   },
+   "sign_snap (12, Taksi)": {
+    "action_frame": 802,
+    "word_frame": 802,
+    "offset_frames": 0
+   },
+   "paper_airplane (13, yuboring)": {
+    "action_frame": 947,
+    "word_frame": 947,
+    "offset_frames": 0
+   },
+   "point_A (14, savdolashasizmi)": {
+    "action_frame": 990,
+    "word_frame": 990,
+    "offset_frames": 0
+   },
+   "point_B (14, hisoblagich)": {
+    "action_frame": 1034,
+    "word_frame": 1034,
+    "offset_frames": 0
+   },
+   "flag_lever (8, taksometrni)": {
+    "action_frame": 506,
+    "word_frame": 506,
+    "offset_frames": 0
+   },
+   "pointing_down_icon (15, Izohda)": {
+    "action_frame": 1087,
+    "word_frame": 1087,
+    "offset_frames": 0
+   }
+  }
+ },
+ "6_cta_icons_and_gestures": {
+  "ok": true,
+  "detail": {
+   "13": "plane icon in on-screen text from scene start; sheet folded then thrown on 'yuboring' (frame 947)",
+   "14": "A/B bubble with handshake + dial icons pops on 'Siz-chi' (frame 969); points A on frame 990, B on frame 1034",
+   "15": "pointing-down icon pops and the hero points down from the window on 'Izohda' (frame 1087)"
+  }
+ },
+ "8_seamless_loop": {
+  "ok": true,
+  "detail": {
+   "mean_abs_diff_0_255": 1.83,
+   "pct_pixels_diff_gt_30": 2.74,
+   "note": "same camera, taxi position and roof-sign state; pigeons only in scenes 1-2 and the CTA arm differ"
+  }
+ },
+ "9_no_water": {
+  "ok": true,
+  "detail": "no water/pond/reflection element in scenes/env/props/gfx"
+ },
+ "10_chapan_most_saturated": {
+  "ok": true,
+  "detail": {
+   "rule": "with the hero hidden, every pixel outside the spec'd accent/sun/window colour family is less saturated than the chapan",
+   "frames": [
+    {
+     "t": 0.5,
+     "scene": 1,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 386,
+     "ok": true
+    },
+    {
+     "t": 3.0,
+     "scene": 2,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 0,
+     "ok": true
+    },
+    {
+     "t": 5.5,
+     "scene": 3,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 13383,
+     "ok": true
+    },
+    {
+     "t": 8.0,
+     "scene": 4,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 115,
+     "ok": true
+    },
+    {
+     "t": 10.0,
+     "scene": 5,
+     "env_max_chroma_outside_accent": 32,
+     "chapan_chroma": 60,
+     "chapan_px": 7112,
+     "ok": true
+    },
+    {
+     "t": 12.5,
+     "scene": 6,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 0,
+     "ok": true
+    },
+    {
+     "t": 14.5,
+     "scene": 7,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 3106,
+     "ok": true
+    },
+    {
+     "t": 17.0,
+     "scene": 8,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 6260,
+     "ok": true
+    },
+    {
+     "t": 19.5,
+     "scene": 9,
+     "env_max_chroma_outside_accent": 39,
+     "chapan_chroma": 60,
+     "chapan_px": 5786,
+     "ok": true
+    },
+    {
+     "t": 21.5,
+     "scene": 10,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 0,
+     "ok": true
+    },
+    {
+     "t": 24.0,
+     "scene": 11,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 2317,
+     "ok": true
+    },
+    {
+     "t": 28.0,
+     "scene": 12,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 13416,
+     "ok": true
+    },
+    {
+     "t": 30.5,
+     "scene": 13,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 13386,
+     "ok": true
+    },
+    {
+     "t": 34.0,
+     "scene": 14,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 159794,
+     "ok": true
+    },
+    {
+     "t": 36.8,
+     "scene": 15,
+     "env_max_chroma_outside_accent": 40,
+     "chapan_chroma": 60,
+     "chapan_px": 1996,
+     "ok": true
+    }
+   ],
+   "secondary_figures": "passengers, horses, cabs, pigeons, pedestrians use only palette grey-blue tones"
+  }
+ },
+ "11_meter_digits_illegible": {
+  "ok": true,
+  "detail": "scenes 6-12 draw digit wheels as accent bars; scene 10 rolls a digit strip at >=5.5 digits/s reduced to a 5x3 px glow per wheel (no glyph shape survives); no currency glyph is ever drawn"
+ },
+ "12_no_overlap_and_glyphs": {
+  "ok": true,
+  "detail": {
+   "overlapping_words": [],
+   "missing_glyphs": [],
+   "apostrophes": [
+    "ʻ"
+   ]
+  }
+ }
+}

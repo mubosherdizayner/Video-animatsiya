@@ -1,0 +1,466 @@
+{
+ "audio_dur": 37.146125,
+ "words": [
+  {
+   "scene": 1,
+   "text": "Har",
+   "start": 0.0,
+   "end": 0.28
+  },
+  {
+   "scene": 1,
+   "text": "kuni",
+   "start": 0.34,
+   "end": 0.54
+  },
+  {
+   "scene": 1,
+   "text": "«taksi»",
+   "start": 0.78,
+   "end": 1.12
+  },
+  {
+   "scene": 1,
+   "text": "deysiz.",
+   "start": 1.22,
+   "end": 1.6
+  },
+  {
+   "scene": 2,
+   "text": "Lekin",
+   "start": 1.96,
+   "end": 2.24
+  },
+  {
+   "scene": 2,
+   "text": "bu",
+   "start": 2.34,
+   "end": 2.42
+  },
+  {
+   "scene": 2,
+   "text": "mashinaning",
+   "start": 2.5,
+   "end": 3.0
+  },
+  {
+   "scene": 2,
+   "text": "nomi",
+   "start": 3.02,
+   "end": 3.24
+  },
+  {
+   "scene": 2,
+   "text": "emas.",
+   "start": 3.32,
+   "end": 3.62
+  },
+  {
+   "scene": 3,
+   "text": "Taksiga",
+   "start": 4.02,
+   "end": 4.38
+  },
+  {
+   "scene": 3,
+   "text": "oʻtirsangiz,",
+   "start": 4.44,
+   "end": 5.04
+  },
+  {
+   "scene": 3,
+   "text": "birinchi",
+   "start": 5.22,
+   "end": 5.54
+  },
+  {
+   "scene": 3,
+   "text": "savol:",
+   "start": 5.58,
+   "end": 5.88
+  },
+  {
+   "scene": 3,
+   "text": "«Qancha",
+   "start": 6.26,
+   "end": 6.54
+  },
+  {
+   "scene": 3,
+   "text": "boʻladi?»",
+   "start": 6.58,
+   "end": 6.9
+  },
+  {
+   "scene": 4,
+   "text": "Hisoblagichdan",
+   "start": 7.24,
+   "end": 7.9
+  },
+  {
+   "scene": 4,
+   "text": "oldin",
+   "start": 7.98,
+   "end": 8.24
+  },
+  {
+   "scene": 4,
+   "text": "narxni",
+   "start": 8.4,
+   "end": 8.74
+  },
+  {
+   "scene": 5,
+   "text": "haydovchi",
+   "start": 8.8,
+   "end": 9.32
+  },
+  {
+   "scene": 5,
+   "text": "va",
+   "start": 9.48,
+   "end": 9.56
+  },
+  {
+   "scene": 5,
+   "text": "yoʻlovchi",
+   "start": 9.7,
+   "end": 10.08
+  },
+  {
+   "scene": 5,
+   "text": "kelishib",
+   "start": 10.12,
+   "end": 10.44
+  },
+  {
+   "scene": 5,
+   "text": "olgan.",
+   "start": 10.5,
+   "end": 10.78
+  },
+  {
+   "scene": 6,
+   "text": "Keyin",
+   "start": 11.06,
+   "end": 11.34
+  },
+  {
+   "scene": 6,
+   "text": "bitta",
+   "start": 11.46,
+   "end": 11.7
+  },
+  {
+   "scene": 6,
+   "text": "kichik",
+   "start": 11.76,
+   "end": 12.0
+  },
+  {
+   "scene": 6,
+   "text": "quti",
+   "start": 12.1,
+   "end": 12.3
+  },
+  {
+   "scene": 6,
+   "text": "hammasini",
+   "start": 12.48,
+   "end": 12.94
+  },
+  {
+   "scene": 6,
+   "text": "oʻzgartirdi.",
+   "start": 13.0,
+   "end": 13.54
+  },
+  {
+   "scene": 7,
+   "text": "Bir",
+   "start": 13.98,
+   "end": 14.08
+  },
+  {
+   "scene": 7,
+   "text": "ming",
+   "start": 14.12,
+   "end": 14.24
+  },
+  {
+   "scene": 7,
+   "text": "sakkiz",
+   "start": 14.26,
+   "end": 14.58
+  },
+  {
+   "scene": 7,
+   "text": "yuz",
+   "start": 14.6,
+   "end": 14.7
+  },
+  {
+   "scene": 7,
+   "text": "toʻqson",
+   "start": 14.74,
+   "end": 15.04
+  },
+  {
+   "scene": 7,
+   "text": "birinchi",
+   "start": 15.08,
+   "end": 15.4
+  },
+  {
+   "scene": 7,
+   "text": "yili",
+   "start": 15.44,
+   "end": 15.66
+  },
+  {
+   "scene": 8,
+   "text": "Vilgelm",
+   "start": 15.92,
+   "end": 16.36
+  },
+  {
+   "scene": 8,
+   "text": "Brun",
+   "start": 16.44,
+   "end": 16.7
+  },
+  {
+   "scene": 8,
+   "text": "taksometrni",
+   "start": 16.86,
+   "end": 17.52
+  },
+  {
+   "scene": 8,
+   "text": "ixtiro",
+   "start": 17.58,
+   "end": 17.84
+  },
+  {
+   "scene": 8,
+   "text": "qildi.",
+   "start": 17.92,
+   "end": 18.16
+  },
+  {
+   "scene": 9,
+   "text": "U",
+   "start": 18.5,
+   "end": 18.52
+  },
+  {
+   "scene": 9,
+   "text": "masofa",
+   "start": 18.76,
+   "end": 19.2
+  },
+  {
+   "scene": 9,
+   "text": "yoki",
+   "start": 19.36,
+   "end": 19.58
+  },
+  {
+   "scene": 9,
+   "text": "vaqtni",
+   "start": 19.68,
+   "end": 20.0
+  },
+  {
+   "scene": 9,
+   "text": "oʻlchab,",
+   "start": 20.08,
+   "end": 20.44
+  },
+  {
+   "scene": 10,
+   "text": "yoʻl",
+   "start": 20.62,
+   "end": 20.8
+  },
+  {
+   "scene": 10,
+   "text": "haqini",
+   "start": 20.86,
+   "end": 21.16
+  },
+  {
+   "scene": 10,
+   "text": "oʻzi",
+   "start": 21.26,
+   "end": 21.44
+  },
+  {
+   "scene": 10,
+   "text": "hisoblardi.",
+   "start": 21.46,
+   "end": 22.02
+  },
+  {
+   "scene": 11,
+   "text": "Nemischa",
+   "start": 22.4,
+   "end": 22.86
+  },
+  {
+   "scene": 11,
+   "text": "«takse»",
+   "start": 23.12,
+   "end": 23.52
+  },
+  {
+   "scene": 11,
+   "text": "toʻlov,",
+   "start": 23.86,
+   "end": 24.2
+  },
+  {
+   "scene": 11,
+   "text": "yunoncha",
+   "start": 24.56,
+   "end": 25.02
+  },
+  {
+   "scene": 11,
+   "text": "«metron»",
+   "start": 25.3,
+   "end": 25.74
+  },
+  {
+   "scene": 11,
+   "text": "oʻlchov.",
+   "start": 26.08,
+   "end": 26.44
+  },
+  {
+   "scene": 12,
+   "text": "«Taksi»",
+   "start": 26.72,
+   "end": 27.08
+  },
+  {
+   "scene": 12,
+   "text": "shu",
+   "start": 27.38,
+   "end": 27.48
+  },
+  {
+   "scene": 12,
+   "text": "hisoblagichning",
+   "start": 27.56,
+   "end": 28.26
+  },
+  {
+   "scene": 12,
+   "text": "qisqa",
+   "start": 28.32,
+   "end": 28.56
+  },
+  {
+   "scene": 12,
+   "text": "nomi.",
+   "start": 28.62,
+   "end": 28.86
+  },
+  {
+   "scene": 13,
+   "text": "Taksida",
+   "start": 29.22,
+   "end": 29.64
+  },
+  {
+   "scene": 13,
+   "text": "doim",
+   "start": 29.84,
+   "end": 30.14
+  },
+  {
+   "scene": 13,
+   "text": "savdolashadigan",
+   "start": 30.2,
+   "end": 30.92
+  },
+  {
+   "scene": 13,
+   "text": "doʻstingizga",
+   "start": 30.96,
+   "end": 31.5
+  },
+  {
+   "scene": 13,
+   "text": "yuboring.",
+   "start": 31.56,
+   "end": 31.92
+  },
+  {
+   "scene": 14,
+   "text": "Siz-chi:",
+   "start": 32.3,
+   "end": 32.64
+  },
+  {
+   "scene": 14,
+   "text": "savdolashasizmi",
+   "start": 33.0,
+   "end": 33.84
+  },
+  {
+   "scene": 14,
+   "text": "yoki",
+   "start": 34.04,
+   "end": 34.3
+  },
+  {
+   "scene": 14,
+   "text": "hisoblagich",
+   "start": 34.46,
+   "end": 34.98
+  },
+  {
+   "scene": 14,
+   "text": "boʻyicha",
+   "start": 35.04,
+   "end": 35.28
+  },
+  {
+   "scene": 14,
+   "text": "toʻlaysizmi?",
+   "start": 35.3,
+   "end": 35.82
+  },
+  {
+   "scene": 15,
+   "text": "Izohda",
+   "start": 36.22,
+   "end": 36.54
+  },
+  {
+   "scene": 15,
+   "text": "yozing.",
+   "start": 36.58,
+   "end": 36.9
+  }
+ ],
+ "scene_start": {
+  "1": 0.0,
+  "2": 1.96,
+  "3": 4.02,
+  "4": 7.24,
+  "5": 8.8,
+  "6": 11.06,
+  "7": 13.98,
+  "8": 15.92,
+  "9": 18.5,
+  "10": 20.62,
+  "11": 22.4,
+  "12": 26.72,
+  "13": 29.22,
+  "14": 32.3,
+  "15": 36.22
+ }
+}
