@@ -876,63 +876,64 @@ def icon_dial(p, cx, cy, s, col, bg):
     p.rrect(cx - 6 * s, cy - 50 * s, cx + 6 * s, cy - 38 * s, 3 * s, col)
 
 
+AB = dict(x0=578, y0=842, bw=482, bh=356, rows=(96, 266))     # bubble box and row centres (bubble coords)
+
+
 def ab_bubble(f, t, t_in, t_a, t_b):
     sc_ = pop(t, t_in, 0.18)
     if sc_ <= 0.02: return None
-    bw, bh = 520, 460
-    cx, cy = 800, 880
+    bw, bh = AB['bw'], AB['bh']
     img = Image.new('RGBA', (bw + 120, bh + 120), (0, 0, 0, 0))
     p = Pen(img.width, img.height, 1.0, 60, 60, ss=2)
-    p.rrect(0, 0, bw, bh, 56, A_(CREAM))
-    p.poly([(4, 210), (4, 290), (-52, 268)], A_(CREAM))
+    p.rrect(0, 0, bw, bh, 52, A_(CREAM))
+    p.poly([(4, 22), (4, 92), (-58, 30)], A_(CREAM))                  # tail toward the hero's face
     hiA = max(0.5, smooth(ramp(t, t_a, t_a + 0.12))) * (t >= t_a) * (1 - smooth(ramp(t, t_b - 1 / FPS, t_b + 0.1)))
     hiB = max(0.5, smooth(ramp(t, t_b, t_b + 0.12))) * (t >= t_b)
-    rows = ((115, 'A', 'Savdo', hiA, 'hand'), (330, 'B', 'Hisoblagich', hiB, 'dial'))
+    rows = ((AB['rows'][0], 'A', 'Savdo', hiA, 'hand'), (AB['rows'][1], 'B', 'Hisoblagich', hiB, 'dial'))
     for (ry, L, label, hi, ic) in rows:
         if hi > 0.01:
-            p.rrect(22, ry - 82, bw - 22, ry + 82, 44, A_(mix(CREAM, ACCENT, 0.24 * hi)))
-        p.circle(70, ry, 36, A_(mix(INK, ACCENT, hi)))
+            p.rrect(16, ry - 74, bw - 16, ry + 74, 40, A_(mix(CREAM, ACCENT, 0.24 * hi)))
+        p.circle(62, ry, 34, A_(mix(INK, ACCENT, hi)))
         bgc = A_(mix(CREAM, ACCENT, 0.24 * hi))
-        if ic == 'hand': icon_handshake(p, 160, ry, 0.82, A_(ACCENT), bgc)
-        else: icon_dial(p, 160, ry, 0.85, A_(ACCENT), bgc)
+        if ic == 'hand': icon_handshake(p, 146, ry, 0.76, A_(ACCENT), bgc)
+        else: icon_dial(p, 146, ry, 0.8, A_(ACCENT), bgc)
     im = p.result()
     d = ImageDraw.Draw(im)
     for (ry, L, label, hi, ic) in rows:
-        d.text((60 + 70, 60 + ry + 2), L, font=P.font(P.FONT_BL, 42), fill=A_(CREAM), anchor='mm')
-        d.text((60 + 216, 60 + ry), label, font=P.font(P.FONT_XB, 54 if label == 'Savdo' else 47), fill=A_(INK), anchor='lm')
+        d.text((60 + 62, 60 + ry + 2), L, font=P.font(P.FONT_BL, 40), fill=A_(CREAM), anchor='mm')
+        d.text((60 + 196, 60 + ry), label, font=P.font(P.FONT_XB, 52 if label == 'Savdo' else 44), fill=A_(INK), anchor='lm')
     if sc_ != 1: im = im.resize((max(1, int(im.width * sc_)), max(1, int(im.height * sc_))), Image.BICUBIC)
-    x0, y0 = cx - bw / 2 - 60, cy - bh / 2 - 60
-    comp(f, im, (x0 + (bw + 120) * (1 - sc_) * 0.0 + (img.width - im.width) / 2, y0 + (img.height - im.height) / 2))
-    return {'A': (cx - bw / 2 - 8, cy - bh / 2 + 125), 'B': (cx - bw / 2 - 8, cy - bh / 2 + 340)}
+    cx, cy = AB['x0'] + bw / 2, AB['y0'] + bh / 2
+    comp(f, im, (cx - im.width / 2, cy - im.height / 2))
+    return {'A': (AB['x0'], AB['y0'] + AB['rows'][0]), 'B': (AB['x0'], AB['y0'] + AB['rows'][1])}
 
 
 def s14(i, t, lt, dur):
     env = ENV('A14'); pal = PAL['A']; cx = 400 + 18 * lt
     t_in, t_a, t_b = wt(14, 'siz'), wt(14, 'savdolashasizmi'), wt(14, 'hisoblagich')
     f = base_A(env, pal, t, cx, 0, sun=(880, 1180 + 3 * lt, 330))
-    probe = Image.new('RGBA', (W, H)); targets = ab_bubble(probe, t, t_in, t_a, t_b) if t >= t_in - 1 / FPS else None
-    hx0, gy, s = 290, 2280, 2.6
-    S = (hx0 + 2 * s, gy - 452 * s)
-    turn = smooth(ramp(t, t_in, t_in + 0.35)) * 0.85
-    # arm: rest -> point A (arrives on 'savdolashasizmi') -> point B (arrives on 'hisoblagich')
-    rest = (14, 26)
-    def aim(tp):
-        T = ((tp[0] - S[0]) / s, (tp[1] - S[1]) / s)
-        return ik2((0, 0), T, 118, 104 + 46, prefer=-1)
-    aA = aim(targets['A']) if targets else rest
-    aB = aim(targets['B']) if targets else rest
-    gA = smooth(ramp(t, t_a - 0.14, t_a)); gB = smooth(ramp(t, t_b - 0.14, t_b))
+    hx0, gy, s = 150, 2020, 2.2                     # waist-up, side view, hero on the left
+    S = (2, -452)                                   # front shoulder (design units)
+    turn = smooth(ramp(t, t_in, t_in + 0.35)) * 0.3     # gentle turn toward the camera (face stays readable)
+    rest = (12, 24)
+    def aim(row):
+        """elbow stays low by the body; the wrist stops just left of the option row; the finger points at it"""
+        tx = (AB['x0'] - 10 - hx0) / s - 50; ty = (AB['y0'] + AB['rows'][row] - gy) / s
+        return ik2(S, (tx, ty), 118, 104, prefer=-1)
+    aA, aB = aim(0), aim(1)
+    gA = smooth(ramp(t, t_a - 0.16, t_a)); gB = smooth(ramp(t, t_b - 0.16, t_b))
     a1 = lerp(lerp(rest[0], aA[0], gA), aB[0], gB); e = lerp(lerp(rest[1], aA[1], gA), aB[1], gB)
-    hand = 'point' if gA > 0.5 else 'open'
-    pose = dict(fa=(a1, e, hand), ba=(-4, 12, 'open'), turn=turn, nod=-3 * turn + 1.5 * math.sin(t * 2.4),
-                breathe=0.5 + 0.5 * math.sin(t * 2.0))
+    pointing = gA > 0.5
+    hdir = (1.0, -0.04) if pointing else None
+    pose = dict(fa=(a1, e, 'point' if pointing else 'open'), ba=(-4, 12, 'open'), turn=turn, hand_dir=hdir,
+                nod=-2 * turn + 1.2 * math.sin(t * 2.4), breathe=0.5 + 0.5 * math.sin(t * 2.0))
     info = put_hero(f, pose, hx0, gy, s)
     ab_bubble(f, t, t_in, t_a, t_b)
-    if hand == 'point' and 'hand' in info:      # the pointing hand stays in front of the bubble
+    if pointing and 'hand' in info:      # the pointing finger stays in front of the bubble edge
         hp = Pen(W, H, s, hx0, gy, ss=2)
         HR.draw_hand(hp, info['hand'], info['hand_dir'], 'point', A_(HR.C['SKIN']))
         f.alpha_composite(hp.result())
-    return zoom(f, 1 + 0.04 * smooth(lt / dur), 540, 880)
+    return zoom(f, 1 + 0.04 * smooth(lt / dur), 540, 900)
 
 
 def s15(i, t, lt, dur):

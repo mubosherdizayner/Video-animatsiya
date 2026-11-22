@@ -56,7 +56,7 @@ def draw_hand(p, Wr, d, kind, col):
         p.capsule((Wr[0] + n[0] * 9, Wr[1] + n[1] * 9), (Wr[0] + n[0] * 13 + d[0] * 14, Wr[1] + n[1] * 13 + d[1] * 14), 8, 7, col)
 
 
-def draw_arm(p, S, a1, e, hand='open', back=False, cm=C, w=1.0):
+def draw_arm(p, S, a1, e, hand='open', back=False, cm=C, w=1.0, hand_dir=None):
     E, Wr, d2 = arm_points(S, a1, e)
     if HIDE: return Wr, d2
     sl = cm['CH_D'] if back else cm['CH']
@@ -70,8 +70,11 @@ def draw_arm(p, S, a1, e, hand='open', back=False, cm=C, w=1.0):
         p.capsule((S[0] + n1[0] * 13 + d1[0] * 10, S[1] + n1[1] * 13 + d1[1] * 10), (E[0] + n1[0] * 12, E[1] + n1[1] * 12), 9, 8, cm['CH_L'])
     p.capsule((Wr[0] - d2[0] * 16, Wr[1] - d2[1] * 16), C0, 50 * w, 52 * w, cuff)
     Wh = (Wr[0] + d2[0] * 2, Wr[1] + d2[1] * 2)
-    draw_hand(p, Wh, d2, hand, skin)
-    return Wh, d2
+    hd = d2
+    if hand_dir is not None:      # wrist bend: the hand points its own way
+        L = math.hypot(*hand_dir); hd = (hand_dir[0] / L, hand_dir[1] / L)
+    draw_hand(p, Wh, hd, hand, skin)
+    return Wh, hd
 
 
 def pepper(p, cx, cy, s, col, flip=1):
@@ -194,7 +197,7 @@ def draw_hero(p, pose=None, cm=C):
     # front arm
     out = {}
     if pose.get('arms', True) and fa:
-        out['hand'], out['hand_dir'] = draw_arm(p, S_f, fa[0], fa[1], fa[2], back=False, cm=cm)
+        out['hand'], out['hand_dir'] = draw_arm(p, S_f, fa[0], fa[1], fa[2], back=False, cm=cm, hand_dir=pose.get('hand_dir'))
     return out
 
 
