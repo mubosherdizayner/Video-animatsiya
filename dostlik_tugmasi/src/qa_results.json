@@ -1,0 +1,72 @@
+[
+ {
+  "check": "t=3.67s 'million': scene 2 shown, subtitle highlights ['million']",
+  "pass": true,
+  "info": "frame 110, orange pixels in word box 25%, outside box 0"
+ },
+ {
+  "check": "t=8.59s 'hayotidan': scene 5 shown, subtitle highlights ['hayotidan']",
+  "pass": true,
+  "info": "frame 257, orange pixels in word box 25%, outside box 0"
+ },
+ {
+  "check": "t=18.03s 'stuli': scene 11 shown, subtitle highlights ['stuli']",
+  "pass": true,
+  "info": "frame 540, orange pixels in word box 25%, outside box 0"
+ },
+ {
+  "check": "t=27.66s 'repost': scene 15 shown, subtitle highlights ['repost']",
+  "pass": true,
+  "info": "frame 829, orange pixels in word box 24%, outside box 0"
+ },
+ {
+  "check": "frame 0 shows the hook visual and hook text",
+  "pass": true,
+  "info": "hook-text ink coverage 23%, button-red px 2428, mean luma 151, timer 20, frame0-vs-3 PSNR 30.2 dB (moving)"
+ },
+ {
+  "check": "last frame matches the frame-0 composition (loop)",
+  "pass": true,
+  "info": "PSNR first vs last = 41.7 dB"
+ },
+ {
+  "check": "timer shows 0 exactly at the first word of scene 13",
+  "pass": true,
+  "info": "'Javob' onset 21.210s = frame 636; timer 1 -> 0"
+ },
+ {
+  "check": "video duration equals audio duration",
+  "pass": true,
+  "info": "video 34.033s (1021 frames), audio track 34.037s, voice-over 34.038s"
+ },
+ {
+  "check": "format: h264 1080x1920 30 fps yuv420p + aac",
+  "pass": true,
+  "info": "h264,1080,1920,yuv420p,30/1 / aac"
+ },
+ {
+  "check": "voice clearly audible over sfx (no music)",
+  "pass": true,
+  "info": "sfx peak -18.0 dB re voice peak, voice RMS 21.6 dB above sfx, extra -6 dB duck under speech"
+ },
+ {
+  "check": "no water appears in any scene",
+  "pass": true,
+  "info": "no water shapes in the scene code"
+ },
+ {
+  "check": "no subtitle or plate goes outside the frame or the safe zone",
+  "pass": true,
+  "info": "2924 plate/bubble/stamp draws checked against x 40-1040, y 220-1560"
+ },
+ {
+  "check": "every cta scene shows its icon and the hero's gesture while the cta words are spoken",
+  "pass": true,
+  "info": "scene 14 'yubor...' frames 683-693: icon 11/11, gesture 11/11; scene 15 'repost qil.' frames 823-840: icon 18/18, gesture 18/18; scene 17 'Obuna bo'l,' frames 962-980: icon 19/19, gesture 19/19"
+ },
+ {
+  "check": "hero's green chapan is the most saturated colour in every frame (non-accent colours)",
+  "pass": true,
+  "info": "chapan chroma C*=27.4 (rendered median 27.4); highest chroma of every other non-accent colour (friend, cash, crowd, sky, layers, plates) p99.9 = 16.4 at frame 570; the warm accents named in the brief (button red, sun, gold, belt, orange UI) are excluded and reach C*=75"
+ }
+]
