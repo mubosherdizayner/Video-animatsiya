@@ -148,20 +148,55 @@ def button(cv, x, y, s, t, glow_a=1.0, press=0.0, pulse=True):
     ellipse(cv, x - 16 * s, y - 18 * s - h, 22 * s, 7 * s, "#D9735A", 0.8)
     return y - 14 * s - h
 
-def cash_stack(cv, x, y, s, n, c="#5E7266", band="#D9CFBA", band_a=0.9):
-    """n flat cash bundles stacked; (x, y) = bottom centre"""
-    bw, bh = 120 * s, 26 * s
+CASH = "#80A287"; CASH_D = "#6F9077"; CASH_EDGE = "#D7E6D2"; CASH_FACE = "#B3CDB0"; CASH_INK = "#4E6B55"
+
+def cash_stack(cv, x, y, s, n, t=0.0, seed=0):
+    """n cash bundles stacked; (x, y) = bottom centre. Light dollar-green notes, paper edges, gold band with '$'
+    (the green stays less saturated than the hero's chapan; the eye-catch comes from value, gold and sparkle)."""
+    bw, bh = 128 * s, 24 * s
     for i in range(n):
-        yy = y - (i + 1) * (bh + 3 * s)
-        off = ((i * 37) % 11 - 5) * s
-        rrect(cv, x - bw / 2 + off, yy, bw, bh, 4 * s, c if i % 2 == 0 else mix(c, "#000000", 0.08))
-        rrect(cv, x - 12 * s + off, yy, 24 * s, bh, 2 * s, band, band_a)
+        yy = y - (i + 1) * (bh + 2 * s)
+        off = ((i * 37 + seed * 13) % 11 - 5) * s
+        x0 = x - bw / 2 + off
+        rrect(cv, x0, yy, bw, bh, 4 * s, CASH if i % 2 == 0 else CASH_D)
+        for j in (1, 2):
+            line(cv, [(x0 + 5 * s, yy + j * bh / 3), (x0 + bw - 5 * s, yy + j * bh / 3)], CASH_EDGE, 1.6 * s, 0.6)
+        rrect(cv, x0 + 3 * s, yy + 2 * s, bw - 6 * s, 3 * s, 1.5 * s, CASH_EDGE, 0.75)          # top paper edge
+        rrect(cv, x - 15.5 * s + off, yy - 1 * s, 31 * s, bh + 2 * s, 3.5 * s, CASH_EDGE)     # cream rim keeps gold off the green
+        rrect(cv, x - 13 * s + off, yy - 1 * s, 26 * s, bh + 2 * s, 3 * s, "#C7A548")        # gold band
+        text(cv, "$", x + off, yy + bh / 2, bh * 0.72, "#7A6424")
+    if n > 0:
+        # the top note shows its face: oval emblem + corner marks
+        yy = y - n * (bh + 2 * s); off = (((n - 1) * 37 + seed * 13) % 11 - 5) * s
+        ellipse(cv, x - 36 * s + off, yy + bh / 2, 13 * s, 8 * s, CASH_FACE)
+        ellipse(cv, x + 36 * s + off, yy + bh / 2, 13 * s, 8 * s, CASH_FACE)
+
+def banknote(cv, x, y, s, rot, flip, a=1.0):
+    """single flat note fluttering (flip = x-scale from turning in the air)"""
+    with xf(cv, x, y, s, rot, sx=s * max(0.15, abs(flip))):
+        with layer_alpha(cv, a):
+            rrect(cv, -60, -28, 120, 56, 6, CASH if flip >= 0 else CASH_D)
+            cv.drawRRect(skia.RRect.MakeRectXY(skia.Rect.MakeLTRB(-52, -20, 52, 20), 4, 4), paint(CASH_EDGE, 0.8, stroke=3))
+            ellipse(cv, 0, 0, 16, 16, CASH_FACE)
+            text(cv, "$", 0, 0, 24, CASH_INK)
+            rrect(cv, -46, -6, 12, 12, 3, CASH_EDGE); rrect(cv, 34, -6, 12, 12, 3, CASH_EDGE)
+
+def sparkle(cv, x, y, r, a=1.0, c="#FFF6DC"):
+    if a <= 0.01 or r <= 0.5: return
+    k = r * 0.22
+    poly(cv, [(x, y - r), (x + k, y - k), (x + r, y), (x + k, y + k), (x, y + r), (x - k, y + k), (x - r, y), (x - k, y - k)], c, a)
 
 def coin(cv, x, y, r, spin=0.0, a=1.0):
-    sx = max(0.12, abs(math.cos(spin)))
+    """gold coin with rim, embossed '$' and a glint when it faces the camera"""
+    cs = math.cos(spin); sx = max(0.12, abs(cs))
     with xf(cv, x, y, 1, 0, None):
-        ellipse(cv, 0, 0, r * sx, r, "#C7A548", a)
-        ellipse(cv, 0, 0, r * sx * 0.62, r * 0.62, "#B39237", a * 0.9)
+        ellipse(cv, 0, 0, r * sx, r, "#A88A38", a)
+        ellipse(cv, -r * 0.06 * sx, -r * 0.04, r * sx * 0.88, r * 0.88, "#D6B54F", a)
+        if sx > 0.45:
+            with xf(cv, 0, 0, 1, 0, sx=sx):
+                text(cv, "$", 0, 0, r * 1.05, "#A88A38", a * 0.85)
+        ellipse(cv, -r * 0.35 * sx, -r * 0.42, r * 0.22 * sx, r * 0.13, "#F6E7A8", a * 0.9)
+    if sx > 0.9: sparkle(cv, x + r * 0.5, y - r * 0.6, r * 0.7 * (sx - 0.9) * 10, a)
 
 def chain(cv, pts, s, c="#C7A548", a=1.0):
     """flat gold chain along a polyline: alternating flat / edge-on links"""

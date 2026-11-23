@@ -108,10 +108,24 @@ def scene2(cv, t, lt, dur):
     wind = wind_at(t)
     steppe_layers(cv, cam, P, t, wind=wind, sun_xy=(800, 985), sun_r=235)
     with at_layer(cv, cam, 1.0):
+        # warm gold glow grows behind the money as it rises
+        grow = ease_out(lt / 1.0)
+        pulse = 0.85 + 0.15 * math.sin(t * 6.0)
+        glow(cv, 690, NEAR1.y(690) - 120, 330, "#E9B949", 0.55 * grow * pulse)
+        glow(cv, 690, NEAR1.y(690) - 60, 190, "#F6D774", 0.45 * grow * pulse)
         # cash stacks rise from the ground behind the pedestal
-        for k, (sx, n_max, d0) in enumerate([(560, 7, 0.05), (742, 9, 0.18), (812, 6, 0.3), (612, 11, 0.42), (690, 13, 0.25)]):
+        stacks = [(560, 7, 0.05), (742, 9, 0.18), (812, 6, 0.3), (612, 11, 0.42), (690, 13, 0.25)]
+        for k, (sx, n_max, d0) in enumerate(stacks):
             n = int(round(n_max * ease_out((lt - d0) / 0.9)))
-            if n > 0: cash_stack(cv, sx, NEAR1.y(sx) + 10, 0.55, n)
+            if n > 0: cash_stack(cv, sx, NEAR1.y(sx) + 10, 0.55, n, t, k)
+        # sparkles twinkling on the stack tops
+        for k, (sx, n_max, d0) in enumerate(stacks):
+            n = int(round(n_max * ease_out((lt - d0) / 0.9)))
+            if n < 2: continue
+            topy = NEAR1.y(sx) + 10 - n * (26 * 0.55 + 1.1)
+            for j in range(2):
+                ph = (t * 1.7 + k * 0.37 + j * 0.5) % 1.0
+                sparkle(cv, sx + (j * 50 - 25) * 0.55 + 8 * math.sin(k + j), topy - 8 - 10 * j, 13 * math.sin(math.pi * ph), 0.95)
     near_ground(cv, cam, P, t, NEAR1, wind=wind)
     with at_layer(cv, cam, 1.0):
         gy = NEAR1.y(PED1_X)
@@ -137,7 +151,17 @@ def scene2(cv, t, lt, dur):
         if tt < 0: continue
         y = -40 + v * tt + 300 * tt * tt
         if y > 1310: continue
-        coin(cv, x, y, rng.uniform(13, 20), spin * tt)
+        coin(cv, x, y, rng.uniform(15, 23), spin * tt)
+    # a few banknotes flutter down between the coins
+    rng = np.random.default_rng(33)
+    for k in range(9):
+        x = rng.uniform(140, 960); d0 = rng.uniform(0.05, 1.3); v = rng.uniform(260, 380); ph = rng.uniform(0, 6.28)
+        tt = lt - d0
+        if tt < 0: continue
+        y = -60 + v * tt
+        if y > 1300: continue
+        xx = x + 60 * math.sin(tt * 2.4 + ph)
+        banknote(cv, xx, y, rng.uniform(0.75, 1.0), 25 * math.sin(tt * 3.1 + ph), math.cos(tt * 4.2 + ph))
 
 # ---------------------------------------------------------------- 3. the hero on the next crest
 HERO3_X = 1700

@@ -42,6 +42,13 @@ for mod in (gfx, world, SC, R):
     if hasattr(mod, "bubble"): mod.bubble = bubble_logged
     if hasattr(mod, "rrect_stroke"): mod.rrect_stroke = rrs_logged
 
+import hero as HR
+_dp = SC.draw_person
+def dp_logged(cv, *a, **k):
+    if k.get("C", a[3] if len(a) > 3 else HR.HERO) is HR.HERO: SC.QA["hero"] = True
+    return _dp(cv, *a, **k)
+SC.draw_person = dp_logged
+
 def instrument(i):
     LOG.clear()
     R.compose(i)
@@ -143,11 +150,14 @@ if __name__ == "__main__":
     # 5. hero's green chapan = most saturated colour: every non-hero, non-accent pixel stays below the chapan's chroma
     Lc, ac, bc = lab(np.array([[[0x3F, 0x7B, 0x61]]], np.uint8)); c_ref = float(np.hypot(ac, bc)[0, 0])
     worst = []; acc_max = 0; hero_c = []
-    for i in range(0, N_FRAMES, 10):
+    hero_in = {i for i, _, qa in out if qa.get("hero")}
+    frames5 = sorted(set(range(0, N_FRAMES, 10)) | set(range(SC_FRAME[2], SC_END_FRAME[2], 3)))
+    for i in frames5:
         fr = frame_from_video(i)
         L_, a_, b_ = lab(fr[::2, ::2]); C = np.hypot(a_, b_); hue = (np.degrees(np.arctan2(b_, a_)) + 360) % 360
         warm = (hue > 15) & (hue < 112)                  # spec accents: button red, sun, gold, belt, orange UI, warm lights
-        hero_green = (hue >= 112) & (hue <= 190) & (C > 16)   # only the hero wears green (cash/env greens are C* < 12)
+        # green pixels are excused only in frames where the hero is actually drawn (cash shots have no hero)
+        hero_green = (hue >= 112) & (hue <= 190) & (C > 16) & (i in hero_in)
         rest = C[~warm & ~hero_green]
         worst.append((float(np.percentile(rest, 99.9)) if rest.size else 0.0, i))
         if hero_green.sum() > 200: hero_c.append(float(np.median(C[hero_green])))
@@ -155,7 +165,8 @@ if __name__ == "__main__":
     w_max = max(worst)
     ok("hero's green chapan is the most saturated colour in every frame (non-accent colours)", w_max[0] < c_ref,
        f"chapan chroma C*={c_ref:.1f} (rendered median {np.median(hero_c):.1f}); highest chroma of every other non-accent colour "
-       f"(friend, cash, crowd, sky, layers, plates) p99.9 = {w_max[0]:.1f} at frame {w_max[1]}; the warm accents named in the "
+       f"(friend, cash, crowd, sky, layers, plates) p99.9 = {w_max[0]:.1f} at frame {w_max[1]}; cash frames {SC_FRAME[2]}-{SC_END_FRAME[2] - 1}: "
+       f"p99.9 {max(v for v, i in worst if SC_FRAME[2] <= i < SC_END_FRAME[2]):.1f}; the warm accents named in the "
        f"brief (button red, sun, gold, belt, orange UI) are excluded and reach C*={acc_max:.0f}")
     json.dump(res, open(os.path.join(OUTDIR, "qa_results.json"), "w"), ensure_ascii=False, indent=1)
     print(f"{sum(r['pass'] for r in res)}/{len(res)} checks passed")
