@@ -148,11 +148,12 @@ def button(cv, x, y, s, t, glow_a=1.0, press=0.0, pulse=True):
     ellipse(cv, x - 16 * s, y - 18 * s - h, 22 * s, 7 * s, "#D9735A", 0.8)
     return y - 14 * s - h
 
-CASH = "#80A287"; CASH_D = "#6F9077"; CASH_EDGE = "#D7E6D2"; CASH_FACE = "#B3CDB0"; CASH_INK = "#4E6B55"
+# deep dollar green (user request: the money may out-saturate the hero's chapan)
+CASH = "#1F7A45"; CASH_D = "#17663A"; CASH_EDGE = "#C4E3B8"; CASH_FACE = "#5DAE72"; CASH_INK = "#0E4527"
 
 def cash_stack(cv, x, y, s, n, t=0.0, seed=0):
     """n cash bundles stacked; (x, y) = bottom centre. Light dollar-green notes, paper edges, gold band with '$'
-    (the green stays less saturated than the hero's chapan; the eye-catch comes from value, gold and sparkle)."""
+    (deep dollar green, by request more saturated than the hero's chapan)."""
     bw, bh = 128 * s, 24 * s
     for i in range(n):
         yy = y - (i + 1) * (bh + 2 * s)

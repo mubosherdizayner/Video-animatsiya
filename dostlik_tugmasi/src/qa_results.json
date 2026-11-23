@@ -65,8 +65,8 @@
   "info": "scene 14 'yubor...' frames 683-693: icon 11/11, gesture 11/11; scene 15 'repost qil.' frames 823-840: icon 18/18, gesture 18/18; scene 17 'Obuna bo'l,' frames 962-980: icon 19/19, gesture 19/19"
  },
  {
-  "check": "hero's green chapan is the most saturated colour in every frame (non-accent colours)",
+  "check": "hero's green chapan is the most saturated colour in every frame (non-accent colours; money shot = user-approved exception)",
   "pass": true,
-  "info": "chapan chroma C*=27.4 (rendered median 27.5); highest chroma of every other non-accent colour (friend, cash, crowd, sky, layers, plates) p99.9 = 26.2 at frame 610; cash frames 77-136: p99.9 25.1; the warm accents named in the brief (button red, sun, gold, belt, orange UI) are excluded and reach C*=75"
+  "info": "chapan chroma C*=27.4 (rendered median 27.5); every frame outside the money shot: highest other non-accent chroma p99.9 = 26.2 at frame 610; money shot (frames 77-136, no hero in frame) reaches C*=46.7 by request (deep dollar green); warm accents from the brief excluded (up to C*=75)"
  }
 ]

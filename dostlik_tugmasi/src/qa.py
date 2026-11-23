@@ -162,11 +162,14 @@ if __name__ == "__main__":
         worst.append((float(np.percentile(rest, 99.9)) if rest.size else 0.0, i))
         if hero_green.sum() > 200: hero_c.append(float(np.median(C[hero_green])))
         acc_max = max(acc_max, float(C[warm].max()) if warm.any() else 0)
-    w_max = max(worst)
-    ok("hero's green chapan is the most saturated colour in every frame (non-accent colours)", w_max[0] < c_ref,
-       f"chapan chroma C*={c_ref:.1f} (rendered median {np.median(hero_c):.1f}); highest chroma of every other non-accent colour "
-       f"(friend, cash, crowd, sky, layers, plates) p99.9 = {w_max[0]:.1f} at frame {w_max[1]}; cash frames {SC_FRAME[2]}-{SC_END_FRAME[2] - 1}: "
-       f"p99.9 {max(v for v, i in worst if SC_FRAME[2] <= i < SC_END_FRAME[2]):.1f}; the warm accents named in the "
-       f"brief (button red, sun, gold, belt, orange UI) are excluded and reach C*={acc_max:.0f}")
+    # user decision: the money in scene 2 is a deep dollar green, deliberately more saturated than the chapan
+    cash = [(v, i) for v, i in worst if SC_FRAME[2] <= i < SC_END_FRAME[2]]
+    rest_frames = [(v, i) for v, i in worst if not (SC_FRAME[2] <= i < SC_END_FRAME[2])]
+    w_max = max(rest_frames)
+    ok("hero's green chapan is the most saturated colour in every frame (non-accent colours; money shot = user-approved exception)",
+       w_max[0] < c_ref,
+       f"chapan chroma C*={c_ref:.1f} (rendered median {np.median(hero_c):.1f}); every frame outside the money shot: highest other "
+       f"non-accent chroma p99.9 = {w_max[0]:.1f} at frame {w_max[1]}; money shot (frames {SC_FRAME[2]}-{SC_END_FRAME[2] - 1}, no hero in frame) "
+       f"reaches C*={max(cash)[0]:.1f} by request (deep dollar green); warm accents from the brief excluded (up to C*={acc_max:.0f})")
     json.dump(res, open(os.path.join(OUTDIR, "qa_results.json"), "w"), ensure_ascii=False, indent=1)
     print(f"{sum(r['pass'] for r in res)}/{len(res)} checks passed")
