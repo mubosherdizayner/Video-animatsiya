@@ -1,0 +1,92 @@
+[
+ {
+  "check": "format: mp4 h264 1080x1920 30 fps yuv420p + aac",
+  "pass": true,
+  "info": "h264,1080,1920,yuv420p,30/1 / aac"
+ },
+ {
+  "check": "video duration equals audio duration",
+  "pass": true,
+  "info": "video 44.533 s (1336 frames), audio track 44.525 s, source voice-over 44.513 s"
+ },
+ {
+  "check": "subtitles use the script text (not the transcript), all words in order",
+  "pass": true,
+  "info": "80 words in 32 lines"
+ },
+ {
+  "check": "on-screen texts match the script",
+  "pass": true,
+  "info": "1: 90% — SOTADI; 2: VOZ KECHDI; 3: ORZULAR; 5: OʻCHIRILDI; 6: 2-RAUND; 7: +$1 000 000; 8: EVAZIGA — U; 9: $0; 10: $2 000 000; 11: 1-RAUNDDA — SIZ. ENDI — U?; 12: IZOHDA: 1 — QIZ · 2 — PUL; 13: UNGA YUBOR ✈️; 14: NATIJA — KEYINGI VIDEODA"
+ },
+ {
+  "check": "font renders oʻ gʻ ʼ (U+02BB/U+02BC) and every script character; ✈️ drawn as a flat #E7A05C icon",
+  "pass": true,
+  "info": "Nunito 800/900"
+ },
+ {
+  "check": "each word is highlighted exactly when spoken (offset <= 1 frame)",
+  "pass": true,
+  "info": "max word-onset offset 16.7 ms (< half a frame), shortest highlight 4 frames; timing = MMS CTC forced alignment of the script"
+ },
+ {
+  "check": "every scene starts at the first word of its text (<= 1 frame)",
+  "pass": true,
+  "info": "1:0f/0.00s, 2:143f/4.76s, 3:232f/7.74s, 4:292f/9.73s, 5:366f/12.21s, 6:427f/14.23s, 7:486f/16.18s, 8:618f/20.61s, 9:718f/23.94s, 10:821f/27.37s, 11:900f/30.00s, 12:992f/33.08s, 13:1136f/37.88s, 14:1272f/42.41s"
+ },
+ {
+  "check": "cut exactly at 'semichka' (scene 4)",
+  "pass": true,
+  "info": "word at 9.730 s -> frame 292; mean pixel change into frame 292: 33.4, next frame: 0.2"
+ },
+ {
+  "check": "cut exactly at 'hammasi' (scene 5)",
+  "pass": true,
+  "info": "word at 12.205 s -> frame 366; mean pixel change into frame 366: 8.7, next frame: 1.3"
+ },
+ {
+  "check": "cut exactly at 'qanday' (scene 13 shot 2)",
+  "pass": true,
+  "info": "word at 40.392 s -> frame 1212; mean pixel change into frame 1212: 9.6, next frame: 0.1"
+ },
+ {
+  "check": "4 timestamps: subtitle and scene match the spoken word",
+  "pass": true,
+  "info": "t=6.16s f185: spoken 'sizdan' -> subtitle 'sizdan', scene 2 (script scene 2), video vs render PSNR 42.4 dB | t=18.48s f554: spoken 'Bossa —' -> subtitle 'Bossa —', scene 7 (script scene 7), video vs render PSNR 41.7 dB | t=34.27s f1028: spoken 'bir,' -> subtitle 'bir,', scene 12 (script scene 12), video vs render PSNR 42.1 dB | t=40.45s f1214: spoken 'qanday' -> subtitle 'qanday', scene 13 (script scene 13), video vs render PSNR 42.8 dB"
+ },
+ {
+  "check": "frame 0 shows the hook visual in motion and the hook text (no fade from black, no title card)",
+  "pass": true,
+  "info": "scene 1, headline '90% — SOTADI' drawn, palm on red button, hero dissolved to 25% of his height, 406 dust particles already flying, banknotes falling; mean brightness 167; frame0->1 change 0.40"
+ },
+ {
+  "check": "scene 12: points at the girl's road on 'bir', at the money on 'ikki'; bubble appears on 'Izohga'",
+  "pass": true,
+  "info": "left arm raise at 'bir' frame 1026: 1.00; right arm at 'ikki' frame 1075: 1.00; bubble pixels frame 1099: 0, frame 1100 ('Izohga'): 78575"
+ },
+ {
+  "check": "every CTA shows its icon and the hero's gesture while the CTA words are spoken",
+  "pass": true,
+  "info": "'Izohga yozing' frames 1100-1123: icon px min 67520, gesture active 8/8 samples; 'Unga yuboring' frames 1178-1200: icon px min 363, gesture active 8/8 samples; throw starts on 'yuboring' frame 1187, plane leaves frame ~1201"
+ },
+ {
+  "check": "voice clearly audible over SFX (no music)",
+  "pass": true,
+  "info": "SFX bus 21.3 dB under the voice (RMS), ducked -8 dB under speech; SFX peak during speech -32.7 dBFS vs voice RMS -27.8 dBFS (before final loudness normalisation)"
+ },
+ {
+  "check": "no subtitle goes outside the frame (and stays in the safe zone)",
+  "pass": true,
+  "info": "all 32 lines: plate x 86..994, y 1413..1537 (frame 1080x1920; bottom 360 px left for platform UI)"
+ },
+ {
+  "check": "hero's green chopon is the most saturated colour in every frame he is in",
+  "pass": true,
+  "info": "87 frames with the hero visible (every 6th of 558 hero-scene frames; 6 skipped: hero fully dissolved/erased); chopon C*ab 27.4; highest environment/prop chroma 23.0 (frame 18); accent hexes are chroma-capped at 22 in hero frames; the hero's own belt/gold trim keep their spec colours; overlays (subtitles/headline) not part of the scene"
+ },
+ {
+  "check": "last frame leads back into the first (loop)",
+  "pass": true,
+  "info": "last frame = frozen finger over the golden button (button x 480, hand from the upper left), frozen since 'aytaman' (diff 0.00); frame 0 = palm pressed on the red button at x 470, same direction and spot: the press completes and round one restarts"
+ }
+]

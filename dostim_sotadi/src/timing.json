@@ -1,0 +1,681 @@
+{
+ "frame_dur": 0.02000570224719101,
+ "words": [
+  {
+   "scene": 1,
+   "text": "Toʻqson",
+   "first": true,
+   "start": 0.02,
+   "end": 0.48,
+   "ctc_start": 0.1,
+   "whisper_start": 0.0
+  },
+  {
+   "scene": 1,
+   "text": "foiz",
+   "first": false,
+   "start": 0.52,
+   "end": 0.78,
+   "whisper_start": 0.42
+  },
+  {
+   "scene": 1,
+   "text": "odam",
+   "first": false,
+   "start": 0.88,
+   "end": 1.08,
+   "whisper_start": 1.02
+  },
+  {
+   "scene": 1,
+   "text": "aytdi:",
+   "first": false,
+   "start": 1.16,
+   "end": 1.52,
+   "ctc_start": 1.2,
+   "whisper_start": 1.02
+  },
+  {
+   "scene": 1,
+   "text": "doʻstingiz",
+   "first": false,
+   "start": 1.95,
+   "end": 2.541,
+   "ctc_start": 2.021,
+   "whisper_start": 1.7
+  },
+  {
+   "scene": 1,
+   "text": "sizni",
+   "first": false,
+   "start": 2.581,
+   "end": 2.861,
+   "whisper_start": 2.46
+  },
+  {
+   "scene": 1,
+   "text": "million",
+   "first": false,
+   "start": 3.001,
+   "end": 3.381,
+   "whisper_start": 3.18
+  },
+  {
+   "scene": 1,
+   "text": "dollarga",
+   "first": false,
+   "start": 3.481,
+   "end": 3.921,
+   "whisper_start": 3.18
+  },
+  {
+   "scene": 1,
+   "text": "sotadi.",
+   "first": false,
+   "start": 3.981,
+   "end": 4.341,
+   "whisper_start": 3.84
+  },
+  {
+   "scene": 2,
+   "text": "Demak,",
+   "first": true,
+   "start": 4.765,
+   "end": 5.201,
+   "ctc_start": 4.821,
+   "whisper_start": 4.4
+  },
+  {
+   "scene": 2,
+   "text": "doʻstingiz",
+   "first": false,
+   "start": 5.455,
+   "end": 6.062,
+   "ctc_start": 5.522,
+   "whisper_start": 5.22
+  },
+  {
+   "scene": 2,
+   "text": "sizdan",
+   "first": false,
+   "start": 6.102,
+   "end": 6.442,
+   "whisper_start": 6.0
+  },
+  {
+   "scene": 2,
+   "text": "voz",
+   "first": false,
+   "start": 6.582,
+   "end": 6.822,
+   "whisper_start": 6.66
+  },
+  {
+   "scene": 2,
+   "text": "kechdi.",
+   "first": false,
+   "start": 6.882,
+   "end": 7.222,
+   "whisper_start": 6.66
+  },
+  {
+   "scene": 3,
+   "text": "Birga",
+   "first": true,
+   "start": 7.74,
+   "end": 8.022,
+   "ctc_start": 7.782,
+   "whisper_start": 7.94
+  },
+  {
+   "scene": 3,
+   "text": "koʻrgan",
+   "first": false,
+   "start": 8.082,
+   "end": 8.422,
+   "whisper_start": 7.94
+  },
+  {
+   "scene": 3,
+   "text": "orzularingiz,",
+   "first": false,
+   "start": 8.542,
+   "end": 9.423,
+   "whisper_start": 8.32
+  },
+  {
+   "scene": 4,
+   "text": "semichka",
+   "first": true,
+   "start": 9.73,
+   "end": 10.203,
+   "ctc_start": 9.783,
+   "whisper_start": 9.46
+  },
+  {
+   "scene": 4,
+   "text": "chaqib",
+   "first": false,
+   "start": 10.263,
+   "end": 10.563,
+   "whisper_start": 10.18
+  },
+  {
+   "scene": 4,
+   "text": "oʻtirgan",
+   "first": false,
+   "start": 10.603,
+   "end": 10.983,
+   "whisper_start": 10.5
+  },
+  {
+   "scene": 4,
+   "text": "kechalaringiz —",
+   "first": false,
+   "start": 11.043,
+   "end": 11.863,
+   "whisper_start": 10.88
+  },
+  {
+   "scene": 5,
+   "text": "hammasi",
+   "first": true,
+   "start": 12.205,
+   "end": 12.864,
+   "ctc_start": 12.304,
+   "whisper_start": 11.88
+  },
+  {
+   "scene": 5,
+   "text": "oʻchib",
+   "first": false,
+   "start": 13.01,
+   "end": 13.284,
+   "ctc_start": 13.044,
+   "whisper_start": 12.78
+  },
+  {
+   "scene": 5,
+   "text": "ketdi.",
+   "first": false,
+   "start": 13.344,
+   "end": 13.664,
+   "whisper_start": 13.24
+  },
+  {
+   "scene": 6,
+   "text": "Endi",
+   "first": true,
+   "start": 14.23,
+   "end": 14.564,
+   "ctc_start": 14.284,
+   "whisper_start": 14.52
+  },
+  {
+   "scene": 6,
+   "text": "oʻyin",
+   "first": false,
+   "start": 14.684,
+   "end": 14.904,
+   "whisper_start": 14.84
+  },
+  {
+   "scene": 6,
+   "text": "qiyinlashadi.",
+   "first": false,
+   "start": 14.984,
+   "end": 15.664,
+   "whisper_start": 14.84
+  },
+  {
+   "scene": 7,
+   "text": "Tugma",
+   "first": true,
+   "start": 16.185,
+   "end": 16.505,
+   "whisper_start": 16.4
+  },
+  {
+   "scene": 7,
+   "text": "yana",
+   "first": false,
+   "start": 16.725,
+   "end": 17.065,
+   "ctc_start": 16.825,
+   "whisper_start": 17.02
+  },
+  {
+   "scene": 7,
+   "text": "doʻstingiz",
+   "first": false,
+   "start": 17.105,
+   "end": 17.585,
+   "whisper_start": 17.02
+  },
+  {
+   "scene": 7,
+   "text": "oldida.",
+   "first": false,
+   "start": 17.685,
+   "end": 17.985,
+   "whisper_start": 17.5
+  },
+  {
+   "scene": 7,
+   "text": "Bossa —",
+   "first": false,
+   "start": 18.42,
+   "end": 18.885,
+   "ctc_start": 18.525,
+   "whisper_start": 18.1
+  },
+  {
+   "scene": 7,
+   "text": "yana",
+   "first": false,
+   "start": 19.31,
+   "end": 19.626,
+   "ctc_start": 19.406,
+   "whisper_start": 19.62
+  },
+  {
+   "scene": 7,
+   "text": "bir",
+   "first": false,
+   "start": 19.686,
+   "end": 19.806,
+   "whisper_start": 19.7
+  },
+  {
+   "scene": 7,
+   "text": "million.",
+   "first": false,
+   "start": 19.846,
+   "end": 20.166,
+   "whisper_start": 19.7
+  },
+  {
+   "scene": 8,
+   "text": "Lekin",
+   "first": true,
+   "start": 20.605,
+   "end": 20.926,
+   "ctc_start": 20.646,
+   "whisper_start": 20.86
+  },
+  {
+   "scene": 8,
+   "text": "bu",
+   "first": false,
+   "start": 21.006,
+   "end": 21.086,
+   "whisper_start": 21.02
+  },
+  {
+   "scene": 8,
+   "text": "safar",
+   "first": false,
+   "start": 21.166,
+   "end": 21.486,
+   "whisper_start": 21.02
+  },
+  {
+   "scene": 8,
+   "text": "evaziga —",
+   "first": false,
+   "start": 21.586,
+   "end": 22.026,
+   "whisper_start": 21.38
+  },
+  {
+   "scene": 8,
+   "text": "sevgan",
+   "first": false,
+   "start": 22.31,
+   "end": 22.887,
+   "ctc_start": 22.406,
+   "whisper_start": 21.9
+  },
+  {
+   "scene": 8,
+   "text": "qizi.",
+   "first": false,
+   "start": 22.967,
+   "end": 23.247,
+   "whisper_start": 23.14
+  },
+  {
+   "scene": 9,
+   "text": "Qizni",
+   "first": true,
+   "start": 23.94,
+   "end": 24.207,
+   "ctc_start": 23.947,
+   "whisper_start": 24.1
+  },
+  {
+   "scene": 9,
+   "text": "tanlasa —",
+   "first": false,
+   "start": 24.267,
+   "end": 24.707,
+   "ctc_start": 24.267,
+   "whisper_start": 24.1
+  },
+  {
+   "scene": 9,
+   "text": "na",
+   "first": false,
+   "start": 24.99,
+   "end": 25.187,
+   "ctc_start": 25.067,
+   "whisper_start": 25.08
+  },
+  {
+   "scene": 9,
+   "text": "doʻsti",
+   "first": false,
+   "start": 25.327,
+   "end": 25.627,
+   "whisper_start": 25.56
+  },
+  {
+   "scene": 9,
+   "text": "qoladi,",
+   "first": false,
+   "start": 25.687,
+   "end": 26.047,
+   "whisper_start": 25.56
+  },
+  {
+   "scene": 9,
+   "text": "na",
+   "first": false,
+   "start": 26.25,
+   "end": 26.448,
+   "ctc_start": 26.348,
+   "whisper_start": 26.34
+  },
+  {
+   "scene": 9,
+   "text": "puli.",
+   "first": false,
+   "start": 26.588,
+   "end": 26.848,
+   "whisper_start": 26.34
+  },
+  {
+   "scene": 10,
+   "text": "Pulni",
+   "first": true,
+   "start": 27.368,
+   "end": 27.648,
+   "ctc_start": 27.368,
+   "whisper_start": 27.54
+  },
+  {
+   "scene": 10,
+   "text": "tanlasa —",
+   "first": false,
+   "start": 27.708,
+   "end": 28.128,
+   "ctc_start": 27.708,
+   "whisper_start": 27.54
+  },
+  {
+   "scene": 10,
+   "text": "ikki",
+   "first": false,
+   "start": 28.455,
+   "end": 28.788,
+   "ctc_start": 28.488,
+   "whisper_start": 28.5
+  },
+  {
+   "scene": 10,
+   "text": "million",
+   "first": false,
+   "start": 28.828,
+   "end": 29.128,
+   "whisper_start": 28.96
+  },
+  {
+   "scene": 10,
+   "text": "dollar.",
+   "first": false,
+   "start": 29.188,
+   "end": 29.508,
+   "whisper_start": 28.96
+  },
+  {
+   "scene": 11,
+   "text": "Sizni",
+   "first": true,
+   "start": 30.005,
+   "end": 30.289,
+   "ctc_start": 30.049,
+   "whisper_start": 30.2
+  },
+  {
+   "scene": 11,
+   "text": "sotgan",
+   "first": false,
+   "start": 30.349,
+   "end": 30.729,
+   "whisper_start": 30.2
+  },
+  {
+   "scene": 11,
+   "text": "odam —",
+   "first": false,
+   "start": 30.81,
+   "end": 31.129,
+   "ctc_start": 30.849,
+   "whisper_start": 30.96
+  },
+  {
+   "scene": 11,
+   "text": "uni",
+   "first": false,
+   "start": 31.5,
+   "end": 31.669,
+   "ctc_start": 31.529,
+   "whisper_start": 31.56
+  },
+  {
+   "scene": 11,
+   "text": "ham",
+   "first": false,
+   "start": 31.709,
+   "end": 31.849,
+   "whisper_start": 31.82
+  },
+  {
+   "scene": 11,
+   "text": "sotarmikan?",
+   "first": false,
+   "start": 31.889,
+   "end": 32.529,
+   "whisper_start": 31.82
+  },
+  {
+   "scene": 12,
+   "text": "Qizni",
+   "first": true,
+   "start": 33.08,
+   "end": 33.37,
+   "ctc_start": 33.089,
+   "whisper_start": 33.26
+  },
+  {
+   "scene": 12,
+   "text": "tanlaydi —",
+   "first": false,
+   "start": 33.41,
+   "end": 33.91,
+   "whisper_start": 33.26
+  },
+  {
+   "scene": 12,
+   "text": "bir,",
+   "first": false,
+   "start": 34.21,
+   "end": 34.39,
+   "whisper_start": 34.42
+  },
+  {
+   "scene": 12,
+   "text": "pulni",
+   "first": false,
+   "start": 34.77,
+   "end": 35.05,
+   "ctc_start": 34.77,
+   "whisper_start": 34.96
+  },
+  {
+   "scene": 12,
+   "text": "tanlaydi —",
+   "first": false,
+   "start": 35.11,
+   "end": 35.59,
+   "ctc_start": 35.11,
+   "whisper_start": 34.96
+  },
+  {
+   "scene": 12,
+   "text": "ikki.",
+   "first": false,
+   "start": 35.84,
+   "end": 36.19,
+   "ctc_start": 35.89,
+   "whisper_start": 35.58
+  },
+  {
+   "scene": 12,
+   "text": "Izohga",
+   "first": false,
+   "start": 36.68,
+   "end": 37.091,
+   "ctc_start": 36.71,
+   "whisper_start": 36.94
+  },
+  {
+   "scene": 12,
+   "text": "yozing.",
+   "first": false,
+   "start": 37.131,
+   "end": 37.451,
+   "whisper_start": 36.94
+  },
+  {
+   "scene": 13,
+   "text": "Ishonchingiz",
+   "first": true,
+   "start": 37.88,
+   "end": 38.451,
+   "ctc_start": 37.891,
+   "whisper_start": 38.04
+  },
+  {
+   "scene": 13,
+   "text": "yoʻqmi?",
+   "first": false,
+   "start": 38.491,
+   "end": 38.791,
+   "whisper_start": 38.56
+  },
+  {
+   "scene": 13,
+   "text": "Unga",
+   "first": false,
+   "start": 39.265,
+   "end": 39.511,
+   "ctc_start": 39.311,
+   "whisper_start": 39.46
+  },
+  {
+   "scene": 13,
+   "text": "yuboring",
+   "first": false,
+   "start": 39.571,
+   "end": 40.031,
+   "whisper_start": 39.46
+  },
+  {
+   "scene": 13,
+   "text": "va",
+   "first": false,
+   "start": 40.131,
+   "end": 40.211,
+   "whisper_start": 40.12
+  },
+  {
+   "scene": 13,
+   "text": "qanday",
+   "first": false,
+   "start": 40.392,
+   "end": 40.792,
+   "whisper_start": 40.12
+  },
+  {
+   "scene": 13,
+   "text": "reaksiya",
+   "first": false,
+   "start": 40.872,
+   "end": 41.272,
+   "whisper_start": 40.72
+  },
+  {
+   "scene": 13,
+   "text": "qilishini",
+   "first": false,
+   "start": 41.332,
+   "end": 41.712,
+   "ctc_start": 41.332,
+   "whisper_start": 41.22
+  },
+  {
+   "scene": 13,
+   "text": "koʻring.",
+   "first": false,
+   "start": 41.75,
+   "end": 42.032,
+   "ctc_start": 41.752,
+   "whisper_start": 41.6
+  },
+  {
+   "scene": 14,
+   "text": "Natijani",
+   "first": true,
+   "start": 42.415,
+   "end": 42.952,
+   "ctc_start": 42.432,
+   "whisper_start": 42.06
+  },
+  {
+   "scene": 14,
+   "text": "keyingi",
+   "first": false,
+   "start": 43.145,
+   "end": 43.512,
+   "ctc_start": 43.152,
+   "whisper_start": 42.82
+  },
+  {
+   "scene": 14,
+   "text": "videoda",
+   "first": false,
+   "start": 43.552,
+   "end": 43.873,
+   "whisper_start": 43.5
+  },
+  {
+   "scene": 14,
+   "text": "aytaman.",
+   "first": false,
+   "start": 43.933,
+   "end": 44.293,
+   "whisper_start": 43.88
+  }
+ ]
+}

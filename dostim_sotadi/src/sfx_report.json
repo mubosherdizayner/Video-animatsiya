@@ -1,0 +1,8 @@
+{
+ "voice_rms_dbfs": -27.817756481558064,
+ "sfx_rms_dbfs": -49.1190912251146,
+ "sfx_under_voice_db": 21.30133474355654,
+ "sfx_peak_during_speech_dbfs": -32.695204098182856,
+ "n_events": 36,
+ "duration_s": 44.53333333333333
+}
