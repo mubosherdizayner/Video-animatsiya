@@ -1,0 +1,157 @@
+{
+ "results": [
+  {
+   "check": "video duration equals audio duration",
+   "ok": true,
+   "info": "video 33.500 s, audio track 33.500 s, voice-over 33.489 s, 1005 frames"
+  },
+  {
+   "check": "mp4 h264 1080x1920 30 fps yuv420p + aac",
+   "ok": true,
+   "info": "h264,1080,1920,yuv420p,30/1 / aac"
+  },
+  {
+   "check": "one audio track only (voice + sfx, no music)",
+   "ok": true,
+   "info": "video,audio"
+  },
+  {
+   "check": "every scene starts on the first word of its text (<= 1 frame)",
+   "ok": true,
+   "info": "max offset 16.7 ms; 1:0.00, 2:4.06, 3:5.89, 4:10.04, 5:12.01, 6:14.92, 7:17.39, 8:20.35, 9:22.20, 10:23.79, 11:25.66, 12:28.36, 13:30.96"
+  },
+  {
+   "check": "split sentences start their scenes (Bir / Oʻgʻlim, Chunki / pul / bolang)",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "check": "subtitles: every script word, in order, one at a time, appears on its spoken frame",
+   "ok": true,
+   "info": "61 words; word onset rounding <= 16.7 ms; shortest word on screen 4 frames"
+  },
+  {
+   "check": "display text: no « » , . : … — ; keeps Uylanmoqchimisiz? and uylansang-u",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "check": "key words coloured",
+   "ok": true,
+   "info": "shartini, moliyaviy, yetim, ayb, yuboring, repost"
+  },
+  {
+   "check": "subtitle font renders oʻ gʻ ʼ (no missing glyphs)",
+   "ok": true,
+   "info": "DejaVuSans-Bold.ttf"
+  },
+  {
+   "check": "subtitles inside the frame and the safe zone (not in bottom 400 px or right 150 px)",
+   "ok": true,
+   "info": "0 frames out"
+  },
+  {
+   "check": "subtitle never covers the hero or the key action (palm / plane / repost icon)",
+   "ok": true,
+   "info": "checked 253 frames; hero overlaps []; key-action overlaps []"
+  },
+  {
+   "check": "decoded frame count = expected",
+   "ok": true,
+   "info": "1005 decoded"
+  },
+  {
+   "check": "4 extracted timestamps: subtitle and scene match the spoken word",
+   "ok": true,
+   "info": "8.17s scene 3 shows 'moliyaviy' (spoken 'moliyaviy', scene 3); 16.17s scene 6 shows 'jim' (spoken 'jim', scene 6); 23.0s scene 9 shows 'boʻladi' (spoken 'boʻladi', scene 9); 30.2s scene 12 shows 'yuboring' (spoken 'yuboring', scene 12)"
+  },
+  {
+   "check": "frame 0 shows the hook visual in motion (hero walking, layers moving)",
+   "ok": true,
+   "info": "mean change over first 3 frames: hero area 20.4, background 3.1 (8-bit levels)"
+  },
+  {
+   "check": "frame 0: no fade from black",
+   "ok": true,
+   "info": "mean level 148"
+  },
+  {
+   "check": "CTA 1: plane thrown exactly on 'yuboring' and flying",
+   "ok": true,
+   "info": "'yuboring' frame 904: plane in hand until 903, airborne by 909 at (578, 680)"
+  },
+  {
+   "check": "CTA 2: repost icon above the raised open palm while 'repost' is spoken",
+   "ok": true,
+   "info": "'repost' frame 975: icon appears at 975, at (520, 883)"
+  },
+  {
+   "check": "scenes 7-11 use the imagined-future look (stronger grain + vignette, -20% saturation)",
+   "ok": true,
+   "info": "look amount per scene {7: 1.0, 8: 1.0, 9: 1.0, 10: 1.0, 11: 1.0}; outside 7-11: 0.0; dissolve in at 17.39-17.84 s, out at 27.45-27.95 s"
+  },
+  {
+   "check": "last frame matches the scene 1 opening framing (loop)",
+   "ok": true,
+   "info": "mean abs difference last vs first frame 7.15 / 255"
+  },
+  {
+   "check": "hero's green chapan is more vivid than every environment / silhouette colour (CIELAB chroma)",
+   "ok": true,
+   "info": "chapan C*=27.4 (measured on screen 16.5-29.5); most vivid environment colour C*=20.6 (frame 724)"
+  },
+  {
+   "check": "note: palette accents",
+   "ok": null,
+   "info": "the sun #F2A55C-#E1742F, accent #E58A3C and lit windows/plane/icon #E7A05C given in the brief are more vivid than the chapan by definition (C* up to 65, frame 452); kept as specified"
+  },
+  {
+   "check": "voice clearly audible over sfx",
+   "ok": true,
+   "info": "loudest sfx is 17.8 dB below the voice RMS, ducked a further up to 6 dB under speech"
+  },
+  {
+   "check": "no on-screen text except the word subtitles; no logo, no title card, no music",
+   "ok": true,
+   "info": "scene code draws no text; renderer draws only the current word pill; audio = voice + synthesized sfx"
+  }
+ ],
+ "checks": [
+  [
+   3,
+   245,
+   8.17,
+   "moliyaviy",
+   3,
+   "moliyaviy",
+   3
+  ],
+  [
+   6,
+   485,
+   16.17,
+   "jim",
+   6,
+   "jim",
+   6
+  ],
+  [
+   9,
+   690,
+   23.0,
+   "boʻladi",
+   9,
+   "boʻladi",
+   9
+  ],
+  [
+   12,
+   906,
+   30.2,
+   "yuboring",
+   12,
+   "yuboring",
+   12
+  ]
+ ]
+}

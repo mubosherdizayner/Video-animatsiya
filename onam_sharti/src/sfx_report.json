@@ -1,0 +1,63 @@
+{
+ "events": [
+  [
+   "0.0 s soft low accent",
+   0.0,
+   0
+  ],
+  [
+   "0.7 s cloth rustle",
+   0.68,
+   -2
+  ],
+  [
+   "scene 2 wing flutter",
+   4.31,
+   -6
+  ],
+  [
+   "scene 3 leaf rustle",
+   8.245,
+   -4
+  ],
+  [
+   "scene 4 airy whoosh",
+   11.075,
+   -3
+  ],
+  [
+   "scene 5 fire crackle",
+   12.005,
+   -4
+  ],
+  [
+   "scene 6 low deep hum",
+   14.92,
+   0
+  ],
+  [
+   "scene 8 soft wind",
+   20.35,
+   -4
+  ],
+  [
+   "scene 12 paper rustle",
+   28.51,
+   -4
+  ],
+  [
+   "scene 12 throw whoosh",
+   30.125,
+   -2
+  ],
+  [
+   "scene 13 rotating whoosh",
+   32.7,
+   -2
+  ]
+ ],
+ "voice_rms_db": -22.0,
+ "sfx_peak_rms_db": null,
+ "sfx_loudest_400ms_rms_db": -39.7,
+ "sfx_below_voice_db": 17.8
+}

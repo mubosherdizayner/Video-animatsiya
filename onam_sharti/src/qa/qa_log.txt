@@ -1,0 +1,24 @@
+PASS video duration equals audio duration — video 33.500 s, audio track 33.500 s, voice-over 33.489 s, 1005 frames
+PASS mp4 h264 1080x1920 30 fps yuv420p + aac — h264,1080,1920,yuv420p,30/1 / aac
+PASS one audio track only (voice + sfx, no music) — video,audio
+PASS every scene starts on the first word of its text (<= 1 frame) — max offset 16.7 ms; 1:0.00, 2:4.06, 3:5.89, 4:10.04, 5:12.01, 6:14.92, 7:17.39, 8:20.35, 9:22.20, 10:23.79, 11:25.66, 12:28.36, 13:30.96
+PASS split sentences start their scenes (Bir / Oʻgʻlim, Chunki / pul / bolang)
+PASS subtitles: every script word, in order, one at a time, appears on its spoken frame — 61 words; word onset rounding <= 16.7 ms; shortest word on screen 4 frames
+PASS display text: no « » , . : … — ; keeps Uylanmoqchimisiz? and uylansang-u
+PASS key words coloured — shartini, moliyaviy, yetim, ayb, yuboring, repost
+PASS subtitle font renders oʻ gʻ ʼ (no missing glyphs) — DejaVuSans-Bold.ttf
+PASS subtitles inside the frame and the safe zone (not in bottom 400 px or right 150 px) — 0 frames out
+PASS subtitle never covers the hero or the key action (palm / plane / repost icon) — checked 253 frames; hero overlaps []; key-action overlaps []
+PASS decoded frame count = expected — 1005 decoded
+PASS 4 extracted timestamps: subtitle and scene match the spoken word — 8.17s scene 3 shows 'moliyaviy' (spoken 'moliyaviy', scene 3); 16.17s scene 6 shows 'jim' (spoken 'jim', scene 6); 23.0s scene 9 shows 'boʻladi' (spoken 'boʻladi', scene 9); 30.2s scene 12 shows 'yuboring' (spoken 'yuboring', scene 12)
+PASS frame 0 shows the hook visual in motion (hero walking, layers moving) — mean change over first 3 frames: hero area 20.4, background 3.1 (8-bit levels)
+PASS frame 0: no fade from black — mean level 148
+PASS CTA 1: plane thrown exactly on 'yuboring' and flying — 'yuboring' frame 904: plane in hand until 903, airborne by 909 at (578, 680)
+PASS CTA 2: repost icon above the raised open palm while 'repost' is spoken — 'repost' frame 975: icon appears at 975, at (520, 883)
+PASS scenes 7-11 use the imagined-future look (stronger grain + vignette, -20% saturation) — look amount per scene {7: 1.0, 8: 1.0, 9: 1.0, 10: 1.0, 11: 1.0}; outside 7-11: 0.0; dissolve in at 17.39-17.84 s, out at 27.45-27.95 s
+PASS last frame matches the scene 1 opening framing (loop) — mean abs difference last vs first frame 7.15 / 255
+PASS hero's green chapan is more vivid than every environment / silhouette colour (CIELAB chroma) — chapan C*=27.4 (measured on screen 16.5-29.5); most vivid environment colour C*=20.6 (frame 724)
+NOTE the sun #F2A55C-#E1742F, accent #E58A3C and lit windows/plane/icon #E7A05C given in the brief are more vivid than the chapan by definition (C* up to 65, frame 452); kept as specified
+PASS voice clearly audible over sfx — loudest sfx is 17.8 dB below the voice RMS, ducked a further up to 6 dB under speech
+PASS no on-screen text except the word subtitles; no logo, no title card, no music — scene code draws no text; renderer draws only the current word pill; audio = voice + synthesized sfx
+frames saved to /home/user/Video-animatsiya/onam_sharti/src/qa

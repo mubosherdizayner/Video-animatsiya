@@ -1,0 +1,7 @@
+src/__pycache__/
+src/voice16k.f32
+src/voice48k_raw.wav
+src/mix.wav
+src/video_noaudio.mp4
+src/qa/check_*.png
+src/qa/cta_*.png
