@@ -34,6 +34,10 @@ LINE_CUTS = {
     5: (12.850, 17.880),
 }
 
+# Where each line's audio really ends (natural decay / breath), faded out with an
+# equal-power curve so no word is clipped. Line 1 ends exactly at the scene-1 cut (9.4 s).
+LINE_TAIL = {1: (6.200, 0.12), 2: (8.780, 0.06), 3: (11.500, 0.08), 4: (12.620, 0.15), 5: (18.000, 0.12)}
+
 # Script (subtitle text source). Apostrophes are typeset as Uzbek oʻ / gʻ.
 SCRIPT = {
     1: ("HIKOYACHI", "1980-yil. Tunqo'rg'on. Bu bazada nima qilishayotganini hech kim bilmasdi."),

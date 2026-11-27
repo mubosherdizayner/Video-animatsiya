@@ -43,7 +43,7 @@
      "scene": 1,
      "frame_expected": "F03",
      "frame_seen": "F03",
-     "psnr_vs_renderer": 36.400001525878906,
+     "psnr_vs_renderer": 36.5,
      "spoken": "Tunqoʻrgʻon.",
      "subtitle": "Tunqoʻrgʻon.",
      "highlighted": "Tunqoʻrgʻon."
@@ -53,7 +53,7 @@
      "scene": 3,
      "frame_expected": "F08",
      "frame_seen": "F08",
-     "psnr_vs_renderer": 36.900001525878906,
+     "psnr_vs_renderer": 36.79999923706055,
      "spoken": "keldi!",
      "subtitle": "Dev keldi!",
      "highlighted": "keldi!"
@@ -63,7 +63,7 @@
      "scene": 8,
      "frame_expected": "F18",
      "frame_seen": "F18",
-     "psnr_vs_renderer": 39.0,
+     "psnr_vs_renderer": 39.099998474121094,
      "spoken": null,
      "subtitle": null,
      "highlighted": null
@@ -145,36 +145,36 @@
     "lines": [
      {
       "line": 1,
-      "voice_rms_db": -17.899999618530273,
-      "music_sfx_rms_db": -39.900001525878906,
-      "margin_db": 22.0
+      "voice_rms_db": -18.0,
+      "music_sfx_rms_db": -37.29999923706055,
+      "margin_db": 19.299999237060547
      },
      {
       "line": 2,
       "voice_rms_db": -17.200000762939453,
-      "music_sfx_rms_db": -39.0,
-      "margin_db": 21.799999237060547
+      "music_sfx_rms_db": -37.79999923706055,
+      "margin_db": 20.700000762939453
      },
      {
       "line": 3,
       "voice_rms_db": -18.100000381469727,
-      "music_sfx_rms_db": -38.79999923706055,
-      "margin_db": 20.700000762939453
+      "music_sfx_rms_db": -37.70000076293945,
+      "margin_db": 19.600000381469727
      },
      {
       "line": 4,
       "voice_rms_db": -16.700000762939453,
-      "music_sfx_rms_db": -42.5,
-      "margin_db": 25.799999237060547
+      "music_sfx_rms_db": -39.20000076293945,
+      "margin_db": 22.5
      },
      {
       "line": 5,
       "voice_rms_db": -19.299999237060547,
-      "music_sfx_rms_db": -44.900001525878906,
-      "margin_db": 25.600000381469727
+      "music_sfx_rms_db": -41.70000076293945,
+      "margin_db": 22.399999618530273
      }
     ],
-    "integrated_lufs": -17.9
+    "integrated_lufs": -18.2
    }
   },
   {
@@ -208,14 +208,38 @@
     "davomi_spoken": 47.925,
     "frame": 1438,
     "text_px_before": 0,
-    "text_px_on": 51711,
+    "text_px_on": 51716,
     "stays_to": "50.0 s"
    }
   },
   {
-   "check": "no synthesized laughter; laughter only from kulgi.mp3",
+   "check": "laughter in scene 4 (kulgi.mp3 if attached, otherwise synthesized on request)",
    "pass": true,
-   "detail": "kulgi.mp3 not attached -> scene 4 has no laughter sound"
+   "detail": {
+    "source": "synthesized (4 boys, source-filter model)",
+    "start": 20.4,
+    "rms_db": -26.0,
+    "over_before_scene5": true
+   }
+  },
+  {
+   "check": "no sudden dropouts: never dead air, the light-out fades smoothly",
+   "pass": true,
+   "detail": {
+    "min_50ms_rms_db": -43.3,
+    "music_drop_first_150ms_db": 4.2,
+    "light_out_curve_db": [
+     -29,
+     -35,
+     -32,
+     -39,
+     -36,
+     -38,
+     -41,
+     -44,
+     -44
+    ]
+   }
   }
  ],
  "all_pass": true

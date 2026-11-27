@@ -1,6 +1,6 @@
 # Audio: voice lines placed at their voice_start, sfx and an analog-synth drone
 # synthesized in code, ducking under speech, final mix (48 kHz stereo, 50.0 s).
-import json, sys, os
+import json, sys, os, math
 import numpy as np
 from scipy import signal
 from scipy.io import wavfile
@@ -26,6 +26,13 @@ def fade(x, fi=0.01, fo=0.01):
     x = x.copy(); a, b = sec(fi), sec(fo)
     if a: x[:a] *= np.linspace(0, 1, a)
     if b: x[-b:] *= np.linspace(1, 0, b)
+    return x
+
+def efade(x, fi, fo):
+    """equal-power (sine) fades"""
+    x = x.copy(); a, b = sec(fi), sec(fo)
+    if a: x[:a] *= np.sin(np.linspace(0, np.pi / 2, a))
+    if b: x[-b:] *= np.cos(np.linspace(0, np.pi / 2, b))
     return x
 
 def mx(*xs):
@@ -69,8 +76,10 @@ class Bus:
 def thump(f=70, d=0.35, click=0.3):
     t = tvec(d)
     body = np.sin(2 * np.pi * (f + 40 * np.exp(-t * 30)) * t) * np.exp(-t * 11)
+    # mid-range body so the hit still reads on phone speakers
+    knock = 0.45 * np.sin(2 * np.pi * 2.3 * f * t) * np.exp(-t * 22) + 0.35 * bp(noise(d), 180, 900) * np.exp(-t * 30)
     tr = lp(noise(d), 1500) * np.exp(-t * 60) * click
-    return fade(body + tr, 0.002, 0.03)
+    return fade(body + knock + tr, 0.002, 0.03)
 
 def metal(freqs=(182, 297, 471, 733), d=0.7, decay=6.0):
     t = tvec(d)
@@ -158,8 +167,9 @@ def build_voice(timing):
     v = np.zeros(N)
     for line, L in timing["lines"].items():
         a, b = LINE_CUTS[int(line)]
+        b, fo = LINE_TAIL[int(line)]
         seg = x[int(round(a * SR)):int(round(b * SR))].astype(np.float64)
-        seg = fade(seg, 0.006, 0.02)
+        seg = efade(seg, 0.010, fo)
         # per-line loudness match (narrator lines are much quieter than the shouted lines)
         env = np.abs(signal.hilbert(seg))
         act = seg[lp(env, 20) > 0.1 * lp(env, 20).max()]
@@ -210,9 +220,16 @@ def build_sfx():
     S.add(14.0 + D1, fade(R(lp(hum(4.5, 100, (1, 0.3, 0.1)), 500), -40), 0.3, 0.3))
     S.add(14.55 + D1, P(rustle(0.5), -25), pan=-0.2)
     S.add(15.55 + D1, P(rustle(0.7), -24), pan=0.1)
-    # scene 4: laughter only from kulgi.mp3 (never synthesized)
+    # scene 4: the boys laugh — kulgi.mp3 if attached, otherwise the synthesized laugh (user request)
     if KULGI and os.path.exists(KULGI):
-        S.add(20.0 + D1, P(load_kulgi(KULGI), -12))
+        S.add(C.LAUGH_T0, P(load_kulgi(KULGI), -8))
+    else:
+        import laugh
+        l, r = laugh.synth()
+        k = db(-7.0) / max(np.abs(l).max(), np.abs(r).max())
+        S.add_st(C.LAUGH_T0, l * k, r * k)
+    # basement bulb hum carries on quietly under scene 4
+    S.add(18.5 + D1, fade(R(lp(hum(4.5, 100, (1, 0.3, 0.1)), 500), -44), 0.3, 0.6))
     # scene 5: bike chain ticking, light night wind, lamp buzz with flicker clicks
     t0 = 23.0 + D1
     for t in np.arange(t0 + 0.05, 28.0, 1 / 7.5):
@@ -261,53 +278,93 @@ def load_kulgi(path):
     x = np.frombuffer(raw, np.float32).astype(np.float64)
     return fade(norm_peak(x, -3), 0.02, 0.3)
 
+def room_tone():
+    """continuous quiet room tone so the track never drops to dead air"""
+    x = noise(DURATION)
+    x = signal.lfilter([1], [1, -0.97], x)                   # brownish
+    x = bp(x, 60, 1400)
+    x = R(x, -56)
+    t = np.arange(N) / SR
+    lift = 1 + 1.2 * ((t >= C.LIGHT_OFF_T) & (t < C.LIGHT_ON_T + 0.5))   # a touch more presence in the dark
+    lift = signal.lfilter([0.0005], [1, -0.9995], lift)
+    x = x * lift
+    return x, np.roll(x, 1200)
+
 def build_music():
-    """Low 1980s analog-synth drone (detuned saws through a slowly moving low-pass)."""
+    """Low 1980s analog-synth drone: detuned saws through a slowly moving low-pass, sub sine,
+    and a soft A-minor pad so it is still heard on phone speakers."""
     t = np.arange(N) / SR
     def saw(f, ph=0.0):
         return 2 * ((f * t + ph) % 1.0) - 1
     vib = 1 + 0.002 * np.sin(2 * np.pi * 0.21 * t)
-    base = 0.5 * (saw(55.0 * vib) + saw(55.35 * vib, 0.3)) + 0.35 * saw(82.41 * vib, 0.6) + 0.6 * np.sin(2 * np.pi * 27.5 * t)
+    base = 0.45 * saw(55.0 * vib) + 0.18 * saw(55.35 * vib, 0.3) + 0.35 * saw(82.41 * vib, 0.6) \
+        + 0.25 * saw(110.2 * vib, 0.15) + 0.35 * np.sin(2 * np.pi * 55.0 * t + 0.7)
     # time-varying low-pass: blocks with interpolated cutoff
-    out = np.zeros(N); blk = 2400; zi = None
-    def cutoff(tc):
-        c = 180
-        if tc > 23.0 + D1: c += 260 * C.smooth((tc - 23.0 - D1) / 4.6)
-        if tc > 28.0: c += 250 * C.smooth((tc - 28.0) / 2.5)
-        return c + 40 * np.sin(2 * np.pi * 0.07 * tc)
-    for i in range(0, N, blk):
-        sos = signal.butter(2, cutoff(i / SR), "low", fs=SR, output="sos")
-        if zi is None: zi = signal.sosfilt_zi(sos) * 0
-        out[i:i + blk], zi = signal.sosfilt(sos, base[i:i + blk], zi=zi)
-    pad = 0.12 * np.sin(2 * np.pi * 220 * t * vib) * (0.5 + 0.5 * np.sin(2 * np.pi * 0.13 * t))
+    out = np.zeros(N); blk = 480; zi = None
+    def cutoff(tc, dark_on=True):
+        c = 420
+        if tc > 23.0 + D1: c += 220 * C.smooth((tc - 23.0 - D1) / 4.6)
+        if tc > 28.0: c += 260 * C.smooth((tc - 28.0) / 2.5)
+        c += 60 * np.sin(2 * np.pi * 0.07 * tc)
+        if dark_on and tc >= C.LIGHT_OFF_T:        # muffled in the dark: glides down with the fade, back up after
+            dark = (1 - math.exp(-(tc - C.LIGHT_OFF_T) / 0.6)) * (1 - C.smooth((tc - C.LIGHT_ON_T) / 1.2))
+            c = c + (230 - c) * dark
+        return c
+    ref = np.zeros(N)
+    for dst, dk in ((out, True), (ref, False)):
+        zi = None
+        for i in range(0, N, blk):
+            sos = signal.butter(2, cutoff(i / SR, dk), "low", fs=SR, output="sos")
+            if zi is None: zi = signal.sosfilt_zi(sos) * 0
+            dst[i:i + blk], zi = signal.sosfilt(sos, base[i:i + blk], zi=zi)
+    trem = 0.6 + 0.4 * np.sin(2 * np.pi * 0.13 * t)
+    pad = (0.16 * np.sin(2 * np.pi * 220 * t * vib) + 0.11 * np.sin(2 * np.pi * 261.63 * t * vib + 1.0)
+           + 0.07 * np.sin(2 * np.pi * 329.63 * t * vib + 2.0)) * trem
+    pad = lp(pad, 1200)
     tension = 0.10 * np.sin(2 * np.pi * 233.08 * t)          # minor-second rub for the re-hook
-    y = out + pad + tension * np.clip((t - 37.0) / 2.0, 0, 1)
-    # unit RMS everywhere (0.5 s running RMS), so the level shape below is absolute dBFS
+    tens = tension * np.clip((t - 37.0) / 2.0, 0, 1)
+    y = out + pad + tens
+    # unit RMS (running, measured on the un-darkened reference) so the level shape below is absolute
+    # dBFS; the dark low-pass after the light-out then acts as a real, gliding attenuation
     from scipy.ndimage import uniform_filter1d
-    y = y / np.sqrt(uniform_filter1d(y ** 2, sec(0.5)) + 1e-9)
+    y = y / np.sqrt(uniform_filter1d((ref + pad + tens) ** 2, sec(1.0)) + 1e-9)
     # level shape (dB): quiet bed -> slow rise from scene 5 -> swell in 6 -> cut at 39.5 -> quiet return at 41.0
     g = np.zeros(N)
     for i in range(0, N, 480):
         tc = i / SR
-        lv = -31.0
-        if tc >= 23.0 + D1: lv += 4 * C.smooth((tc - 23.0 - D1) / 4.6)
-        if tc >= 28.0: lv += 3 * C.smooth((tc - 28.0) / 1.5)
+        lv = -30.0
+        if tc >= 23.0 + D1: lv += 3.5 * C.smooth((tc - 23.0 - D1) / 4.6)
+        if tc >= 28.0: lv += 2.5 * C.smooth((tc - 28.0) / 1.5)
         if tc >= 33.0: lv -= 1.5 * C.smooth((tc - 33.0) / 1.0)
         if tc >= 37.0: lv += 1.5 * C.smooth((tc - 37.0) / 2.0)
-        if tc >= C.LIGHT_OFF_T: lv = -120
-        if tc >= C.LIGHT_ON_T: lv = -34 - 30 * (1 - C.smooth((tc - C.LIGHT_ON_T) / 1.2))
-        if tc >= 49.6: lv -= 40 * C.smooth((tc - 49.6) / 0.4)
+        if tc >= C.LIGHT_OFF_T:
+            # the light goes out: a fast but smooth fall (no dead cut), a dark low remnant stays
+            lv0 = lv
+            lv = lv0 + (-40.0 - lv0) * (1 - math.exp(-(tc - C.LIGHT_OFF_T) / 0.6))
+        if tc >= C.LIGHT_ON_T:
+            lv = -40.0 + 8.0 * C.smooth((tc - C.LIGHT_ON_T) / 1.4)    # returns quietly
+        if tc >= 49.0: lv -= 30 * C.smooth((tc - 49.0) / 1.0)
         g[i:i + 480] = db(lv)
-    g = signal.lfilter([0.01], [1, -0.99], g)
-    # hard cut at the light-out (10 ms), no smoothing tail
-    cut = sec(C.LIGHT_OFF_T)
-    g[cut:cut + sec(0.01)] *= np.linspace(1, 0, sec(0.01))
-    g[cut + sec(0.01):sec(C.LIGHT_ON_T)] = 0
+    g = signal.lfilter([0.004], [1, -0.996], g)                    # ~5 ms smoothing: no zipper noise
     y = y * g
     l = y; r = np.roll(y, 240) * 0.98 + 0.02 * y
     return l, r
 
-def duck_env(v, depth_db=-8.0):
+def duck_env(v, depth_db=-5.0, hold=0.35, smooth_s=0.12, lookahead=0.06):
+    """speech-activity ducking: hold across short pauses, raised-cosine ramps (no pumping)"""
+    from scipy.ndimage import maximum_filter1d
+    hop = 240
+    n = len(v) // hop + 1
+    e = np.sqrt(np.convolve(np.pad(v ** 2, (0, n * hop - len(v))), np.ones(hop) / hop, "same")[::hop])
+    act = (e > db(-40)).astype(np.float64)
+    act = maximum_filter1d(act, int(hold * SR / hop) * 2 + 1)          # bridge short pauses
+    k = int(smooth_s * SR / hop); win = np.hanning(2 * k + 1); win /= win.sum()
+    act = np.convolve(act, win, "same")
+    act = np.roll(act, -int(lookahead * SR / hop))
+    g = np.interp(np.arange(len(v)) / hop, np.arange(n), act)
+    return db(depth_db * np.clip(g, 0, 1))
+
+def duck_env_old(v, depth_db=-8.0):
     a = np.abs(v)
     att, rel = np.exp(-1 / (0.02 * SR)), np.exp(-1 / (0.30 * SR))
     env = np.zeros_like(a); e = 0.0
@@ -352,6 +409,21 @@ def compressor(x, thr_db=-26, ratio=2.5, att=0.008, rel=0.15):
     over = np.maximum(0, lv - thr_db)
     return x * db(-over * (1 - 1 / ratio))
 
+def peak_comp(x, thr_db=-9.0, ratio=3.0, att=0.0015, rel=0.06, knee=6.0):
+    """fast soft-knee peak compressor (catches shouted syllables before the limiter)"""
+    a = np.abs(x)
+    ka, kr = np.exp(-1 / (att * SR)), np.exp(-1 / (rel * SR))
+    env = signal.lfilter([1 - ka], [1, -ka], a)
+    env = np.maximum(env, signal.lfilter([1 - kr], [1, -kr], a))
+    lv = 20 * np.log10(np.maximum(env, 1e-9))
+    over = lv - thr_db
+    red = np.where(over <= -knee / 2, 0, np.where(over >= knee / 2, over * (1 - 1 / ratio),
+                   (1 - 1 / ratio) * (over + knee / 2) ** 2 / (2 * knee)))
+    from scipy.ndimage import maximum_filter1d
+    red = maximum_filter1d(red, sec(0.003))
+    red = signal.lfilter([0.02], [1, -0.98], red)
+    return x * db(-red)
+
 def lufs(stereo):
     import subprocess, tempfile
     with tempfile.NamedTemporaryFile(suffix=".wav") as f:
@@ -369,14 +441,18 @@ def main(timing_json, outdir):
     voice = build_voice(timing)
     voice = compressor(voice, -28, 2.5)
     voice = voice * db(-16.5) / np.sqrt(np.mean(voice[np.abs(voice) > 0.003] ** 2))
-    voice = limiter(voice, -1.5)
+    voice = peak_comp(voice, -9.0, 3.0)
+    pre = np.abs(voice).max()
+    voice = limiter(voice, -1.5, look=0.005, release=0.15)
+    print("voice limiter: peak before", round(20 * np.log10(pre), 1), "dBFS -> -1.5")
     S = build_sfx()
     ml, mr = build_music()
-    g = duck_env(voice, -9.0)
-    gs = duck_env(voice, -7.0)
-    sfx = np.stack([S.L, S.R], 1) * gs[:, None]
+    rl, rr = room_tone()
+    g = duck_env(voice, -5.0)
+    gs = duck_env(voice, -4.0)
+    sfx = np.stack([S.L + rl, S.R + rr], 1) * gs[:, None]
     mus = np.stack([ml, mr], 1) * g[:, None]
-    mix = limiter(voice[:, None] + sfx + mus, -1.0)
+    mix = limiter(voice[:, None] + sfx + mus, -1.2, look=0.005, release=0.12)
     print("integrated loudness", round(lufs(mix), 1), "LUFS")
     wavfile.write(os.path.join(outdir, "mix.wav"), SR, mix.astype(np.float32))
     wavfile.write(os.path.join(outdir, "stem_voice.wav"), SR, voice.astype(np.float32))

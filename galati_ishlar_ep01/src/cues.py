@@ -41,6 +41,9 @@ def f06_lamp(t):
         if x >= s: g = v
     return g
 
+# --- scene 4: the boys laugh (F10) -----------------------------------------
+LAUGH_T0 = 20.0 + D1
+
 # --- scene 5: street lamp flickers off/on three times -------------------------
 F12_OFF = [(25.80, 25.95), (26.30, 26.50), (26.95, 27.30)]
 def f12_lamp(t):

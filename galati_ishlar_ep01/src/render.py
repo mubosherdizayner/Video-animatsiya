@@ -576,10 +576,24 @@ class S_F10(Shot):
         k = C.smooth(self.u(t))
         dx, dy, r = shake(t, 1.5, 0.08, 0.7, 9.0)
         return dict(z=lerp(1.06, 1.12, k), cx=0.5, cy=lerp(0.52, 0.50, k), dx=dx, dy=dy + 2 * math.sin(2 * math.pi * 2.2 * t))
+    SCHED = None
+    def bounce(self, k, t):
+        """each boy jumps on his own "ha" of the laugh (same schedule as the sound)"""
+        if S_F10.SCHED is None:
+            import laugh
+            S_F10.SCHED = laugh.call_schedule()
+        x = t - C.LAUGH_T0
+        b = 0.0
+        for tc, amp, f0, v in S_F10.SCHED[k]["calls"]:
+            d = x - (tc + 0.035)                      # the shoulders follow the voice onset slightly
+            if 0 <= d < 0.20: b += amp * math.sin(math.pi * d / 0.20) ** 2
+        for tc, amp in S_F10.SCHED[k]["inhales"]:       # a small lift on the in-breath
+            d = x - tc
+            if 0 <= d < 0.34: b += 0.35 * amp * math.sin(math.pi * d / 0.34)
+        return b
     def warp(self, t, X, Y):
-        x = t - self.t0
-        for cx, cy, rx, ry, ph, f in self.BOYS:
-            b = abs(math.sin(2 * math.pi * f * x / 2 + ph)) * 0.007 * min(1, x / 0.25)
+        for k, (cx, cy, rx, ry, ph, f) in enumerate(self.BOYS):
+            b = 0.0075 * self.bounce(k, t)
             X, Y = blob_shift(X, Y, cx, cy, rx, ry, 0.0, -b)
         return X, Y
     def light(self, t, img, M):
@@ -1007,7 +1021,7 @@ def main(out_mp4, audio_wav, workers=4, frames=None):
            "-i", audio_wav, "-map", "0:v", "-map", "1:a",
            "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "12M", "-bufsize", "24M",
            "-pix_fmt", "yuv420p", "-profile:v", "high", "-level", "4.2",
-           "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-ar", str(SR),
+           "-r", str(FPS), "-c:a", "aac", "-b:a", "256k", "-ar", str(SR),
            "-t", f"{DURATION:.3f}", "-movflags", "+faststart", out_mp4]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     t0 = time.time()

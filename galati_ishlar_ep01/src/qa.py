@@ -236,12 +236,30 @@ def main(mp4, out_json):
     check("\"Davomi bor\" appears exactly when \"Davomi\" is spoken", ok,
           dict(davomi_spoken=dav["start"], frame=fi, text_px_before=white(a_), text_px_on=white(b_), stays_to="50.0 s"))
 
-    # --- laughter
+    # --- laughter: kulgi.mp3 if attached, otherwise synthesized (the user asked for it on 27 Nov)
     kul = bool(KULGI and os.path.exists(KULGI))
-    src_txt = open(os.path.join(HERE, "audio.py")).read()
-    ok = ("laugh" not in src_txt.replace("laughter only from kulgi.mp3", "").replace("never synthesized", "")) and not kul
-    check("no synthesized laughter; laughter only from kulgi.mp3", ok,
-          "kulgi.mp3 not attached -> scene 4 has no laughter sound" if not kul else "kulgi.mp3 used at 20.4 s")
+    _, sfx = wavfile.read(os.path.join(d, "stem_sfx.wav")); sfx = sfx.mean(1)
+    lt = R.C.LAUGH_T0
+    seg = sfx[int(lt * SR):int((lt + 3.0) * SR)]
+    lr = 20 * np.log10(np.sqrt(np.mean(seg ** 2)) + 1e-9)
+    end_ok = np.abs(sfx[int((SCENES[5]["start"] - 0.05) * SR):int(SCENES[5]["start"] * SR)]).max() < 0.02
+    check("laughter in scene 4 (kulgi.mp3 if attached, otherwise synthesized on request)", lr > -32 and end_ok,
+          dict(source="kulgi.mp3" if kul else "synthesized (4 boys, source-filter model)", start=lt, rms_db=round(lr, 1),
+               over_before_scene5=bool(end_ok)))
+
+    # --- no sudden dropouts / dead air
+    hop = int(0.05 * SR); n = len(mix) // hop
+    E = 20 * np.log10(np.sqrt((mix[:n * hop].reshape(n, hop) ** 2).mean(1)) + 1e-9)
+    floor = float(E[:int(49.5 / 0.05)].min())
+    _, mus = wavfile.read(os.path.join(d, "stem_music.wav")); mus = mus.mean(1)
+    Em = 20 * np.log10(np.sqrt((mus[:n * hop].reshape(n, hop) ** 2).mean(1)) + 1e-9)
+    i0 = int(R.C.LIGHT_OFF_T / 0.05)
+    fall = float(Em[i0 - 1] - Em[i0 + 2])          # music drop in the first 150 ms after the light-out
+    ok = floor > -50 and fall < 8
+    check("no sudden dropouts: never dead air, the light-out fades smoothly", ok,
+          dict(min_50ms_rms_db=round(floor, 1), music_drop_first_150ms_db=round(fall, 1),
+               light_out_curve_db=[round(float(x)) for x in Em[i0 - 2:i0 + 24:3]]))
+
     res["all_pass"] = all(c["pass"] for c in res["checks"])
     json.dump(res, open(out_json, "w"), ensure_ascii=False, indent=1, default=float)
     print("ALL PASS" if res["all_pass"] else "SOME CHECKS FAILED")
