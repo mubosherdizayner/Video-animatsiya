@@ -1,0 +1,288 @@
+{
+ "duration": {
+  "video": 24.466667,
+  "audio": 24.466,
+  "voiceover": 24.450563,
+  "diff_frames": 0.48,
+  "ok": true
+ },
+ "voice_over_sfx_min_db": 9.1,
+ "lipsync": {
+  "open_in_pauses": [],
+  "min_state_frames": 2,
+  "open_frames_in_speech": 358
+ },
+ "subtitle_frames": [
+  {
+   "word": "Lentada",
+   "start": 0.075,
+   "frame": 2,
+   "offset_frames": -0.25
+  },
+  {
+   "word": "biri",
+   "start": 0.535,
+   "frame": 16,
+   "offset_frames": -0.05
+  },
+  {
+   "word": "hype",
+   "start": 0.835,
+   "frame": 25,
+   "offset_frames": -0.05
+  },
+  {
+   "word": "qilyapti,",
+   "start": 1.18,
+   "frame": 35,
+   "offset_frames": -0.4
+  },
+  {
+   "word": "biri",
+   "start": 1.836,
+   "frame": 55,
+   "offset_frames": -0.08
+  },
+  {
+   "word": "yomonlayapti.",
+   "start": 1.996,
+   "frame": 60,
+   "offset_frames": 0.12
+  },
+  {
+   "word": "Menga",
+   "start": 3.165,
+   "frame": 95,
+   "offset_frames": 0.05
+  },
+  {
+   "word": "yordamingiz",
+   "start": 3.437,
+   "frame": 103,
+   "offset_frames": -0.11
+  },
+  {
+   "word": "kerak.",
+   "start": 4.077,
+   "frame": 122,
+   "offset_frames": -0.31
+  },
+  {
+   "word": "Bu",
+   "start": 4.877,
+   "frame": 146,
+   "offset_frames": -0.31
+  },
+  {
+   "word": "sahifada",
+   "start": 5.017,
+   "frame": 151,
+   "offset_frames": 0.49
+  },
+  {
+   "word": "ikkalasi",
+   "start": 5.677,
+   "frame": 170,
+   "offset_frames": -0.31
+  },
+  {
+   "word": "ham",
+   "start": 6.198,
+   "frame": 186,
+   "offset_frames": 0.06
+  },
+  {
+   "word": "yo'q.",
+   "start": 6.438,
+   "frame": 193,
+   "offset_frames": -0.14
+  },
+  {
+   "word": "\"Instagram'da",
+   "start": 7.095,
+   "frame": 213,
+   "offset_frames": 0.15
+  },
+  {
+   "word": "foydali",
+   "start": 7.718,
+   "frame": 232,
+   "offset_frames": 0.46
+  },
+  {
+   "word": "narsa",
+   "start": 8.199,
+   "frame": 246,
+   "offset_frames": 0.03
+  },
+  {
+   "word": "yo'q\"",
+   "start": 8.639,
+   "frame": 259,
+   "offset_frames": -0.17
+  },
+  {
+   "word": "deydigan",
+   "start": 8.959,
+   "frame": 269,
+   "offset_frames": 0.23
+  },
+  {
+   "word": "do'stingizga",
+   "start": 9.399,
+   "frame": 282,
+   "offset_frames": 0.03
+  },
+  {
+   "word": "yuboring.",
+   "start": 10.059,
+   "frame": 302,
+   "offset_frames": 0.23
+  },
+  {
+   "word": "Bizni",
+   "start": 10.88,
+   "frame": 326,
+   "offset_frames": -0.4
+  },
+  {
+   "word": "ikki",
+   "start": 11.315,
+   "frame": 339,
+   "offset_frames": -0.45
+  },
+  {
+   "word": "yuz",
+   "start": 11.58,
+   "frame": 347,
+   "offset_frames": -0.4
+  },
+  {
+   "word": "ellik",
+   "start": 11.88,
+   "frame": 356,
+   "offset_frames": -0.4
+  },
+  {
+   "word": "kishi",
+   "start": 12.275,
+   "frame": 368,
+   "offset_frames": -0.25
+  },
+  {
+   "word": "kuzatmoqda.",
+   "start": 12.46,
+   "frame": 374,
+   "offset_frames": 0.2
+  },
+  {
+   "word": "Rahmat!",
+   "start": 13.485,
+   "frame": 405,
+   "offset_frames": 0.45
+  },
+  {
+   "word": "Lekin",
+   "start": 14.221,
+   "frame": 427,
+   "offset_frames": 0.37
+  },
+  {
+   "word": "layk",
+   "start": 14.695,
+   "frame": 441,
+   "offset_frames": 0.15
+  },
+  {
+   "word": "so'ramayman.",
+   "start": 15.002,
+   "frame": 450,
+   "offset_frames": -0.06
+  },
+  {
+   "word": "Yordamingiz",
+   "start": 15.9,
+   "frame": 477,
+   "offset_frames": 0.0
+  },
+  {
+   "word": "boshqa:",
+   "start": 16.502,
+   "frame": 495,
+   "offset_frames": -0.06
+  },
+  {
+   "word": "keyingi",
+   "start": 17.335,
+   "frame": 520,
+   "offset_frames": -0.05
+  },
+  {
+   "word": "videoni",
+   "start": 17.703,
+   "frame": 531,
+   "offset_frames": -0.09
+  },
+  {
+   "word": "siz",
+   "start": 18.263,
+   "frame": 548,
+   "offset_frames": 0.11
+  },
+  {
+   "word": "tanlaysiz.",
+   "start": 18.503,
+   "frame": 555,
+   "offset_frames": -0.09
+  },
+  {
+   "word": "Foydalimi",
+   "start": 19.303,
+   "frame": 579,
+   "offset_frames": -0.09
+  },
+  {
+   "word": "yoki",
+   "start": 20.084,
+   "frame": 603,
+   "offset_frames": 0.48
+  },
+  {
+   "word": "kayfiyatlimi?",
+   "start": 20.444,
+   "frame": 613,
+   "offset_frames": -0.32
+  },
+  {
+   "word": "Izohda",
+   "start": 21.51,
+   "frame": 645,
+   "offset_frames": -0.3
+  },
+  {
+   "word": "yozing.",
+   "start": 21.885,
+   "frame": 657,
+   "offset_frames": 0.45
+  },
+  {
+   "word": "Yozmasangiz,",
+   "start": 22.525,
+   "frame": 676,
+   "offset_frames": 0.25
+  },
+  {
+   "word": "onam",
+   "start": 23.415,
+   "frame": 702,
+   "offset_frames": -0.45
+  },
+  {
+   "word": "tanlaydi.",
+   "start": 23.725,
+   "frame": 712,
+   "offset_frames": 0.25
+  }
+ ],
+ "max_sub_offset_frames": 0.49
+}
