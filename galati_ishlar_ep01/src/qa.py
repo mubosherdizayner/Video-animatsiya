@@ -24,6 +24,33 @@ def psnr(a, b):
     m = np.mean((a.astype(np.float32) - b.astype(np.float32)) ** 2)
     return 99.0 if m == 0 else 10 * np.log10(255 ** 2 / m)
 
+def edges(g):
+    g = cv2.GaussianBlur(g, (0, 0), 1.0)
+    return np.sqrt(cv2.Sobel(g, cv2.CV_32F, 1, 0) ** 2 + cv2.Sobel(g, cv2.CV_32F, 0, 1) ** 2)
+
+LOWSRC = {}
+def classify_cam(img, t, ignore=()):
+    """which Flow frame is on screen: each candidate is warped with the camera the renderer
+    uses at time t and compared on edge structure (robust to light effects and grades)"""
+    s, _ = R.shot_at(t)
+    cp = s.cam(t)
+    M = R.cam_matrix(cp.get("z", 1.06), cp.get("cx", 0.5), cp.get("cy", 0.5), cp.get("r", 0.0), cp.get("dx", 0.0), cp.get("dy", 0.0))
+    Ml = M.copy(); Ml[:, 2] /= 4
+    g = edges(cv2.cvtColor(cv2.resize(img, (W // 4, H // 4), interpolation=cv2.INTER_AREA), cv2.COLOR_RGB2GRAY).astype(np.float32))
+    m = np.ones_like(g, bool)
+    for y0, y1 in ignore: m[y0 // 4:y1 // 4] = False
+    best = None
+    for k in [f"F{n:02d}" for n in range(1, 22)]:
+        if k not in LOWSRC:
+            LOWSRC[k] = cv2.cvtColor(cv2.resize(R.SRC(k), (R.SW // 4, R.SH // 4), interpolation=cv2.INTER_AREA), cv2.COLOR_RGB2GRAY).astype(np.float32)
+        ref = edges(cv2.warpAffine(LOWSRC[k], Ml, (W // 4, H // 4), flags=cv2.INTER_LINEAR | cv2.WARP_INVERSE_MAP, borderMode=cv2.BORDER_REFLECT))
+        a, b = g[m] - g[m].mean(), ref[m] - ref[m].mean()
+        r = float((a * b).sum() / (np.sqrt((a * a).sum() * (b * b).sum()) + 1e-6))
+        if best is None or r > best[1]: best = (k, r)
+    return best
+
+TEXT_BANDS = ((330, 790), (1320, 1480), (700, 940))
+
 THUMBS = None
 def classify(img):
     """which Flow frame is on screen (max normalized correlation on small grayscale thumbnails)"""
@@ -45,6 +72,17 @@ def classify(img):
         if best is None or r > best[1]: best = (k, r)
     return best
 
+def spoken_at(tj, t):
+    """word being spoken at t, judged from timing.json alone: from its onset to its end
+    (+0.12 s release), or up to the next word when the gap is shorter than 0.5 s"""
+    for L in tj["lines"].values():
+        ws = L["words"]
+        for k, w in enumerate(ws):
+            nxt = ws[k + 1]["start"] if k + 1 < len(ws) else None
+            end = w["end"] + 0.15 if nxt is None else (nxt if nxt - w["end"] < 0.5 else w["end"] + 0.12)
+            if w["start"] <= t < end: return w["text"]
+    return None
+
 def expected_at(t):
     for k, a, b, sid in shot_list():
         if a <= t + 1e-9 < b: return k, sid
@@ -54,7 +92,7 @@ def main(mp4, out_json):
     res = {"checks": []}
     def check(name, ok, detail):
         res["checks"].append({"check": name, "pass": bool(ok), "detail": detail})
-        print(("PASS " if ok else "FAIL ") + name + " — " + (detail if isinstance(detail, str) else json.dumps(detail, ensure_ascii=False)))
+        print(("PASS " if ok else "FAIL ") + name + " — " + (detail if isinstance(detail, str) else json.dumps(detail, ensure_ascii=False, default=float)))
 
     tj = json.load(open(os.path.join(WORK, "timing.json")))
     fmt, v, a = probe(mp4)
@@ -68,13 +106,13 @@ def main(mp4, out_json):
 
     # --- frame 0: hook visual in motion + hook text
     f0, f1 = frame_at(mp4, 0), frame_at(mp4, 3)
-    cls0 = classify(f0)
+    cls0 = classify_cam(f0, 0.0, TEXT_BANDS)
     hx0, hy0, hx1, hy1 = [int(x) for x in R.hook_box()]
     reg = f0[hy0:hy1, hx0:hx1].astype(np.int32)
     txt = int(((reg[..., 0] > 225) & (reg[..., 1] > 215) & (reg[..., 2] > 205)).sum())
     motion = float(np.abs(f0.astype(np.int16) - f1.astype(np.int16)).mean())
     check("frame 0.0 s shows F01 in motion with \"Bu bazada nima bor?\"", cls0[0] == "F01" and txt > 5000 and motion > 1.0,
-          dict(frame0_is=cls0[0], corr=round(cls0[1], 3), hook_text_px=txt, motion_0_to_0.1s=round(motion, 2)))
+          dict(frame0_is=cls0[0], corr=round(cls0[1], 3), hook_text_px=txt, motion_frame0_to_3=round(motion, 2)))
 
     # --- QA frames: scene + subtitle vs spoken word
     ovl = R.Overlay()
@@ -86,16 +124,13 @@ def main(mp4, out_json):
         img = frame_at(mp4, i)
         cv2.imwrite(os.path.join(shots_dir, f"qa_{t:05.1f}s.png"), img[:, :, ::-1])
         exp_k, sid = expected_at(t)
-        got = classify(img)
+        got = classify_cam(img, t, TEXT_BANDS)
         ref = R.render_frame(i)
         p = psnr(img, ref)
-        spoken = None
-        for ln, L in tj["lines"].items():
-            for w in L["words"]:
-                if w["start"] <= t < w["end"]: spoken = w["text"]
+        spoken = spoken_at(tj, t)
         shown, active = None, None
         for f0_, f1_, ch in ovl.win:
-            if f0_ <= i < f1_:
+            if f0_ <= i < f1_ and not ovl.in_pause(i):
                 shown = " ".join(w["text"] for w in ch)
                 act = 0
                 for k, w in enumerate(ch):
@@ -107,14 +142,21 @@ def main(mp4, out_json):
                          spoken=spoken, subtitle=shown, highlighted=active))
     check("QA frames 1.0/6.0/16.5/38.5/48.5: scene and subtitle match the spoken word", allok, rows)
 
-    # --- every shot change lands on its start frame
-    bad = []
-    for k, a_, b_, sid in shot_list():
-        if k == "BLACK": continue
+    # --- every shot change lands on its start frame (and the frame before still shows the previous shot)
+    bad = []; sl = shot_list()
+    for n, (k, a_, b_, sid) in enumerate(sl):
         i = fr(a_)
-        got = classify(frame_at(mp4, i))
-        if got[0] != k: bad.append(dict(shot=k, t=a_, seen=got[0]))
-    check("scene changes at their start times", not bad, bad or "all shots on their first frame")
+        prev_k = sl[n - 1][0] if n else None
+        img = frame_at(mp4, i)
+        got = ("BLACK", 1.0) if k == "BLACK" and img.mean() < 8 else classify_cam(img, a_, TEXT_BANDS)
+        if prev_k is None:
+            pb = None
+        else:
+            imb = frame_at(mp4, i - 1)
+            pb = ("BLACK", 1.0) if prev_k == "BLACK" and imb.mean() < 8 else classify_cam(imb, (i - 1) / FPS, TEXT_BANDS)
+        if got[0] != k or (pb is not None and pb[0] != prev_k):
+            bad.append(dict(shot=k, t=a_, seen=got[0], frame_before=pb and pb[0], expected_before=prev_k))
+    check("scene changes at their start times", not bad, bad or f"all {len(sl)} shots start on their frame; the frame before shows the previous shot")
 
     # --- voice line starts (cross-correlation of each cut line against the decoded MP4 audio)
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", mp4, "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True).stdout
@@ -201,7 +243,7 @@ def main(mp4, out_json):
     check("no synthesized laughter; laughter only from kulgi.mp3", ok,
           "kulgi.mp3 not attached -> scene 4 has no laughter sound" if not kul else "kulgi.mp3 used at 20.4 s")
     res["all_pass"] = all(c["pass"] for c in res["checks"])
-    json.dump(res, open(out_json, "w"), ensure_ascii=False, indent=1)
+    json.dump(res, open(out_json, "w"), ensure_ascii=False, indent=1, default=float)
     print("ALL PASS" if res["all_pass"] else "SOME CHECKS FAILED")
 
 if __name__ == "__main__":

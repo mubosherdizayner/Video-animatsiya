@@ -1,0 +1,400 @@
+{
+ "method": "faster-whisper word_timestamps",
+ "lines": {
+  "1": {
+   "speaker": "HIKOYACHI",
+   "voice_start": 3.2,
+   "cut": [
+    0.0,
+    6.12
+   ],
+   "clip_dur": 6.12,
+   "words": [
+    {
+     "text": "1980-yil.",
+     "script": "1980-yil.",
+     "start": 3.2,
+     "end": 5.02,
+     "src": [
+      0.0,
+      1.82
+     ]
+    },
+    {
+     "text": "Tunqoʻrgʻon.",
+     "script": "Tunqo'rg'on.",
+     "start": 5.49,
+     "end": 6.12,
+     "src": [
+      2.29,
+      2.92
+     ]
+    },
+    {
+     "text": "Bu",
+     "script": "Bu",
+     "start": 6.645,
+     "end": 6.825,
+     "src": [
+      3.445,
+      3.625
+     ]
+    },
+    {
+     "text": "bazada",
+     "script": "bazada",
+     "start": 6.825,
+     "end": 7.145,
+     "src": [
+      3.625,
+      3.945
+     ]
+    },
+    {
+     "text": "nima",
+     "script": "nima",
+     "start": 7.145,
+     "end": 7.36,
+     "src": [
+      3.945,
+      4.16
+     ]
+    },
+    {
+     "text": "qilishayotganini",
+     "script": "qilishayotganini",
+     "start": 7.36,
+     "end": 8.2,
+     "src": [
+      4.16,
+      5.0
+     ]
+    },
+    {
+     "text": "hech",
+     "script": "hech",
+     "start": 8.2,
+     "end": 8.514,
+     "src": [
+      5.0,
+      5.314
+     ]
+    },
+    {
+     "text": "kim",
+     "script": "kim",
+     "start": 8.514,
+     "end": 8.75,
+     "src": [
+      5.314,
+      5.55
+     ]
+    },
+    {
+     "text": "bilmasdi.",
+     "script": "bilmasdi.",
+     "start": 8.75,
+     "end": 9.32,
+     "src": [
+      5.55,
+      6.12
+     ]
+    }
+   ],
+   "whisper": [
+    "1980",
+    "-ci",
+    "il,",
+    "Tunqurgan.",
+    "Bu",
+    "bazada",
+    "nima",
+    "qilishiyatganini",
+    "hechkin",
+    "bilmast."
+   ]
+  },
+  "2": {
+   "speaker": "HIKOYACHI",
+   "voice_start": 11.6,
+   "cut": [
+    6.7,
+    8.74
+   ],
+   "clip_dur": 2.04,
+   "words": [
+    {
+     "text": "Oʻsha",
+     "script": "O'sha",
+     "start": 11.6,
+     "end": 11.81,
+     "src": [
+      6.7,
+      6.91
+     ]
+    },
+    {
+     "text": "kecha",
+     "script": "kecha",
+     "start": 11.81,
+     "end": 12.31,
+     "src": [
+      6.91,
+      7.41
+     ]
+    },
+    {
+     "text": "nimadir",
+     "script": "nimadir",
+     "start": 12.31,
+     "end": 12.795,
+     "src": [
+      7.41,
+      7.895
+     ]
+    },
+    {
+     "text": "tashqariga",
+     "script": "tashqariga",
+     "start": 12.795,
+     "end": 13.14,
+     "src": [
+      7.895,
+      8.24
+     ]
+    },
+    {
+     "text": "chiqdi.",
+     "script": "chiqdi.",
+     "start": 13.14,
+     "end": 13.64,
+     "src": [
+      8.24,
+      8.74
+     ]
+    }
+   ],
+   "whisper": [
+    "Ushekechi,",
+    "nimadir",
+    "tashqargi",
+    "chukdi."
+   ]
+  },
+  "3": {
+   "speaker": "DONIYOR",
+   "voice_start": 16.0,
+   "cut": [
+    8.8,
+    11.45
+   ],
+   "clip_dur": 2.65,
+   "words": [
+    {
+     "text": "Dev",
+     "script": "Dev",
+     "start": 16.0,
+     "end": 16.37,
+     "src": [
+      8.8,
+      9.17
+     ]
+    },
+    {
+     "text": "keldi!",
+     "script": "keldi!",
+     "start": 16.37,
+     "end": 17.135,
+     "src": [
+      9.17,
+      9.935
+     ]
+    },
+    {
+     "text": "Nima",
+     "script": "Nima",
+     "start": 17.39,
+     "end": 17.575,
+     "src": [
+      10.19,
+      10.375
+     ]
+    },
+    {
+     "text": "qilasan,",
+     "script": "qilasan,",
+     "start": 17.575,
+     "end": 18.035,
+     "src": [
+      10.375,
+      10.835
+     ]
+    },
+    {
+     "text": "Sardor?",
+     "script": "Sardor?",
+     "start": 18.035,
+     "end": 18.56,
+     "src": [
+      10.835,
+      11.36
+     ]
+    }
+   ],
+   "whisper": [
+    "Dev",
+    "geldi!",
+    "Nimaqilasan,",
+    "sardor?"
+   ]
+  },
+  "4": {
+   "speaker": "SARDOR",
+   "voice_start": 19.0,
+   "cut": [
+    11.6,
+    12.46
+   ],
+   "clip_dur": 0.86,
+   "words": [
+    {
+     "text": "Qochaman!",
+     "script": "Qochaman!",
+     "start": 19.0,
+     "end": 19.81,
+     "src": [
+      11.6,
+      12.41
+     ]
+    }
+   ],
+   "whisper": [
+    "Kocha",
+    "man!"
+   ]
+  },
+  "5": {
+   "speaker": "HIKOYACHI",
+   "voice_start": 44.7,
+   "cut": [
+    12.85,
+    17.88
+   ],
+   "clip_dur": 5.03,
+   "words": [
+    {
+     "text": "Ertasi",
+     "script": "Ertasi",
+     "start": 44.7,
+     "end": 45.108,
+     "src": [
+      12.85,
+      13.258
+     ]
+    },
+    {
+     "text": "kuni",
+     "script": "kuni",
+     "start": 45.108,
+     "end": 45.535,
+     "src": [
+      13.258,
+      13.685
+     ]
+    },
+    {
+     "text": "Sardorni",
+     "script": "Sardorni",
+     "start": 45.535,
+     "end": 46.355,
+     "src": [
+      13.685,
+      14.505
+     ]
+    },
+    {
+     "text": "hech",
+     "script": "hech",
+     "start": 46.355,
+     "end": 46.525,
+     "src": [
+      14.505,
+      14.675
+     ]
+    },
+    {
+     "text": "kim",
+     "script": "kim",
+     "start": 46.525,
+     "end": 46.84,
+     "src": [
+      14.675,
+      14.99
+     ]
+    },
+    {
+     "text": "topolmadi.",
+     "script": "topolmadi.",
+     "start": 46.84,
+     "end": 47.45,
+     "src": [
+      14.99,
+      15.6
+     ]
+    },
+    {
+     "text": "Davomi",
+     "script": "Davomi",
+     "start": 47.925,
+     "end": 48.26,
+     "src": [
+      16.075,
+      16.41
+     ]
+    },
+    {
+     "text": "bor —",
+     "script": "bor —",
+     "start": 48.26,
+     "end": 48.615,
+     "src": [
+      16.41,
+      16.765
+     ]
+    },
+    {
+     "text": "obuna",
+     "script": "obuna",
+     "start": 48.945,
+     "end": 49.26,
+     "src": [
+      17.095,
+      17.41
+     ]
+    },
+    {
+     "text": "boʻling.",
+     "script": "bo'ling.",
+     "start": 49.26,
+     "end": 49.725,
+     "src": [
+      17.41,
+      17.875
+     ]
+    }
+   ],
+   "whisper": [
+    "Əртәскөnә,",
+    "sәrdарны",
+    "хич",
+    "ким",
+    "тополмәдә.",
+    "Довамы",
+    "бар,",
+    "абу",
+    "не",
+    "болим!"
+   ]
+  }
+ }
+}

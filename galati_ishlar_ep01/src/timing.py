@@ -192,8 +192,11 @@ def main(model_dir, out_json):
         loud = np.where(db > db.max() - 45)[0]
         speech_end = min(b - a, (loud[-1] + 1) * 0.005 + 0.02) if len(loud) else b - a
         times[-1][1] = speech_end
-        for i in range(len(sw) - 1):             # contiguous highlighting
-            times[i][1] = max(times[i][1], times[i + 1][0]) if times[i + 1][0] - times[i][1] < 0.6 else times[i][1]
+        # word ends: where the next pause begins (energy), otherwise contiguous with the next word
+        for i in range(len(sw) - 1):
+            s0, nx = a + times[i][0], a + times[i + 1][0]
+            gaps = [r for r in GRUNS if s0 + 0.1 < r[0] < nx and r[1] - r[0] >= 0.15]
+            times[i][1] = (gaps[0][0] + 0.03 - a) if gaps else times[i + 1][0]
         vs = VOICE_START[line]
         out["lines"][line] = {
             "speaker": SCRIPT[line][0], "voice_start": vs, "cut": [a, b], "clip_dur": round(b - a, 3),

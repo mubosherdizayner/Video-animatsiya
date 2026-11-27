@@ -819,9 +819,9 @@ def shot_at(t):
 def font(size, path=FONT):
     return ImageFont.truetype(path, size)
 
-SUB_SIZE = 76
+SUB_SIZE = 74
 SUB_Y = 1400            # plate centre (Reels safe zone: above the caption/UI band)
-SUB_MAXW = 800
+SUB_MAXW = 772         # plate <= 840 px: stays left of the Reels action column
 PADX, PADY = 34, 20
 
 def text_w(s, size, path=FONT):
@@ -832,21 +832,30 @@ def load_timing():
     return tj
 
 def build_chunks(tj):
-    chunks = []
+    """one-line chunks: split at sentence ends, then a DP per sentence -> fewest plates,
+    no plate ending on a short word (keeps "hech kim" together), balanced widths"""
     gap = text_w(" ", SUB_SIZE)
+    def width(ws): return sum(text_w(x["text"], SUB_SIZE) for x in ws) + gap * (len(ws) - 1)
+    chunks = []
     for line, L in sorted(tj["lines"].items(), key=lambda kv: int(kv[0])):
-        cur = []
-        words = L["words"]
-        for k, w in enumerate(words):
-            cand = cur + [w]
-            wid = sum(text_w(x["text"], SUB_SIZE) for x in cand) + gap * (len(cand) - 1)
-            if cur and (wid > SUB_MAXW or len(cand) > 3):
-                chunks.append(cur); cur = [w]
-            else:
-                cur = cand
-            if cur and cur[-1]["text"].rstrip()[-1:] in ".!?—" and k < len(words) - 1:
-                chunks.append(cur); cur = []
-        if cur: chunks.append(cur)
+        sent, cur = [], []
+        for w in L["words"]:
+            cur.append(w)
+            if w["text"].rstrip()[-1:] in ".!?—": sent.append(cur); cur = []
+        if cur: sent.append(cur)
+        for sw in sent:
+            n = len(sw); best = {0: (0.0, [])}
+            for j in range(1, n + 1):
+                for i in range(max(0, j - 3), j):
+                    if i not in best: continue
+                    seg = sw[i:j]; wd = width(seg)
+                    if wd > SUB_MAXW and j - i > 1: continue
+                    pen = 100.0
+                    if j < n and len(seg[-1]["text"].strip(".,!?—")) <= 4: pen += 60
+                    pen += (wd / SUB_MAXW) ** 2 * 5
+                    c = best[i][0] + pen
+                    if j not in best or c < best[j][0]: best[j] = (c, best[i][1] + [seg])
+            chunks += best[n][1]
     return chunks
 
 def chunk_windows(tj, chunks):
@@ -866,6 +875,7 @@ def chunk_windows(tj, chunks):
         res.append((f0, f1, ch))
     return res
 
+PAUSE_HIDE = 0.5
 _SUBCACHE = {}
 def sub_image(ch, active):
     key = (tuple(w["text"] for w in ch), active)
@@ -966,9 +976,19 @@ class Overlay:
                 act = 0
                 for k, w in enumerate(ch):
                     if i >= fr(w["start"]): act = k
-                blit(img, sub_image(ch, act), W / 2, SUB_Y)
+                if not self.in_pause(i):
+                    blit(img, sub_image(ch, act), W / 2, SUB_Y)
                 break
         return img
+
+    def in_pause(self, i):
+        """inside a pause of >= 0.5 s between two words of a line (shown only while someone speaks)"""
+        for L in self.tj["lines"].values():
+            ws = L["words"]
+            for a, b in zip(ws, ws[1:]):
+                if b["start"] - a["end"] >= PAUSE_HIDE and fr(a["end"] + 0.12) <= i < fr(b["start"]):
+                    return True
+        return False
 
 OVL = None
 def render_frame(i):
@@ -985,7 +1005,8 @@ def main(out_mp4, audio_wav, workers=4, frames=None):
     n = NFRAMES if frames is None else frames
     cmd = ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
            "-i", audio_wav, "-map", "0:v", "-map", "1:a",
-           "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-pix_fmt", "yuv420p", "-profile:v", "high", "-level", "4.2",
+           "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-maxrate", "12M", "-bufsize", "24M",
+           "-pix_fmt", "yuv420p", "-profile:v", "high", "-level", "4.2",
            "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-ar", str(SR),
            "-t", f"{DURATION:.3f}", "-movflags", "+faststart", out_mp4]
     p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
