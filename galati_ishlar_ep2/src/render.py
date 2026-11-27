@@ -23,6 +23,7 @@ def clamp01(x): return 0.0 if x < 0 else 1.0 if x > 1 else x
 def lerp(a, b, t): return a + (b - a) * t
 def smooth(x): x = clamp01(x); return x * x * (3 - 2 * x)
 def ease_out(x): x = clamp01(x); return 1 - (1 - x) ** 3
+def ease_in(x): x = clamp01(x); return x * x * x
 def ease_out_back(x, s=1.9): x = clamp01(x) - 1; return x * x * ((s + 1) * x + s) + 1
 def uz(s): return s.replace("o'", "oʻ").replace("g'", "gʻ").replace("O'", "Oʻ").replace("G'", "Gʻ")
 
@@ -334,17 +335,108 @@ def cam_for(sid, tl, d, img):
     if sid == 15: return Cam(img, lerp(1.60, 1.72, p), lerp(0.40, 0.39, p), lerp(0.49, 0.47, p))
     if sid == 16: return Cam(img, lerp(1.10, 1.22, p), lerp(0.62, 0.70, p), lerp(0.52, 0.47, p))
     if sid == 18: return Cam(img, lerp(1.10, 1.22, p), 0.5, lerp(0.48, 0.45, p))
-    if sid == 19: return Cam(img, lerp(1.12, 1.30, p), 0.5, 0.42)
+    if sid == 19: return Cam(img, lerp(1.12, 1.30, p) + 0.07 * ease_in((tl - (d - 0.35)) / 0.35), 0.5, 0.42)
     if sid == 20:
-        sh = math.exp(-tl / 0.12) * (tl < 0.4)
-        du = 0.016 * sh * math.sin(2 * math.pi * 23 * tl); dv = 0.012 * sh * math.sin(2 * math.pi * 17 * tl + 1)
-        s = lerp(1.26, 1.10, ease_out((tl - 0.35) / 0.8)) - 0.01 * p
+        ti = tl - IMPACT20
+        sh = math.exp(-max(ti, 0) / 0.13) * (0 <= ti < 0.45)
+        du = 0.018 * sh * math.sin(2 * math.pi * 23 * ti); dv = 0.013 * sh * math.sin(2 * math.pi * 17 * ti + 1)
+        punch = 0.06 * math.exp(-ti / 0.12) if ti >= 0 else 0.0
+        s = lerp(1.32, 1.10, ease_out((tl - 0.40) / 0.9)) + punch - 0.01 * p
         return Cam(img, s, 0.45 + du, 0.58 + dv)
     if sid == 21: return Cam(img, lerp(1.12, 1.22, p), lerp(0.42, 0.52, p), lerp(0.55, 0.52, p))
     if sid == 22: return Cam(img, lerp(1.10, 1.18, p), 0.47, 0.48)
     if sid == 23: return Cam(img, lerp(1.10, 1.35, p), lerp(0.55, 0.59, p), lerp(0.52, 0.50, p))
     if sid == 24: return Cam(img, lerp(1.08, 1.16, p), 0.5, 0.60)
     raise ValueError(sid)
+
+
+# ---------------------------------------------------------------- scene 20: the push
+IMPACT20 = 0.10                    # men hit the wall 0.1 s after the cut
+GIRL20 = (0.50, 0.64)              # 27's chest in frame_18 (image coords)
+MEN20 = (0.38, 0.50)               # centre of the three flying men
+_grid = {}
+
+
+def warp20(img, cam, tl):
+    """shock ring refracting outward from 27 + the men drifting further toward the wall (smooth warp, no cut-outs)"""
+    from scipy.ndimage import map_coordinates
+    if "yx" not in _grid:
+        _grid["yx"] = np.mgrid[0:H, 0:W].astype(np.float32)
+    gy, gx = _grid["yx"]
+    dx = np.zeros((H, W), np.float32); dy = np.zeros((H, W), np.float32)
+    cx, cy = cam.xy(*GIRL20)
+    q = tl / 0.45
+    if q < 1:                                    # refracting ring
+        R = 40 + 1500 * ease_out(q); wdt = 70 + 60 * q; A = 26 * (1 - q) ** 1.5
+        rx, ry = gx - cx, gy - cy; r = np.sqrt(rx * rx + ry * ry) + 1e-3
+        k = A * np.exp(-((r - R) / wdt) ** 2)
+        dx -= k * rx / r; dy -= k * ry / r      # sample inward -> pixels pushed outward
+    ti = tl - IMPACT20
+    if ti > 0:                                   # men keep flying left/up, eased
+        mx, my = cam.xy(*MEN20); z = cam.ppu()
+        sx, sy = 0.16 * W * z, 0.075 * H * z
+        g = np.exp(-(((gx - mx) / sx) ** 2 + ((gy - my) / sy) ** 2))
+        mv = 34 * z * ease_out(ti / 1.4)
+        dx += g * mv * 0.92; dy += g * mv * 0.38   # source offset: content moves left/up
+    a = np.asarray(img, np.float32)
+    out = np.empty_like(a)
+    for c in range(3):
+        out[..., c] = map_coordinates(a[..., c], [gy + dy, gx + dx], order=1, mode="nearest")
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+
+
+def fx20(base, cam, tl):
+    from PIL import ImageDraw as D_
+    cx, cy = cam.xy(*GIRL20); z = cam.ppu()
+    ti = tl - IMPACT20
+    # soft shock band (blurred, flat) travelling out from 27
+    q = tl / 0.45
+    if q < 1:
+        ring = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = D_.Draw(ring)
+        R = 40 + 1500 * ease_out(q)
+        d.ellipse((cx - R, cy - R, cx + R, cy + R), outline=(220, 230, 236, int(120 * (1 - q) ** 1.3)), width=int(46 - 30 * q))
+        base.alpha_composite(ring.filter(ImageFilter.GaussianBlur(7)))
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = D_.Draw(lay)
+    if tl < 0.42:                                # air streaks from 27 toward the men
+        r = np.random.default_rng(200)
+        for k in range(30):
+            ang = math.radians(r.uniform(-165, -70)); sp = r.uniform(1600, 2800); L = r.uniform(200, 420)
+            r0 = 70 + sp * tl; r1 = r0 + L
+            al = int(175 * clamp01(1 - tl / 0.42) * r.uniform(0.45, 1.0))
+            d.line((cx + math.cos(ang) * r0, cy + math.sin(ang) * r0, cx + math.cos(ang) * r1, cy + math.sin(ang) * r1),
+                   fill=(238, 242, 244, al), width=int(r.uniform(4, 9)))
+    if ti > 0:                                   # debris from the wall: piyola shards, splinters, leaves
+        r = np.random.default_rng(300)
+        cols = [(236, 240, 244), (236, 240, 244), (70, 112, 166), (128, 98, 70), (150, 116, 80), (170, 128, 70)]
+        for k in range(30):
+            a = ti - r.uniform(0, 0.10)
+            u0, v0 = r.uniform(0.08, 0.30), r.uniform(0.38, 0.50)
+            vx, vy = r.uniform(-260, 380), r.uniform(-620, -80)      # bursts up and out from the wall
+            spin = r.uniform(-16, 16); size = r.uniform(6, 13); col = cols[k % len(cols)]
+            if a <= 0 or a > 1.7: continue
+            def pos(a_):
+                return (u0 * 756 + vx * (1 - math.exp(-a_ / 0.5)) * 0.5,
+                        v0 * 1344 + vy * (1 - math.exp(-a_ / 0.5)) * 0.5 + 330 * a_ * a_)
+            px, py = pos(a); qx, qy = pos(max(0.0, a - 0.05))
+            x, y = cam.xy(px / 756, py / 1344); x2, y2 = cam.xy(qx / 756, qy / 1344); sz = size * 1.43 * z * 0.5
+            al = int(235 * clamp01((1.7 - a) / 0.5))
+            d.line((x2, y2, x, y), fill=col + (al // 3,), width=max(2, int(sz)))          # short motion trail
+            ang = spin * a
+            pts = [(x + math.cos(ang + o) * sz * f, y + math.sin(ang + o) * sz * f) for o, f in ((0, 1.0), (2.2, 0.55), (3.9, 0.9), (5.1, 0.5))]
+            d.polygon(pts, fill=col + (al,))
+    base.alpha_composite(lay.filter(ImageFilter.GaussianBlur(1.0)))
+    if ti > 0:                                   # dust cloud puffing out of the wall
+        r = np.random.default_rng(400)
+        for k in range(14):
+            a = ti - r.uniform(0, 0.12)
+            if a <= 0: continue
+            u, v = r.uniform(0.06, 0.32), r.uniform(0.40, 0.50)
+            x, y = cam.xy(u, v - 0.02 * a)
+            rad = (30 + 150 * ease_out(a / 0.9)) * z * r.uniform(0.7, 1.2)
+            paste(base, blob(rad, 0.38 * math.exp(-a / 0.7), (192, 176, 152)), x + 30 * a * r.uniform(-1, 1), y)
+    if 0 <= ti < 0.2:                            # cold impact flash
+        fl = Image.new("RGBA", (W, H), (226, 234, 240, int(95 * (1 - ti / 0.2) ** 1.5)))
+        base.alpha_composite(fl)
 
 
 STEAM = dict(col=(238, 236, 230), rate=5.0, life=2.6, rise=0.06, size0=0.022, grow=2.2, alpha=0.16, sway=0.018, spread=0.012)
@@ -413,16 +505,17 @@ def overlays(base, sid, tl, d, t, cam):
     elif sid == 20:
         fog_layer(base, "mist_far", 760, -40, t, 0.7)
         fog_layer(base, "dust_low", 1150, -80, t, 0.6)
-        if tl > 0.08:   # dust burst from the impact point
-            x0, y0 = cam.xy(0.36, 0.46)
+        if tl > IMPACT20:   # dust burst from the impact point
+            x0, y0 = cam.xy(0.30, 0.47)
             r = np.random.default_rng(20)
             for k in range(46):
-                ang = r.uniform(-math.pi, 0.4); sp = r.uniform(150, 620); a = tl - 0.08 - r.uniform(0, 0.15)
+                ang = r.uniform(-math.pi, 0.4); sp = r.uniform(150, 620); a = tl - IMPACT20 - r.uniform(0, 0.15)
                 if a <= 0: continue
                 dist = sp * (1 - math.exp(-a / 0.35)) * 0.35
                 x = x0 + math.cos(ang) * dist; y = y0 + math.sin(ang) * dist + 40 * a * a
                 al = 0.55 * math.exp(-a / 0.8)
                 paste(base, blob(r.uniform(3, 11) * (1 + a), al, (176, 160, 138), 0.3), x, y)
+        fx20(base, cam, tl)
     elif sid == 21:
         fog_layer(base, "mist_far", 700, -60, t, 0.8)
         fog_layer(base, "mist_mid", 1000, -130, t, 0.9)
@@ -452,6 +545,7 @@ def frame(n):
         else:
             img = cam_for(sid, tl, d, sim).render()
         cam = cam_for(sid, tl, d, sim)
+        if sid == 20: img = warp20(img, cam, tl)
         if sid == 22:
             rad = 14 * (1 - ease_out(tl / 0.9))
             if rad > 0.3: img = img.filter(ImageFilter.GaussianBlur(rad))

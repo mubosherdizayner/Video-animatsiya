@@ -4,7 +4,7 @@ VOICE_LINES = [
     (2, "ZULFIYA OPA", "Rustam! Ukang qani?!"),
     (3, "BAXTIYOR AKA", "Opa, bolalar shunaqa. Kechqurun o'zi kelib qoladi."),
     (4, "QODIR AKA", "Isming nima, qizim?"),
-    (5, "QODIR AKA", "Allo, bolalar uyimi?"),
+    (5, "QODIR AKA", "Alo, bolalar uyimi?"),
     (6, "HIKOYACHI", "Lekin kelganlar bolalar uyidan emas, bazadan edi."),
     (7, "SALIMOV", "Uni toping."),
     (8, "HIKOYACHI", "Davomi bor — obuna bo'ling."),

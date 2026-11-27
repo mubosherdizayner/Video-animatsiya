@@ -255,6 +255,42 @@ def drip():
     return lp(x, 2500)
 
 
+def suck(dur=0.55):
+    """reverse swell: air pulled in before the push (rises, ends abruptly at the cut)"""
+    n = n_(dur); t = tt(n)
+    e = (t / dur) ** 2.2
+    nz = lp(pink(n, 501), 900) * e
+    tone = np.sin(2 * np.pi * np.cumsum(40 + 50 * (t / dur) ** 2) / SR) * e
+    x = nz + 0.8 * tone
+    x[-n_(0.004):] *= np.linspace(1, 0, n_(0.004))
+    return x
+
+
+def sub_hit():
+    n = n_(1.6); t = tt(n)
+    f = 30 + 55 * np.exp(-t / 0.05)
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.45)
+    x += 0.6 * lp(white(n, 502), 220, 4) * np.exp(-t / 0.08)
+    return lp(x, 300) * np.minimum(t / 0.002, 1)
+
+
+def debris_rain(dur=1.4, seed=503):
+    r = np.random.default_rng(seed); out = np.zeros(n_(dur + 0.3))
+    for k in range(16):
+        p = n_(r.uniform(0.0, dur) ** 1.4 / dur ** 0.4)
+        if r.random() < 0.5:
+            c = thump(r.uniform(140, 260), 0.12, 0.02, 0.4, k)               # wood bits / clods
+        else:
+            c = clink([r.uniform(700, 1100), r.uniform(1500, 2100)], 0.05, k, 0.5)   # small shards, low and short
+        c = c[:len(out) - p]; out[p:p + len(c)] += c * r.uniform(0.3, 1.0) * (1 - p / len(out))
+    return lp(out, 3000)
+
+
+def rumble_tail(dur=1.8):
+    n = n_(dur); t = tt(n)
+    return lp(brown(n, 504), 120, 4) * np.exp(-t / 0.6) * np.minimum(t / 0.02, 1)
+
+
 def pop():
     n = n_(0.14); t = tt(n)
     f = 260 + 340 * np.exp(-t / 0.02)
@@ -456,6 +492,10 @@ def main(vo, timing, outdir):
     blk = np.clip(np.minimum((t - S[17]["start"]) / 0.05, (S[17]["end"] - t) / 0.3), 0, 1)
     amb *= (1 - 0.75 * blk)[:, None]
     amb *= (1 - (1 - db(-8)) * speech_env)[:, None]
+    c20 = S[20]["start"]
+    dip = np.clip((t - (c20 - 0.45)) / 0.45, 0, 1) * (t < c20 + 0.1) + (t >= c20 + 0.1) * np.clip(1 - (t - (c20 + 0.1)) / 0.7, 0, 1)
+    dipg = 1 - (1 - db(-10)) * dip
+    amb *= dipg[:, None]
 
     # ---- sfx events (absolute times from scene starts)
     def at(sid, dt): return S[sid]["start"] + dt
@@ -486,7 +526,11 @@ def main(vo, timing, outdir):
     for k, dt in enumerate((0.2, 0.9, 1.6)): ev.append((at(18, dt), wood_step(30 + k, True), -23, 0.1 - 0.1 * k))
     ev.append((at(19, 0.0), rumble_rise(S[19]["end"] - S[19]["start"] + 0.1), -22, 0))
     ev.append((at(19, 0.15), heartbeat(2, 0.9), -20, 0))
-    ev.append((at(20, 0.0), whoosh(0.6), -24, 0))
+    ev.append((at(20, 0.0) - 0.55, suck(0.55), -22, 0))
+    ev.append((at(20, 0.0), whoosh(0.6), -23, -0.2))
+    ev.append((at(20, 0.10), sub_hit(), -15, 0))
+    ev.append((at(20, 0.14), rumble_tail(1.8), -22, 0))
+    ev.append((at(20, 0.45), debris_rain(1.3), -29, -0.1))
     ev.append((at(20, 0.12), wall_thud(40), -19, -0.15))
     ev.append((at(20, 0.30), wall_thud(41), -21, 0.15))
     ev.append((at(20, 0.22), clatter(42), -27, 0.2))
@@ -502,7 +546,7 @@ def main(vo, timing, outdir):
         sfx[p:p + len(sig), 0] += sig * l; sfx[p:p + len(sig), 1] += sig * r
     sfx *= (1 - (1 - db(-6)) * speech_env)[:, None]
 
-    mus = music(n, scenes, speech_env) * db(-24)  # pad RMS -20 dBFS -> about -44 dBFS, ~26 dB under the -18 dBFS voice
+    mus = music(n, scenes, speech_env) * db(-24) * dipg[:, None]  # pad RMS -20 dBFS -> about -44 dBFS, ~26 dB under the -18 dBFS voice
 
     vo2 = np.stack([voice, voice], 1)
     mix = vo2 + amb + sfx + mus

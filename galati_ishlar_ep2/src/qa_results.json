@@ -17,7 +17,7 @@
  {
   "check": "frame@24.5s scene+subtitle",
   "ok": true,
-  "detail": "t=24.5: scene 13 expects frame_13, best image match frame_13 (r=0.86); spoken word 'Allo,' (23.95-24.48s), highlighted amber px=2796"
+  "detail": "t=24.5: scene 13 expects frame_13, best image match frame_13 (r=0.86); spoken word 'Alo,' (23.95-24.48s), highlighted amber px=2588"
  },
  {
   "check": "frame@44.0s scene+subtitle",
@@ -47,7 +47,7 @@
  {
   "check": "silent scenes have ambience + sfx",
   "ok": true,
-  "detail": "scene:rms/sfx-events 7:-27dB/1sfx, 8:-24dB/2sfx, 9:-26dB/1sfx, 10:-27dB/0sfx, 12:-27dB/1sfx, 16:-26dB/1sfx, 17:-18dB/1sfx, 18:-24dB/3sfx, 19:-23dB/2sfx, 20:-24dB/4sfx, 21:-22dB/1sfx, 22:-25dB/2sfx"
+  "detail": "scene:rms/sfx-events 7:-27dB/1sfx, 8:-24dB/2sfx, 9:-26dB/1sfx, 10:-27dB/0sfx, 12:-27dB/1sfx, 16:-26dB/1sfx, 17:-18dB/1sfx, 18:-24dB/3sfx, 19:-23dB/3sfx, 20:-20dB/7sfx, 21:-22dB/1sfx, 22:-25dB/2sfx"
  },
  {
   "check": "audio ends with >=1.0 s fade",
@@ -62,7 +62,7 @@
  {
   "check": "voice clearly above sfx + music",
   "ok": true,
-  "detail": "speech blocks (161): voice - (amb+sfx+music) median 20.8 LU, 5th pct 13.3 LU; music median 30.8 LU under voice; sfx peak momentary -19.0 vs voice -8.1 LUFS"
+  "detail": "speech blocks (161): voice - (amb+sfx+music) median 20.8 LU, 5th pct 13.3 LU; music median 30.8 LU under voice; sfx peak momentary -16.7 vs voice -8.2 LUFS"
  },
  {
   "check": "text inside safe zone",
