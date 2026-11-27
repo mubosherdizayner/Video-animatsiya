@@ -1,0 +1,38 @@
+# Script data for "G'alati ishlar" ep.2 ("Qochoq qiz"), copied from the brief.
+VOICE_LINES = [
+    (1, "HIKOYACHI", "Sardor yo'qolgan tongda o'rmondan bir qiz chiqdi."),
+    (2, "ZULFIYA OPA", "Rustam! Ukang qani?!"),
+    (3, "BAXTIYOR AKA", "Opa, bolalar shunaqa. Kechqurun o'zi kelib qoladi."),
+    (4, "QODIR AKA", "Isming nima, qizim?"),
+    (5, "QODIR AKA", "Allo, bolalar uyimi?"),
+    (6, "HIKOYACHI", "Lekin kelganlar bolalar uyidan emas, bazadan edi."),
+    (7, "SALIMOV", "Uni toping."),
+    (8, "HIKOYACHI", "Davomi bor — obuna bo'ling."),
+]
+# id, start, end, frame, voice_line, voice_at, continues_line, starts_on_word, location, on_screen_text
+SCENES = [
+    dict(id=1, start=0.0, end=1.8, frame=1, vl=1, vat=0.1, loc="forest", text="Bu qiz kim?"),
+    dict(id=2, start=1.8, end=3.6, frame=2, cont=1, sow="o'rmondan", loc="forest", text="Bu qiz kim?"),
+    dict(id=3, start=3.6, end=5.1, frame=3, vl=2, vat=3.7, loc="house"),
+    dict(id=4, start=5.1, end=6.6, frame=4, cont=2, sow="Ukang", loc="house"),
+    dict(id=5, start=6.6, end=8.6, frame=5, vl=3, vat=6.7, loc="office", tag="Militsiya"),
+    dict(id=6, start=8.6, end=10.4, frame=6, cont=3, sow="Kechqurun", loc="office"),
+    dict(id=7, start=10.4, end=12.8, frame=7, loc="choyxona", tag="Choyxona"),
+    dict(id=8, start=12.8, end=15.0, frame=8, loc="choyxona"),
+    dict(id=9, start=15.0, end=17.4, frame=9, loc="choyxona"),
+    dict(id=10, start=17.4, end=19.8, frame=10, loc="choyxona"),
+    dict(id=11, start=19.8, end=21.8, frame=11, vl=4, vat=19.9, loc="choyxona"),
+    dict(id=12, start=21.8, end=23.4, frame=12, loc="choyxona"),
+    dict(id=13, start=23.4, end=25.8, frame=13, vl=5, vat=23.9, loc="choyxona"),
+    dict(id=14, start=25.8, end=28.2, frame=14, vl=6, vat=25.9, loc="street"),
+    dict(id=15, start=28.2, end=30.4, frame=14, cont=6, sow="bazadan", loc="street"),
+    dict(id=16, start=30.4, end=32.4, frame=15, loc="choyxona"),
+    dict(id=17, start=32.4, end=33.4, frame=None, loc="void"),
+    dict(id=18, start=33.4, end=35.6, frame=16, loc="choyxona"),
+    dict(id=19, start=35.6, end=37.6, frame=17, loc="choyxona"),
+    dict(id=20, start=37.6, end=39.6, frame=18, loc="street"),
+    dict(id=21, start=39.6, end=41.8, frame=19, loc="forest"),
+    dict(id=22, start=41.8, end=43.4, frame=20, loc="choyxona"),
+    dict(id=23, start=43.4, end=46.4, frame=21, vl=7, vat=43.5, loc="choyxona"),
+    dict(id=24, start=46.4, end=50.0, frame=22, vl=8, vat=46.8, loc="forest", text="Davomi bor"),
+]

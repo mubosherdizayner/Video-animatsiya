@@ -1,0 +1,92 @@
+[
+ {
+  "check": "format",
+  "ok": true,
+  "detail": "h264 1080x1920 yuv420p 30/1 fps, audio aac 48000 Hz 2ch"
+ },
+ {
+  "check": "frame@0.0s scene+subtitle",
+  "ok": true,
+  "detail": "t=0.0: scene 1 expects frame_01, best image match frame_01 (r=0.92)"
+ },
+ {
+  "check": "frame@7.5s scene+subtitle",
+  "ok": true,
+  "detail": "t=7.5: scene 5 expects frame_05, best image match frame_05 (r=0.74); spoken word 'bolalar' (7.34-7.82s), highlighted amber px=3778"
+ },
+ {
+  "check": "frame@24.5s scene+subtitle",
+  "ok": true,
+  "detail": "t=24.5: scene 13 expects frame_13, best image match frame_13 (r=0.86); spoken word 'Allo,' (23.95-24.48s), highlighted amber px=2796"
+ },
+ {
+  "check": "frame@44.0s scene+subtitle",
+  "ok": true,
+  "detail": "t=44.0: scene 23 expects frame_21, best image match frame_21 (r=0.69); spoken word 'toping.' (43.95-44.31s), highlighted amber px=3567"
+ },
+ {
+  "check": "frame 0 = hook in motion + 'Bu qiz kim?'",
+  "ok": true,
+  "detail": "white text px in hook area=25151, mean abs diff frame0->frame1=5.01"
+ },
+ {
+  "check": "voice clips hold whole sentences",
+  "ok": true,
+  "detail": "8 clips cut inside pauses (edges below -38 dB, all words inside, >=20 ms pre-roll, >=50 ms tail); problems=[]"
+ },
+ {
+  "check": "clips never overlap",
+  "ok": true,
+  "detail": "overlaps=[]"
+ },
+ {
+  "check": "no digital silence before final fade",
+  "ok": true,
+  "detail": "min RMS of any 200 ms window before the fade = -37.3 dBFS (at 4.4s)"
+ },
+ {
+  "check": "silent scenes have ambience + sfx",
+  "ok": true,
+  "detail": "scene:rms/sfx-events 7:-27dB/1sfx, 8:-24dB/2sfx, 9:-26dB/1sfx, 10:-27dB/0sfx, 12:-27dB/1sfx, 16:-26dB/1sfx, 17:-18dB/1sfx, 18:-24dB/3sfx, 19:-23dB/2sfx, 20:-24dB/4sfx, 21:-22dB/1sfx, 22:-25dB/2sfx"
+ },
+ {
+  "check": "audio ends with >=1.0 s fade",
+  "ok": true,
+  "detail": "level before fade -28.8 dB -> mid-fade -32.4 dB -> last 30 ms -93.5 dB"
+ },
+ {
+  "check": "duration",
+  "ok": true,
+  "detail": "video 50.167s, audio 50.176s, last spoken word ends 48.865s (+1.2 = 50.065s)"
+ },
+ {
+  "check": "voice clearly above sfx + music",
+  "ok": true,
+  "detail": "speech blocks (161): voice - (amb+sfx+music) median 20.8 LU, 5th pct 13.3 LU; music median 30.8 LU under voice; sfx peak momentary -19.0 vs voice -8.1 LUFS"
+ },
+ {
+  "check": "text inside safe zone",
+  "ok": true,
+  "detail": "971 text boxes checked against x60-1020, y210-1560; outside=[]"
+ },
+ {
+  "check": "no image edge visible",
+  "ok": true,
+  "detail": "minimum camera scale 108.0% (frame 0); crop windows outside image: 0"
+ },
+ {
+  "check": "'Davomi bor' on 'Davomi', icon on 'obuna'",
+  "ok": true,
+  "detail": "'Davomi' spoken 47.020s (frame 1411) -> text frame 1411; 'obuna' spoken 48.115s (frame 1443) -> icon frame 1443"
+ },
+ {
+  "check": "scene cuts land on plan (<=1 frame)",
+  "ok": true,
+  "detail": "23 cuts, offsets in frames: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
+ },
+ {
+  "check": "starts_on_word cuts",
+  "ok": true,
+  "detail": "scene 2 'o'rmondan': cut frame 50 vs word frame 50; scene 4 'Ukang': cut frame 140 vs word frame 140; scene 6 'Kechqurun': cut frame 260 vs word frame 260; scene 15 'bazadan': cut frame 857 vs word frame 857"
+ }
+]

@@ -1,0 +1,691 @@
+{
+ "trimmed": false,
+ "leading_silence": 0.055,
+ "duration": 50.17,
+ "lines": {
+  "1": {
+   "ws": 0.0,
+   "we": 2.96,
+   "on": 0.055,
+   "off": 3.01,
+   "c0": 0.005,
+   "c1": 3.13
+  },
+  "2": {
+   "ws": 3.34,
+   "we": 4.94,
+   "on": 3.455,
+   "off": 5.115,
+   "c0": 3.405,
+   "c1": 5.235
+  },
+  "3": {
+   "ws": 5.48,
+   "we": 8.74,
+   "on": 5.575,
+   "off": 8.82,
+   "c0": 5.525,
+   "c1": 8.94
+  },
+  "4": {
+   "ws": 9.22,
+   "we": 10.14,
+   "on": 9.285,
+   "off": 10.18,
+   "c0": 9.235,
+   "c1": 10.3
+  },
+  "5": {
+   "ws": 10.58,
+   "we": 12.28,
+   "on": 10.59,
+   "off": 12.49,
+   "c0": 10.54,
+   "c1": 12.61
+  },
+  "6": {
+   "ws": 12.8,
+   "we": 15.88,
+   "on": 12.865,
+   "off": 16.205,
+   "c0": 12.815,
+   "c1": 16.325
+  },
+  "7": {
+   "ws": 16.08,
+   "we": 17.16,
+   "on": 16.615,
+   "off": 17.21,
+   "c0": 16.565,
+   "c1": 17.33
+  },
+  "8": {
+   "ws": 17.58,
+   "we": 19.38,
+   "on": 17.605,
+   "off": 19.45,
+   "c0": 17.555,
+   "c1": 19.57
+  }
+ },
+ "clips": [
+  {
+   "line": 1,
+   "src0": 0.0049999999999999975,
+   "src1": 3.1300000000000003,
+   "t0": 0.1,
+   "t1": 3.2250000000000005
+  },
+  {
+   "line": 2,
+   "src0": 3.4050000000000002,
+   "src1": 5.235,
+   "t0": 3.7,
+   "t1": 5.53
+  },
+  {
+   "line": 3,
+   "src0": 5.525,
+   "src1": 8.94,
+   "t0": 6.7,
+   "t1": 10.114999999999998
+  },
+  {
+   "line": 4,
+   "src0": 9.235,
+   "src1": 10.299999999999999,
+   "t0": 19.9,
+   "t1": 20.964999999999996
+  },
+  {
+   "line": 5,
+   "src0": 10.54,
+   "src1": 12.61,
+   "t0": 23.9,
+   "t1": 25.97
+  },
+  {
+   "line": 6,
+   "src0": 12.815,
+   "src1": 16.325000000000003,
+   "t0": 26.069999999999997,
+   "t1": 29.58
+  },
+  {
+   "line": 7,
+   "src0": 16.565,
+   "src1": 17.330000000000002,
+   "t0": 43.67,
+   "t1": 44.435
+  },
+  {
+   "line": 8,
+   "src0": 17.555,
+   "src1": 19.57,
+   "t0": 46.97,
+   "t1": 48.985
+  }
+ ],
+ "words": [
+  {
+   "line": 1,
+   "k": 0,
+   "text": "Sardor",
+   "src_s": 0.055,
+   "src_e": 0.5,
+   "t0": 0.15,
+   "t1": 0.595,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 1,
+   "k": 1,
+   "text": "yo'qolgan",
+   "src_s": 0.5,
+   "src_e": 0.96,
+   "t0": 0.595,
+   "t1": 1.055,
+   "how": "whisper"
+  },
+  {
+   "line": 1,
+   "k": 2,
+   "text": "tongda",
+   "src_s": 1.08,
+   "src_e": 1.42,
+   "t0": 1.175,
+   "t1": 1.515,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 1,
+   "k": 3,
+   "text": "o'rmondan",
+   "src_s": 1.57,
+   "src_e": 2.1,
+   "t0": 1.665,
+   "t1": 2.195,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 1,
+   "k": 4,
+   "text": "bir",
+   "src_s": 2.215,
+   "src_e": 2.3,
+   "t0": 2.31,
+   "t1": 2.395,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 1,
+   "k": 5,
+   "text": "qiz",
+   "src_s": 2.445,
+   "src_e": 2.615,
+   "t0": 2.54,
+   "t1": 2.71,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 1,
+   "k": 6,
+   "text": "chiqdi.",
+   "src_s": 2.675,
+   "src_e": 3.01,
+   "t0": 2.77,
+   "t1": 3.105,
+   "how": "whisper+offset+snap"
+  },
+  {
+   "line": 2,
+   "k": 0,
+   "text": "Rustam!",
+   "src_s": 3.455,
+   "src_e": 3.94,
+   "t0": 3.75,
+   "t1": 4.235,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 2,
+   "k": 1,
+   "text": "Ukang",
+   "src_s": 4.365,
+   "src_e": 4.64,
+   "t0": 4.66,
+   "t1": 4.935,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 2,
+   "k": 2,
+   "text": "qani?!",
+   "src_s": 4.64,
+   "src_e": 5.115,
+   "t0": 4.935,
+   "t1": 5.41,
+   "how": "whisper+offset"
+  },
+  {
+   "line": 3,
+   "k": 0,
+   "text": "Opa,",
+   "src_s": 5.575,
+   "src_e": 5.86,
+   "t0": 6.75,
+   "t1": 7.035,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 3,
+   "k": 1,
+   "text": "bolalar",
+   "src_s": 6.165,
+   "src_e": 6.64,
+   "t0": 7.34,
+   "t1": 7.815,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 3,
+   "k": 2,
+   "text": "shunaqa.",
+   "src_s": 6.64,
+   "src_e": 7.1,
+   "t0": 7.815,
+   "t1": 8.275,
+   "how": "whisper"
+  },
+  {
+   "line": 3,
+   "k": 3,
+   "text": "Kechqurun",
+   "src_s": 7.495,
+   "src_e": 7.9,
+   "t0": 8.67,
+   "t1": 9.075,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 3,
+   "k": 4,
+   "text": "o'zi",
+   "src_s": 7.9,
+   "src_e": 8.17,
+   "t0": 9.075,
+   "t1": 9.345,
+   "how": "whisper"
+  },
+  {
+   "line": 3,
+   "k": 5,
+   "text": "kelib",
+   "src_s": 8.2,
+   "src_e": 8.385,
+   "t0": 9.375,
+   "t1": 9.56,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 3,
+   "k": 6,
+   "text": "qoladi.",
+   "src_s": 8.49,
+   "src_e": 8.82,
+   "t0": 9.665,
+   "t1": 9.995,
+   "how": "whisper+offset+snap"
+  },
+  {
+   "line": 4,
+   "k": 0,
+   "text": "Isming",
+   "src_s": 9.285,
+   "src_e": 9.54,
+   "t0": 19.95,
+   "t1": 20.205,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 4,
+   "k": 1,
+   "text": "nima,",
+   "src_s": 9.54,
+   "src_e": 9.78,
+   "t0": 20.205,
+   "t1": 20.445,
+   "how": "whisper"
+  },
+  {
+   "line": 4,
+   "k": 2,
+   "text": "qizim?",
+   "src_s": 9.86,
+   "src_e": 10.18,
+   "t0": 20.525,
+   "t1": 20.845,
+   "how": "whisper+offset+snap"
+  },
+  {
+   "line": 5,
+   "k": 0,
+   "text": "Allo,",
+   "src_s": 10.59,
+   "src_e": 11.12,
+   "t0": 23.95,
+   "t1": 24.48,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 5,
+   "k": 1,
+   "text": "bolalar",
+   "src_s": 11.295,
+   "src_e": 11.88,
+   "t0": 24.655,
+   "t1": 25.24,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 5,
+   "k": 2,
+   "text": "uyimi?",
+   "src_s": 11.88,
+   "src_e": 12.49,
+   "t0": 25.24,
+   "t1": 25.85,
+   "how": "whisper+offset"
+  },
+  {
+   "line": 6,
+   "k": 0,
+   "text": "Lekin",
+   "src_s": 12.865,
+   "src_e": 13.2,
+   "t0": 26.12,
+   "t1": 26.455,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 6,
+   "k": 1,
+   "text": "kelganlar",
+   "src_s": 13.27,
+   "src_e": 13.8,
+   "t0": 26.525,
+   "t1": 27.055,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 6,
+   "k": 2,
+   "text": "bolalar",
+   "src_s": 13.8,
+   "src_e": 14.34,
+   "t0": 27.055,
+   "t1": 27.595,
+   "how": "whisper"
+  },
+  {
+   "line": 6,
+   "k": 3,
+   "text": "uyidan",
+   "src_s": 14.34,
+   "src_e": 14.7,
+   "t0": 27.595,
+   "t1": 27.955,
+   "how": "whisper"
+  },
+  {
+   "line": 6,
+   "k": 4,
+   "text": "emas,",
+   "src_s": 14.7,
+   "src_e": 15.12,
+   "t0": 27.955,
+   "t1": 28.375,
+   "how": "whisper"
+  },
+  {
+   "line": 6,
+   "k": 5,
+   "text": "bazadan",
+   "src_s": 15.31,
+   "src_e": 15.88,
+   "t0": 28.565,
+   "t1": 29.135,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 6,
+   "k": 6,
+   "text": "edi.",
+   "src_s": 15.88,
+   "src_e": 16.205,
+   "t0": 29.135,
+   "t1": 29.46,
+   "how": "interp"
+  },
+  {
+   "line": 7,
+   "k": 0,
+   "text": "Uni",
+   "src_s": 16.615,
+   "src_e": 16.7,
+   "t0": 43.72,
+   "t1": 43.805,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 7,
+   "k": 1,
+   "text": "toping.",
+   "src_s": 16.84,
+   "src_e": 17.21,
+   "t0": 43.945,
+   "t1": 44.315,
+   "how": "whisper+offset+snap"
+  },
+  {
+   "line": 8,
+   "k": 0,
+   "text": "Davomi",
+   "src_s": 17.605,
+   "src_e": 18.06,
+   "t0": 47.02,
+   "t1": 47.475,
+   "how": "whisper+onset"
+  },
+  {
+   "line": 8,
+   "k": 1,
+   "text": "bor",
+   "src_s": 18.06,
+   "src_e": 18.28,
+   "t0": 47.475,
+   "t1": 47.695,
+   "how": "whisper"
+  },
+  {
+   "line": 8,
+   "k": 2,
+   "text": "obuna",
+   "src_s": 18.7,
+   "src_e": 19.06,
+   "t0": 48.115,
+   "t1": 48.475,
+   "how": "whisper+snap"
+  },
+  {
+   "line": 8,
+   "k": 3,
+   "text": "bo'ling.",
+   "src_s": 19.06,
+   "src_e": 19.45,
+   "t0": 48.475,
+   "t1": 48.865,
+   "how": "whisper+offset"
+  }
+ ],
+ "scenes": [
+  {
+   "id": 1,
+   "start": 0.0,
+   "end": 1.665,
+   "frame": 1,
+   "vl": 1,
+   "vat": 0.1,
+   "loc": "forest",
+   "text": "Bu qiz kim?"
+  },
+  {
+   "id": 2,
+   "start": 1.665,
+   "end": 3.6,
+   "frame": 2,
+   "cont": 1,
+   "sow": "o'rmondan",
+   "loc": "forest",
+   "text": "Bu qiz kim?"
+  },
+  {
+   "id": 3,
+   "start": 3.6,
+   "end": 4.66,
+   "frame": 3,
+   "vl": 2,
+   "vat": 3.7,
+   "loc": "house"
+  },
+  {
+   "id": 4,
+   "start": 4.66,
+   "end": 6.6,
+   "frame": 4,
+   "cont": 2,
+   "sow": "Ukang",
+   "loc": "house"
+  },
+  {
+   "id": 5,
+   "start": 6.6,
+   "end": 8.67,
+   "frame": 5,
+   "vl": 3,
+   "vat": 6.7,
+   "loc": "office",
+   "tag": "Militsiya"
+  },
+  {
+   "id": 6,
+   "start": 8.67,
+   "end": 10.4,
+   "frame": 6,
+   "cont": 3,
+   "sow": "Kechqurun",
+   "loc": "office"
+  },
+  {
+   "id": 7,
+   "start": 10.4,
+   "end": 12.8,
+   "frame": 7,
+   "loc": "choyxona",
+   "tag": "Choyxona"
+  },
+  {
+   "id": 8,
+   "start": 12.8,
+   "end": 15.0,
+   "frame": 8,
+   "loc": "choyxona"
+  },
+  {
+   "id": 9,
+   "start": 15.0,
+   "end": 17.4,
+   "frame": 9,
+   "loc": "choyxona"
+  },
+  {
+   "id": 10,
+   "start": 17.4,
+   "end": 19.8,
+   "frame": 10,
+   "loc": "choyxona"
+  },
+  {
+   "id": 11,
+   "start": 19.8,
+   "end": 21.8,
+   "frame": 11,
+   "vl": 4,
+   "vat": 19.9,
+   "loc": "choyxona"
+  },
+  {
+   "id": 12,
+   "start": 21.8,
+   "end": 23.4,
+   "frame": 12,
+   "loc": "choyxona"
+  },
+  {
+   "id": 13,
+   "start": 23.4,
+   "end": 25.97,
+   "frame": 13,
+   "vl": 5,
+   "vat": 23.9,
+   "loc": "choyxona",
+   "extend": 0.16999999999999815
+  },
+  {
+   "id": 14,
+   "start": 25.97,
+   "end": 28.565,
+   "frame": 14,
+   "vl": 6,
+   "vat": 26.069999999999997,
+   "loc": "street"
+  },
+  {
+   "id": 15,
+   "start": 28.565,
+   "end": 30.57,
+   "frame": 14,
+   "cont": 6,
+   "sow": "bazadan",
+   "loc": "street"
+  },
+  {
+   "id": 16,
+   "start": 30.57,
+   "end": 32.57,
+   "frame": 15,
+   "loc": "choyxona"
+  },
+  {
+   "id": 17,
+   "start": 32.57,
+   "end": 33.57,
+   "frame": null,
+   "loc": "void"
+  },
+  {
+   "id": 18,
+   "start": 33.57,
+   "end": 35.77,
+   "frame": 16,
+   "loc": "choyxona"
+  },
+  {
+   "id": 19,
+   "start": 35.77,
+   "end": 37.77,
+   "frame": 17,
+   "loc": "choyxona"
+  },
+  {
+   "id": 20,
+   "start": 37.77,
+   "end": 39.77,
+   "frame": 18,
+   "loc": "street"
+  },
+  {
+   "id": 21,
+   "start": 39.77,
+   "end": 41.97,
+   "frame": 19,
+   "loc": "forest"
+  },
+  {
+   "id": 22,
+   "start": 41.97,
+   "end": 43.57,
+   "frame": 20,
+   "loc": "choyxona"
+  },
+  {
+   "id": 23,
+   "start": 43.57,
+   "end": 46.57,
+   "frame": 21,
+   "vl": 7,
+   "vat": 43.67,
+   "loc": "choyxona"
+  },
+  {
+   "id": 24,
+   "start": 46.57,
+   "end": 50.17,
+   "frame": 22,
+   "vl": 8,
+   "vat": 46.97,
+   "loc": "forest",
+   "text": "Davomi bor"
+  }
+ ]
+}
